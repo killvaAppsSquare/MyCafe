@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520918BB1F45C582009E9340 /* MainPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520918BA1F45C582009E9340 /* MainPageCell.swift */; };
 		520C2A011F443D5E00F56BFA /* UIButtonX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C29F71F443D5E00F56BFA /* UIButtonX.swift */; };
 		520C2A021F443D5E00F56BFA /* UIImageViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C29F81F443D5E00F56BFA /* UIImageViewX.swift */; };
 		520C2A031F443D5E00F56BFA /* UILabelX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C29F91F443D5E00F56BFA /* UILabelX.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520918BA1F45C582009E9340 /* MainPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageCell.swift; sourceTree = "<group>"; };
 		520C29F71F443D5E00F56BFA /* UIButtonX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonX.swift; sourceTree = "<group>"; };
 		520C29F81F443D5E00F56BFA /* UIImageViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewX.swift; sourceTree = "<group>"; };
 		520C29F91F443D5E00F56BFA /* UILabelX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelX.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		520C2A111F44424B00F56BFA /* V */ = {
 			isa = PBXGroup;
 			children = (
+				520918BA1F45C582009E9340 /* MainPageCell.swift */,
 				5264F7BB1F446E9C000AD5D6 /* RegistrationVC.xib */,
 				520C2A0F1F44408300F56BFA /* ReviewCell.swift */,
 			);
@@ -352,6 +355,7 @@
 				521187041F434FBB00FD1C59 /* MainPageVC.swift in Sources */,
 				529397D51F419C6E00CB7D79 /* Constants.swift in Sources */,
 				521187001F43317900FD1C59 /* Helper.swift in Sources */,
+				520918BB1F45C582009E9340 /* MainPageCell.swift in Sources */,
 				520C2A021F443D5E00F56BFA /* UIImageViewX.swift in Sources */,
 				5264F7BE1F447AEB000AD5D6 /* ExtensionsClass.swift in Sources */,
 				520C2A101F44408300F56BFA /* ReviewCell.swift in Sources */,
@@ -486,6 +490,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.killva.stanford.Mercato;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -500,6 +505,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.killva.stanford.Mercato;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -11,11 +11,10 @@ import UIKit
 class OurProductsVC: UIViewController  {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    fileprivate let reviewSegue = "pTrSegue"
 
-    let titles = ["Join Us","Menu","About Us","Our Products","Our Location","Reviews"]
+    let titles = ["Hot Drinks","Cold Drinks","Dessert" ]
     
-    let imgList = [UIImage(named:"pexels-photo-64775"),UIImage(named:"menu-coffee-outside-cafe"),UIImage(named:"pexels-photo-296882"),UIImage(named:"pexels-photo-296888"),UIImage(named:"menu-coffee-outside-cafe"),UIImage(named:"pexels-photo-532753")]
+    let imgList = [#imageLiteral(resourceName: "menu_pic01"),#imageLiteral(resourceName: "menu_pic03"),#imageLiteral(resourceName: "menu_pic02") ]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +22,7 @@ class OurProductsVC: UIViewController  {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(MainVcCells.self, forCellWithReuseIdentifier: "MainCell")
+        collectionView.register(OurProductsCell.self, forCellWithReuseIdentifier: "MainCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,8 +50,8 @@ extension OurProductsVC : UICollectionViewDelegate , UICollectionViewDelegateFlo
         
         switch indexPath.row {
         case 0: break
-        default:
-            performSegue(withIdentifier: reviewSegue, sender: self)
+        default: break
+//            performSegue(withIdentifier: reviewSegue, sender: self)
         }
     }
     
@@ -70,11 +69,11 @@ extension OurProductsVC : UICollectionViewDelegate , UICollectionViewDelegateFlo
 extension OurProductsVC : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return titles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCell", for: indexPath) as! MainVcCells
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCell", for: indexPath) as! OurProductsCell
         cell.label.text = titles[indexPath.row]
         
         cell.imageView.image = imgList[indexPath.row]
@@ -85,7 +84,7 @@ extension OurProductsVC : UICollectionViewDataSource {
 
 
 
-class MainVcCells : BaseCell {
+class OurProductsCell : BaseCell {
     
     let imageView : UIImageView =  {
         
@@ -94,10 +93,14 @@ class MainVcCells : BaseCell {
         iv.image = #imageLiteral(resourceName: "menu-coffee-outside-cafe")
         return iv
     }()
-    
+    let blackView : UIView = {
+       let view = UIView()
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        return view
+    }()
     let label : UILabel = {
        let lbl = UILabel()
-        lbl.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        lbl.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         lbl.text = "hi"
         lbl.textColor = .white
         lbl.tag = 20
@@ -108,12 +111,16 @@ class MainVcCells : BaseCell {
     override func setUpView() {
         self.clipsToBounds = true
         addSubview(imageView)
+        addSubview(blackView)
         addSubview(label)
-        let lblHeight = self.bounds.height / 6
+
         addConstraintsWithFormat("H:|[v0]|", views: imageView)
         addConstraintsWithFormat("V:|[v0]|", views: imageView)
         
-//        addConstraintsWithFormat("V:[v0(\(lblHeight))]|", views: label)
+        addConstraintsWithFormat("H:|[v0]|", views: blackView)
+        addConstraintsWithFormat("V:|[v0]|", views: blackView)
+
+
         addConstraintsWithFormat("H:|[v0]|", views: label)
 
         addConstraints([NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: imageView, attribute: .centerX, multiplier: 1, constant: 0)])

@@ -62,7 +62,7 @@ class MUserData {
     }     
     
     
-    func postRegiserationData(email: String , userPassword:String ,name : String, birthday : String , phone_number : String ,completed : @escaping ((PostLoginVars?,Bool,String,[String:Any]?,String))->()) {
+    func postRegiserationData(name : String?, phone_number : String?,email: String? ,userPassword:String? , birthday : String?   ,completed : @escaping (Bool,Int?)->()) {
         let parameters : Parameters = [ parSource.email : email , parSource.password : userPassword, parSource.name : name, parSource.birthday : birthday, parSource.phone_number : phone_number]
         //        print("that is the parameters in postLoginData : \(parameters)")
         
@@ -86,20 +86,22 @@ class MUserData {
                     
                 }
                 let json = JSON( response.result.value!) // SwiftyJSON
-                print("that is  postRegiserationData getting the data Mate : %@", response.result.value!)
-                
-                
+//                print("that is  postRegiserationData getting the data Mate : %@", response.result.value!)
+                let status : Bool  = json["api_status"].intValue == 0 ?  false : true
+                let id = json["id"].intValue
+                print(status ,id )
+                completed(status, id)
                 break
                 
             case .failure(_) :
                 
-                if let data = response.data {
-                    let json = String(data: data, encoding: String.Encoding.utf8)
-                    print("Failure postRegiserationData Response: \(json)")
-                }
-                print("that is fail i n getting the postRegiserationData data Mate : \(response.result.error?.localizedDescription)")
+//                if let data = response.data {
+//                    let json = String(data: data, encoding: String.Encoding.utf8)
+//                    print("Failure postRegiserationData Response: String(describing: \(js)on)")
+//                }
+                print("that is fail i n getting the postRegiserationData data Mate : \(String(describing: response.result.error?.localizedDescription))")
                 
-                completed((nil,false, "Network Time out",nil ,"Network Time out"))
+                completed(false ,nil )
                 break
             }
         }

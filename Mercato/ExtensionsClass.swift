@@ -81,7 +81,7 @@ extension String {
             let regex = try NSRegularExpression(pattern: "^[a-zA-Z_0-9\\-_,;.:#+*?=!§$%&/()@]+$", options: .caseInsensitive)
             if(regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count)) != nil){
                 
-                if(self.characters.count>=8 && self.characters.count<=20){
+                if(self.characters.count>=4 && self.characters.count<=20){
                     return true
                 }else{
                     return false
@@ -94,23 +94,49 @@ extension String {
         }
     }
     
+    var  isValidCount  : Bool {
+            if(self.characters.count>=8 && self.characters.count<=20){
+                return true
+            }else{
+                return false
+            }
+    }
     
 }
 
 import CDAlertView
 extension UIView {
-    func showAlert(_ title : String? , _ sms : String? ,_ action: @escaping () -> ()) {
+    func showAlert(_ title : String? , _ sms : String? ,_ alertType : CDAlertViewType ,_ action:( ()->())?) {
         
-        
-        let alert = CDAlertView(title: "Password Doesn't match", message: "please confirm your password", type: .warning)
+ 
+        let alert = CDAlertView(title: title, message: sms, type: alertType)
         alert.hideAnimations = { (center, transform, alpha) in
             transform = CGAffineTransform(scaleX: 3, y: 3)
             transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 90 ) / 180 )
             alpha = 0
-            action()
+            action?()
         }
         alert.hideAnimationDuration = 0.55
         alert.show()
+    }
+    
+    func showSimpleAlert(_ title : String? , _ sms : String? ,_ alertType : CDAlertViewType ) {
+        
+        let alert = CDAlertView(title: title, message: sms, type: alertType)
+        alert.hideAnimations = { (center, transform, alpha) in
+            transform = CGAffineTransform(scaleX: 3, y: 3)
+            transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 90 ) / 180 )
+            alpha = 0
+        }
+        alert.hideAnimationDuration = 0.55
+        alert.show()
+    }
+    
+    func emptyTextFieldHandler(_ textF : UITextField,_ title : String,_ sms : String?,_ alertTyper : CDAlertViewType) {
+         self.showAlert(title, sms, alertTyper, {
+            
+//            textF.becomeFirstResponder()
+        })
     }
 }
 
@@ -136,7 +162,15 @@ extension UIView {
 
 
 
-
+extension UIColor {
+    
+   public class  var lightRed : UIColor {
+        return UIColor(red: 180/255, green: 32/255, blue: 36/255, alpha: 1)
+    }
+   public class   var darkRed : UIColor {
+        return UIColor(red: 90/255, green: 30/255, blue: 24/255, alpha: 1)
+    }
+}
 
 
 extension String {

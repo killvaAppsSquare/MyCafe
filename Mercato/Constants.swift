@@ -53,22 +53,7 @@ class Constants  {
     
     
     
-    class Colors {
-        static let blue = UIColor(colorLiteralRed: 57/255, green: 84/255, blue: 159/255, alpha: 1) //  #39599f
-        
-        static let green = UIColor(colorLiteralRed: 92/255, green: 173/255, blue: 40/255, alpha: 1)   //  #5cad28
-        
-        static let red = UIColor(colorLiteralRed: 177/255, green: 17/255, blue: 22/255, alpha: 1)    // #b11116
-        
-        static  let black = UIColor(colorLiteralRed: 40/255, green: 40/255, blue: 40/255, alpha: 1)    //   #282828
-        static  let lightGray = UIColor(colorLiteralRed: 175/255, green: 175/255, blue: 175/255, alpha: 1)     //   #989898
-        
-        static  let gray = UIColor(colorLiteralRed: 152/255, green: 152/255, blue: 152/255, alpha: 1)     //   #989898
-        
-        static  let darkGreen = UIColor(colorLiteralRed: 74/255, green: 139/255, blue: 32/255, alpha: 1)     //   #4A8B20
-        
-        //    static  let yellow = UIColor(colorLiteralRed: 152/255, green: 152/255, blue: 152/255, alpha: 1)  //   #d8c800
-    }
+ 
     
     
 

@@ -68,6 +68,7 @@
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001-qr-code" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-Dy-kMj">
                             <rect key="frame" x="87" y="477" width="41" height="41"/>
+                            <color key="backgroundColor" red="0.73872441053390503" green="0.1163872554898262" blue="0.1734638512134552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.84639817480000001" green="0.82046240569999995" blue="0.74138623479999999" alpha="0.94560680649999995" colorSpace="custom" customColorSpace="sRGB"/>
