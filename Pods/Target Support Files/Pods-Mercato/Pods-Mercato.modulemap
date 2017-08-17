@@ -1,0 +1,6 @@
+framework module Pods_Mercato {
+  umbrella header "Pods-Mercato-umbrella.h"
+
+  export *
+  module * { export * }
+}
