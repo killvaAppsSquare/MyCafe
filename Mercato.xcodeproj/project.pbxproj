@@ -38,6 +38,8 @@
 		52E4D8081F3C961800D4BF85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E4D8061F3C961800D4BF85 /* Main.storyboard */; };
 		52E4D80A1F3C961800D4BF85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E4D8091F3C961800D4BF85 /* Assets.xcassets */; };
 		52E4D80D1F3C961800D4BF85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E4D80B1F3C961800D4BF85 /* LaunchScreen.storyboard */; };
+		71EE6EA51F49B85900C2FA9A /* MenuNsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EE6EA41F49B85900C2FA9A /* MenuNsView.swift */; };
+		71EE6EA71F49C73E00C2FA9A /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EE6EA61F49C73E00C2FA9A /* AboutUsVC.swift */; };
 		7CB5DA31ABCF97EBB20B751F /* Pods_Mercato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A92C4C907E2916ACB3EF22 /* Pods_Mercato.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		52E4D80C1F3C961800D4BF85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52E4D80E1F3C961800D4BF85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E65E96C4A9BB79CB38AB189 /* Pods-Mercato.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mercato.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mercato/Pods-Mercato.debug.xcconfig"; sourceTree = "<group>"; };
+		71EE6EA41F49B85900C2FA9A /* MenuNsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuNsView.swift; sourceTree = "<group>"; };
+		71EE6EA61F49C73E00C2FA9A /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
 		93A92C4C907E2916ACB3EF22 /* Pods_Mercato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mercato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74646F6BDD25EB98E7A5467 /* Pods-Mercato.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mercato.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mercato/Pods-Mercato.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +161,8 @@
 				5264F7B11F44669E000AD5D6 /* LocationOnMapVC.swift */,
 				5264F7B21F44669E000AD5D6 /* LocationOnMapVC.xib */,
 				529397D61F41A3AF00CB7D79 /* RegistrationVC.swift */,
+				71EE6EA41F49B85900C2FA9A /* MenuNsView.swift */,
+				71EE6EA61F49C73E00C2FA9A /* AboutUsVC.swift */,
 			);
 			name = C;
 			sourceTree = "<group>";
@@ -356,8 +362,10 @@
 				529397D51F419C6E00CB7D79 /* Constants.swift in Sources */,
 				521187001F43317900FD1C59 /* Helper.swift in Sources */,
 				520918BB1F45C582009E9340 /* MainPageCell.swift in Sources */,
+				71EE6EA71F49C73E00C2FA9A /* AboutUsVC.swift in Sources */,
 				520C2A021F443D5E00F56BFA /* UIImageViewX.swift in Sources */,
 				5264F7BE1F447AEB000AD5D6 /* ExtensionsClass.swift in Sources */,
+				71EE6EA51F49B85900C2FA9A /* MenuNsView.swift in Sources */,
 				520C2A101F44408300F56BFA /* ReviewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,13 @@ class MainPageVC: UIViewController  {
     fileprivate let reviewSegue = "mTrSegue"
 
     let imgList = [#imageLiteral(resourceName: "join_us"),#imageLiteral(resourceName: "menu_icon"),#imageLiteral(resourceName: "aboutus_icon") ,#imageLiteral(resourceName: "products_icon"),#imageLiteral(resourceName: "location_icon"),#imageLiteral(resourceName: "reviews_icon")]
+    
+    lazy var  menuView : MenuNsView = {
+       let vc = MenuNsView()
+        vc.mainpageController = self
+        
+        return vc
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +31,23 @@ class MainPageVC: UIViewController  {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(MainVcCells.self, forCellWithReuseIdentifier: "MainCell")    }
+        collectionView.register(MainVcCells.self, forCellWithReuseIdentifier: "MainCell")
+    
+        
+        let btn2 = UIButton(type: .custom)
+        btn2.setImage(UIImage(named: "sidemenu_icon"), for: .normal)
+        btn2.frame = CGRect(x: 0, y: 0, width: 30, height: 20)
+        btn2.addTarget(self, action: #selector(sidemenuBtnAct), for: .touchUpInside)
+        let item2 = UIBarButtonItem(customView: btn2)
+        
+        self.navigationItem.setLeftBarButtonItems([item2], animated: true)
+
+    
+    }
+    
+    func sidemenuBtnAct() {
+        menuView.showMenu()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,7 +55,16 @@ class MainPageVC: UIViewController  {
     }
     
  
-    
+    func navigatieToView ( _ selected : MenuList) {
+        switch selected {
+        case .MyProfile : break
+        case .MyWallet : break
+        case .Reddem : break
+        case .Offers : break
+        case .Logout : break
+        }
+        print(selected.rawValue)
+    }
     /*
      // MARK: - Navigation
      
