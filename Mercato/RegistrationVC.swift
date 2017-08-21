@@ -33,8 +33,8 @@ class RegistrationVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         nukeTf = true
     }
     
@@ -77,8 +77,13 @@ class RegistrationVC: UIViewController {
             let dataM = MUserData()
             dataM.postRegiserationData(name: fullnameTxt.text, phone_number: mobileNumTxt.text, email: emailTxt.text, userPassword: passTxt.text, birthday: birthdayText.text) { [weak self ](data) in
                 
-                if data.0 {
-                    self?.view.showSimpleAlert("Success", "", .success)
+                if data.0 , let id = data.1{
+                    ad.saveUserLogginData(email: nil, photoUrl: nil, uid: id, name: nil)
+                    self?.view.showSimpleAlert("Success", "Welcome", .success)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
+                        ad.reload()
+                    }
+                    
                 }else {
                     self?.view.showSimpleAlert("Failed ot register!!", "Please try again", .error)
                     
@@ -107,7 +112,7 @@ class RegistrationVC: UIViewController {
 
 
 //MARK: PickerView
-extension RegistrationVC :  UIPickerViewDelegate,UITextFieldDelegate {
+extension RegistrationVC :  UITextFieldDelegate {
     
     func setupTextsDelegate() {
         
@@ -121,20 +126,15 @@ extension RegistrationVC :  UIPickerViewDelegate,UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard !nukeTf else { return }
-         guard  textField.text != "" else {  return  }
         
-        if   textField == birthdayText ,  textField.text == "" {
-            let formatter = DateFormatter()
-            let date_ = Calendar.current.date(byAdding: .year, value: -10, to: Date())
-            formatter.dateFormat =   "yyyy-MM-dd"
-            
-            guard let date = date_ else { return }
-            let dateS  = formatter.string(from: date )
-            textField.text = dateS
-            
+        if   textField == birthdayText ,(  textField.text == "" || textField.text == " " ){
+          
+            defaultDateSelection()
         }
        
     }
+    
+
     
     func textFieldRulesValidation(_ textField : UITextField)-> Bool {
         switch textField {
@@ -198,14 +198,8 @@ extension RegistrationVC :  UIPickerViewDelegate,UITextFieldDelegate {
 //        confirmPassTxt.isUserInteractionEnabled = true
         switch textField {
         case birthdayText:
-            let datePicker = UIDatePicker()
-            datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: -10, to: Date())
-            datePicker.minimumDate = Calendar.current.date(byAdding: .year, value: -90, to: Date())
-            
-            datePicker.datePickerMode = UIDatePickerMode.date
-            textField.inputView = datePicker
-            datePicker.addTarget(self, action: #selector(self.timePickerChanged(_:)), for: .valueChanged)
-//        case passTxt : confirmPassTxt.isUserInteractionEnabled = false
+                setupPickerForTextF()
+        //        case passTxt : confirmPassTxt.isUserInteractionEnabled = false
         case confirmPassTxt :
             if textField == confirmPassTxt , let txt = passTxt.text, txt.isBlank{
                 
@@ -221,26 +215,54 @@ extension RegistrationVC :  UIPickerViewDelegate,UITextFieldDelegate {
     }
     
     
-    //Picker
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+  
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
+
     
+    
+    
+}
+
+
+extension RegistrationVC : UIPickerViewDelegate {
+    
+    func setupPickerForTextF() {
+        
+        let datePicker = UIDatePicker()
+        datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: -10, to: Date())
+        datePicker.minimumDate = Calendar.current.date(byAdding: .year, value: -90, to: Date())
+        
+        datePicker.datePickerMode = UIDatePickerMode.date
+        birthdayText.inputView = datePicker
+        datePicker.addTarget(self, action: #selector(self.timePickerChanged(_:)), for: .valueChanged)
+
+    }
     func setupPickerV() {
         birthdayText.delegate = self
     }
     
     
-    
+    func defaultDateSelection() {
+        
+        let formatter = DateFormatter()
+        formatter.locale = Locale.init(identifier: "en")
+        let date_ = Calendar.current.date(byAdding: .year, value: -20, to: Date())
+        formatter.dateFormat =   "yyyy-MM-dd"
+        
+        guard let date = date_ else { return }
+        let dateS  = formatter.string(from: date )
+        birthdayText.text = dateS
+        
+    }
     
     func timePickerChanged(_ sender: UIDatePicker) {
         let formatter = DateFormatter()
+        formatter.locale = Locale.init(identifier: "en")
         formatter.dateFormat = "yyyy-MM-dd"
         birthdayText.text = formatter.string(from: sender.date)
     }
-    
-    
-    
 }

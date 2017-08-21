@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -8,42 +8,43 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewC" customModule="Mercato" customModuleProvider="target">
             <connections>
+                <outlet property="emailTxt" destination="5UM-fu-uEM" id="Wak-4b-OBW"/>
+                <outlet property="loginBtnOL" destination="zYI-Ew-mgA" id="aVk-j2-N0y"/>
+                <outlet property="passwordTxt" destination="kV0-og-yjh" id="6y4-7S-EJG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHt-o1-xWN">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pexels-photo-296888" translatesAutoresizingMaskIntoConstraints="NO" id="buL-ho-toq">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="279" id="EXg-XW-52s"/>
-                            </constraints>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic01" translatesAutoresizingMaskIntoConstraints="NO" id="buL-ho-toq">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5UM-fu-uEM">
-                            <rect key="frame" x="8" y="308" width="359" height="30"/>
+                            <rect key="frame" x="8" y="218" width="304" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kV0-og-yjh">
-                            <rect key="frame" x="8" y="355" width="359" height="30"/>
+                            <rect key="frame" x="8" y="265" width="304" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYI-Ew-mgA">
-                            <rect key="frame" x="139" y="411" width="97" height="41"/>
+                            <rect key="frame" x="112" y="315" width="97" height="41"/>
                             <color key="backgroundColor" red="0.77541775170000005" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="zYI-Ew-mgA" secondAttribute="height" multiplier="97:41" id="oe4-UH-3y1"/>
@@ -53,45 +54,91 @@
                             <state key="normal" title="Login ">
                                 <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="loginbtnAct:" destination="-1" eventType="touchUpInside" id="u5W-Ua-5ux"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krJ-n8-ERE">
-                            <rect key="frame" x="120" y="477" width="165" height="41"/>
+                            <rect key="frame" x="90" y="414" width="140" height="62"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="165" id="S50-rG-0jf"/>
-                                <constraint firstAttribute="width" secondItem="krJ-n8-ERE" secondAttribute="height" multiplier="165:41" id="mXP-V4-xfu"/>
-                            </constraints>
                             <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
-                            <state key="normal" title="QR code Scanner">
+                            <state key="normal">
                                 <color key="titleColor" red="0.77541775170000005" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="scanAction:" destination="-1" eventType="touchUpInside" id="J52-QD-zqG"/>
+                            </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001-qr-code" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-Dy-kMj">
-                            <rect key="frame" x="87" y="477" width="41" height="41"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mywallet_qr" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-Dy-kMj">
+                            <rect key="frame" x="140" y="414" width="41" height="41"/>
                             <color key="backgroundColor" red="0.73872441053390503" green="0.1163872554898262" blue="0.1734638512134552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="41" id="vb4-L3-ASo"/>
+                                <constraint firstAttribute="width" secondItem="fdm-Dy-kMj" secondAttribute="height" multiplier="41:41" id="zNB-ST-rdy"/>
+                            </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzW-ma-0ph">
+                            <rect key="frame" x="110.5" y="362" width="100" height="27"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                            <size key="titleShadowOffset" width="0.10000000000000001" height="0.10000000000000001"/>
+                            <state key="normal" title="Forgot Password?">
+                                <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="titleShadowColor" red="0.73872441050000004" green="0.11638725549999999" blue="0.17346385119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="forgotpassBtnAct:" destination="-1" eventType="touchUpInside" id="zPw-cC-BTM"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cy8-FK-AIb">
+                            <rect key="frame" x="110.5" y="383" width="100" height="1"/>
+                            <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="pZT-i5-29Z"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR code Scanner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc2-qa-95M">
+                            <rect key="frame" x="90" y="455" width="140" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="140" id="eTz-nC-NvJ"/>
+                                <constraint firstAttribute="height" constant="21" id="xyT-gN-BiL"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                            <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.84639817480000001" green="0.82046240569999995" blue="0.74138623479999999" alpha="0.94560680649999995" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="fdm-Dy-kMj" firstAttribute="width" secondItem="krJ-n8-ERE" secondAttribute="height" multiplier="1:1" id="3ms-pY-0mX"/>
-                        <constraint firstItem="fdm-Dy-kMj" firstAttribute="centerY" secondItem="krJ-n8-ERE" secondAttribute="centerY" id="3rr-wM-GmO"/>
                         <constraint firstItem="kV0-og-yjh" firstAttribute="width" secondItem="5UM-fu-uEM" secondAttribute="width" id="4BG-Kg-Vwa"/>
+                        <constraint firstItem="dzW-ma-0ph" firstAttribute="bottom" secondItem="Cy8-FK-AIb" secondAttribute="bottom" constant="5" id="5bo-zC-CZH"/>
                         <constraint firstItem="5UM-fu-uEM" firstAttribute="centerX" secondItem="buL-ho-toq" secondAttribute="centerX" id="6U6-uw-pGj"/>
-                        <constraint firstItem="krJ-n8-ERE" firstAttribute="leading" secondItem="fdm-Dy-kMj" secondAttribute="trailing" constant="-8" id="AVS-hR-xHI"/>
                         <constraint firstItem="buL-ho-toq" firstAttribute="leading" secondItem="hHt-o1-xWN" secondAttribute="leading" id="DkL-g3-WBr"/>
                         <constraint firstAttribute="trailingMargin" secondItem="5UM-fu-uEM" secondAttribute="trailing" id="FMf-Xg-NaA"/>
                         <constraint firstItem="kV0-og-yjh" firstAttribute="top" secondItem="5UM-fu-uEM" secondAttribute="bottom" constant="17" id="G77-uI-5Un"/>
+                        <constraint firstItem="fdm-Dy-kMj" firstAttribute="centerX" secondItem="dzW-ma-0ph" secondAttribute="centerX" id="Gpl-hM-O9x"/>
+                        <constraint firstItem="dzW-ma-0ph" firstAttribute="top" secondItem="zYI-Ew-mgA" secondAttribute="bottom" constant="6" id="HLX-A0-MuH"/>
+                        <constraint firstItem="fdm-Dy-kMj" firstAttribute="top" secondItem="dzW-ma-0ph" secondAttribute="bottom" constant="25" id="Hwm-Ia-9Vt"/>
+                        <constraint firstItem="dzW-ma-0ph" firstAttribute="centerX" secondItem="zYI-Ew-mgA" secondAttribute="centerX" id="K1P-By-aUN"/>
                         <constraint firstItem="buL-ho-toq" firstAttribute="top" secondItem="hHt-o1-xWN" secondAttribute="top" id="OJJ-vN-nxS"/>
-                        <constraint firstItem="krJ-n8-ERE" firstAttribute="centerX" secondItem="zYI-Ew-mgA" secondAttribute="centerX" constant="15" id="U7F-Ur-MhW"/>
+                        <constraint firstItem="Gc2-qa-95M" firstAttribute="top" secondItem="fdm-Dy-kMj" secondAttribute="bottom" id="QXO-0q-u3S"/>
+                        <constraint firstItem="dzW-ma-0ph" firstAttribute="leading" secondItem="Cy8-FK-AIb" secondAttribute="leading" id="Qfu-5k-twb"/>
+                        <constraint firstItem="Gc2-qa-95M" firstAttribute="centerX" secondItem="fdm-Dy-kMj" secondAttribute="centerX" id="SCD-Mf-TEK"/>
+                        <constraint firstItem="krJ-n8-ERE" firstAttribute="bottom" secondItem="Gc2-qa-95M" secondAttribute="bottom" id="SXa-74-WKV"/>
                         <constraint firstItem="5UM-fu-uEM" firstAttribute="leading" secondItem="hHt-o1-xWN" secondAttribute="leadingMargin" id="a3n-jI-WgJ"/>
-                        <constraint firstItem="krJ-n8-ERE" firstAttribute="top" secondItem="zYI-Ew-mgA" secondAttribute="bottom" constant="25" id="bDC-PK-tvp"/>
+                        <constraint firstItem="buL-ho-toq" firstAttribute="height" secondItem="hHt-o1-xWN" secondAttribute="height" multiplier="0.33" id="ckv-Af-2EP"/>
                         <constraint firstItem="kV0-og-yjh" firstAttribute="centerX" secondItem="5UM-fu-uEM" secondAttribute="centerX" id="fVp-R6-B1q"/>
-                        <constraint firstItem="fdm-Dy-kMj" firstAttribute="height" secondItem="krJ-n8-ERE" secondAttribute="height" id="g4r-G0-144"/>
+                        <constraint firstItem="krJ-n8-ERE" firstAttribute="trailing" secondItem="Gc2-qa-95M" secondAttribute="trailing" id="g8t-05-InY"/>
+                        <constraint firstItem="dzW-ma-0ph" firstAttribute="trailing" secondItem="Cy8-FK-AIb" secondAttribute="trailing" id="kaE-m5-Xwx"/>
+                        <constraint firstItem="krJ-n8-ERE" firstAttribute="leading" secondItem="Gc2-qa-95M" secondAttribute="leading" id="qdV-P3-Otd"/>
+                        <constraint firstItem="krJ-n8-ERE" firstAttribute="top" secondItem="fdm-Dy-kMj" secondAttribute="top" id="rVp-Kx-xqb"/>
                         <constraint firstItem="kV0-og-yjh" firstAttribute="height" secondItem="5UM-fu-uEM" secondAttribute="height" id="rdn-Xu-HxZ"/>
                         <constraint firstItem="zYI-Ew-mgA" firstAttribute="centerX" secondItem="kV0-og-yjh" secondAttribute="centerX" id="ut8-zt-0d7"/>
-                        <constraint firstItem="zYI-Ew-mgA" firstAttribute="top" secondItem="kV0-og-yjh" secondAttribute="bottom" constant="26" id="vL1-CN-dmf"/>
+                        <constraint firstItem="zYI-Ew-mgA" firstAttribute="top" secondItem="kV0-og-yjh" secondAttribute="bottom" constant="20" id="vL1-CN-dmf"/>
                         <constraint firstAttribute="trailing" secondItem="buL-ho-toq" secondAttribute="trailing" id="vU2-qn-rRR"/>
-                        <constraint firstItem="5UM-fu-uEM" firstAttribute="top" secondItem="buL-ho-toq" secondAttribute="bottom" constant="29" id="zdm-SY-unT"/>
+                        <constraint firstItem="5UM-fu-uEM" firstAttribute="top" secondItem="buL-ho-toq" secondAttribute="bottom" constant="30" id="zdm-SY-unT"/>
                     </constraints>
                 </view>
             </subviews>
@@ -105,7 +152,7 @@
         </view>
     </objects>
     <resources>
-        <image name="001-qr-code" width="64" height="64"/>
-        <image name="pexels-photo-296888" width="1280" height="640"/>
+        <image name="mywallet_qr" width="82" height="82"/>
+        <image name="pic01" width="1242" height="612"/>
     </resources>
 </document>

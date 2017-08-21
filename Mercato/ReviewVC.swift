@@ -8,20 +8,28 @@
 
 import UIKit
 
-class ReviewVC: UIViewController {
+class ReviewVC: TextFieldKeyBoardhandler {
 
     @IBOutlet weak var reviewTextViewHeight: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var submitBtnOL: UIButtonX!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+ 
 //        tableView.delegate = self
         tableView.dataSource = self
-        
-
-        // Do any additional setup after loading the view.
+        }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+     }
+       
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+//        IQKeyboardManager.sharedManager().enable = true
     }
 
     override func didReceiveMemoryWarning() {

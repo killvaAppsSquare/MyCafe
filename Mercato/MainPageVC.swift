@@ -15,8 +15,8 @@ class MainPageVC: UIViewController  {
     let titles = ["Join Us","Menu","About Us","Our Products","Our Location","Reviews"]
     fileprivate let reviewSegue = "mTrSegue"
 
-    let imgList = [#imageLiteral(resourceName: "join_us"),#imageLiteral(resourceName: "menu_icon"),#imageLiteral(resourceName: "aboutus_icon") ,#imageLiteral(resourceName: "products_icon"),#imageLiteral(resourceName: "location_icon"),#imageLiteral(resourceName: "reviews_icon")]
     
+    let imgList = [UIImage(named: "join_us"),UIImage(named: "Meni_MainPage_icon"),UIImage(named: "aboutus_icon"),UIImage(named: "products_icon"),UIImage(named: "location_icon"),UIImage(named: "reviews_icon")]
     lazy var  menuView : MenuNsView = {
        let vc = MenuNsView()
         vc.mainpageController = self
@@ -68,7 +68,15 @@ class MainPageVC: UIViewController  {
             menuView.handleDismiss()
             let vc = AboutUsVC()
             self.navigationController?.pushViewController(vc, animated: true)
-        case .Logout : break
+        case .Logout :
+            self.view.showSimpleAlert("LoggingOut", "loading...", .alarm)
+            self.view.isUserInteractionEnabled = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
+
+            ad.saveUserLogginData(email: nil, photoUrl: nil, uid: nil, name: nil)
+                self.view.isUserInteractionEnabled = true
+                ad.reload()
+            }
         }
         print(selected.rawValue)
     }
@@ -91,8 +99,12 @@ extension MainPageVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLa
         
         switch indexPath.row {
              case 0 : // Join us
-//            let vc = RegistrationVC()
-//            navigationController?.pushViewController(vc, animated: true)
+                guard ad.isUserLoggedIn() else {
+                    let vc = LoginViewC()
+                    navigationController?.pushViewController(vc, animated: true)
+                    return }
+                let vc = AboutUsVC()
+                navigationController?.pushViewController(vc, animated: true)
          case 1 : //Menu
             print("Puna bete")
         case 2 : //About Us

@@ -18,7 +18,7 @@ class MUserData {
     private  let source = Constants.API.URLS()
     private   let parSource = Constants.API.Parameters()
     
-    func postLoginData(email: String , userPassword:String ,completed : @escaping ((PostLoginVars?,Bool,String,[String:Any]?,String))->()) {
+    func postLoginData(email: String , userPassword:String ,completed : @escaping (PostLoginVars?,Bool)->()) {
         let parameters : Parameters = [ parSource.email : email , parSource.password : userPassword ]
 //        print("that is the parameters in postLoginData : \(parameters)")
         
@@ -42,20 +42,26 @@ class MUserData {
                     
                 }
                 let json = JSON( response.result.value!) // SwiftyJSON
-                print("that is  postUserData_LOGIN getting the data Mate : %@", response.result.value!)
+                print("that is  postUserData_LOGIN getting the data Mate : %@", response.result.value)
+                let parm = Constants.API.Parameters()
+                let status: Bool  =  json[parm.api_status].intValue == 0 ? false : true
+                let data = json["data"]
                 
+                var profileData =  PostLoginVars(data)
+ 
                 
+                completed(profileData , status )
                 break
                 
             case .failure(_) :
                 
-                if let data = response.data {
-                    let json = String(data: data, encoding: String.Encoding.utf8)
-                    print("Failure Response: \(json)")
-                }
+//                if let data = response.data {
+//                    let json = String(data: data, encoding: String.Encoding.utf8)
+//                    print("Failure Response: \(json)")
+//                }
                 print("that is fail i n getting the Login data Mate : \(response.result.error?.localizedDescription)")
  
-                completed((nil,false, "Network Time out",nil ,"Network Time out"))
+                completed(nil,false)
                 break
             }
         }
@@ -74,7 +80,7 @@ class MUserData {
         //        print("URL: is postLoginData RL : \(url)")
         
         Alamofire.request(url , method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: source.HEADER).responseJSON { (response:DataResponse<Any>) in
-            //            print(response.result)
+                        print(response.result)
             switch(response.result) {
             case .success(_):
                 guard response.result.error == nil else {
@@ -87,7 +93,8 @@ class MUserData {
                 }
                 let json = JSON( response.result.value!) // SwiftyJSON
 //                print("that is  postRegiserationData getting the data Mate : %@", response.result.value!)
-                let status : Bool  = json["api_status"].intValue == 0 ?  false : true
+                let parm = Constants.API.Parameters()
+                let status: Bool  =  json[parm.api_status].intValue == 0 ? false : true
                 let id = json["id"].intValue
                 print(status ,id )
                 completed(status, id)
@@ -121,76 +128,57 @@ class PostLoginVars {
     private   let imageURL = Constants.API.URLS()
 
     //[
-    private var _success : String?
-    // [:]
-    private var _data  : String?
-    private var _id :Int?
+     private var _id :Int?
 
-    private var _name  : String?
-    private var _mobile  : String?
-    private var _city : String?
-    private var _area  : String?
-    private var _pg_type : String?
-    private var _type  : String?
-    private var _team :String?
+    private var _birthday  : String?
+    private var _email  : String?
+    private var _name : String?
+    private var _phone_number  : String?
+    private var _photo : String?
     private var _points : Int?
-    private var _birth_date  : String?
-    private var _map_lon  : String?
-    private var _map_lat  : String?
-    private var _email : String?
-    private var _password  : String?
-    private var _remember_token : String?
-    private var _api_token : String?
-    private var _created_at : String?
-    private var _updated_at  : String?
-    private var _deleted_at  : String?
-    private var _image  : String?
-
-     private var _position  : String?
-    private var _snap_chat  : String?
-    private var _fbId : String?
-    private  var _message  : String?
     //]
     
     //[
-    var success : String {
-        guard let x = _success else { return "" }
+    var birthday : String {
+        guard let x = _birthday else { return "" }
         return x
     }
     // [:]
-    var data  : String {
-        guard let x = _data else { return "" }
+    var email : String {
+        guard let x = _email else { return "" }
         return x
     }
-   
-    var snapChat : String {
-         guard let x = _snap_chat , x != "" , x != " "  else { return "unknown" }
-         return x
+    var name : String {
+        guard let x = _name else { return "" }
+        return x
     }
-    var fbIDToken : String {
-        guard let x = _fbId , x != "" , x != " "  else { return "unknown" }
+    var phone_number : String {
+        guard let x = _phone_number else { return "" }
+        return x
+    }
+    var photo : String {
+        guard let x = _photo else { return "" }
+        return x
+    }
+    var points : Int {
+        guard let x = _points else { return 0 }
+        return x
+    }
+    var id : Int {
+        guard let x = _id else { return 0 }
         return x
     }
     
-    var isFbUser : Bool {
-        guard let x = _fbId , x != "" , x != " "  else { return false }
-//        print("that is teh fb value : \(x)")
-        return true
-        
-    }
-    //]
-    
-//    init(name : String?,mobile:String?, city:String?,area:String?,ph_type:String?, map_lon:Double?,map_lat:Double?,email:String?,password:String?,rememberToken:String?,apiToken:String?,createdAt:String?,updatedAt:String?,deletedAt:String?,success:Bool?,message:String?) {
-//        
-//        
-//    }
-    
-//    convenience init(name:String?,email:String?,city:String?,type:String?) {
-//        self.init(name : nil,mobile:nil, city:nil,area:nil,ph_type:nil, map_lon:nil,map_lat:nil,email:nil,password:nil,rememberToken:nil,apiToken:nil,createdAt:nil,updatedAt:nil,deletedAt:nil,success:nil,message:nil)
-    init(jsonData : JSON) {
+
+
+    init(_ jsonData : JSON) {
         self._name = jsonData[source.name].stringValue
         self._email = jsonData[source.email].stringValue
- 
+        self._birthday = jsonData[source.birthday].stringValue
+        self._phone_number = jsonData[source.phone_number].stringValue
+        self._photo = jsonData[source.photo].stringValue
+        self._points = jsonData[source.points].intValue
+
 
     }
     

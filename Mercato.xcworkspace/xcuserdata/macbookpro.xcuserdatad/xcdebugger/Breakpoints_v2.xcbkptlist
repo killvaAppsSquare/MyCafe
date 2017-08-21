@@ -9,46 +9,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mercato/MUserData.swift"
-            timestampString = "524394873.18716"
+            filePath = "Mercato/LoginVC.swift"
+            timestampString = "525008565.42213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/MUserData.swift"
+            timestampString = "525023611.07483"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "postRegiserationData(name:phone_number:email:userPassword:birthday:completed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/MUserData.swift"
+            timestampString = "525010685.337009"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "postLoginData(email:userPassword:completed:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Mercato.MUserData.postLoginData (email : Swift.String, userPassword : Swift.String, completed : (Swift.Optional&lt;Mercato.PostLoginVars&gt;, Swift.Bool, Swift.String, Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "Mercato"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/MUserData.swift"
-                  timestampString = "525006997.69777"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "677">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Mercato.MUserData.(postLoginData (email : Swift.String, userPassword : Swift.String, completed : (Swift.Optional&lt;Mercato.PostLoginVars&gt;, Swift.Bool, Swift.String, Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, Swift.String) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "Mercato"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/MUserData.swift"
-                  timestampString = "525006997.701022"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,43 +58,106 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mercato/RegistrationVC.swift"
-            timestampString = "524677769.412005"
+            timestampString = "525023004.759071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "textFieldValidation()"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "textFieldDidEndEditing(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/RegistrationVC.swift"
+            timestampString = "525023004.759071"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "textFieldDidEndEditing(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/RegistrationVC.swift"
+            timestampString = "525019859.680466"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "viewDidDisappear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/MainPageVC.swift"
+            timestampString = "525019978.637103"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "MainPageVC"
+            landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Mercato.RegistrationVC.textFieldValidation () -&gt; ()"
+                  symbolName = "Mercato.MainPageVC.imgList.getter : Swift.Array&lt;__ObjC.UIImage&gt;"
                   moduleName = "Mercato"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/RegistrationVC.swift"
-                  timestampString = "525006997.707886"
+                  urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/MainPageVC.swift"
+                  timestampString = "525019978.649795"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "1745">
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "35">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Mercato.RegistrationVC.textFieldValidation () -&gt; ()"
+                  symbolName = "Mercato.MainPageVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Mercato.MainPageVC"
                   moduleName = "Mercato"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/RegistrationVC.swift"
-                  timestampString = "525006997.710295"
+                  urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/MainPageVC.swift"
+                  timestampString = "525019978.6544"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "2040">
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "551">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mercato.MainPageVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Mercato.MainPageVC&gt;"
+                  moduleName = "Mercato"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/MainPageVC.swift"
+                  timestampString = "525019978.657133"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "454">
                </Location>
             </Locations>
          </BreakpointContent>

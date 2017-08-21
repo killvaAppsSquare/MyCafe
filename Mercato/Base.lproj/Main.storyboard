@@ -98,7 +98,7 @@
                                         <rect key="frame" x="0.0" y="197" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="epU-oS-Eta" id="3zl-Dl-zXk">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mywallet_qr" translatesAutoresizingMaskIntoConstraints="NO" id="yso-Vq-M4w">
@@ -199,7 +199,7 @@
                                 </view>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RedeemsPointsCell" id="bCj-Z1-doa" customClass="RedeemsPointsCell" customModule="Mercato" customModuleProvider="target">
-                                        <rect key="frame" x="80" y="231" width="161" height="155"/>
+                                        <rect key="frame" x="79.5" y="231" width="161" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="161" height="155"/>
@@ -470,18 +470,10 @@
             </objects>
             <point key="canvasLocation" x="1386.4000000000001" y="-401.64917541229386"/>
         </scene>
-        <!--LoginVC-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="Mercato" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="121.88905547226388"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="a3c-2Y-bJE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UuF-VK-teq" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="rootNav" automaticallyAdjustsScrollViewInsets="NO" id="UuF-VK-teq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="aaC-f8-WBE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -499,7 +491,7 @@
             </objects>
             <point key="canvasLocation" x="-943" y="-1137"/>
         </scene>
-        <!--Mercato Home-->
+        <!--Mercato-->
         <scene sceneID="xym-vJ-dyZ">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="3sB-W5-bmH" customClass="MainPageVC" customModule="Mercato" customModuleProvider="target" sceneMemberID="viewController">
@@ -535,146 +527,16 @@
                                     <outlet property="delegate" destination="3sB-W5-bmH" id="YXl-A8-DR7"/>
                                 </connections>
                             </collectionView>
-                            <stackView opaque="NO" alpha="0.0" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1CN-So-E9r">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1u8-JI-xnb">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="168"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZ9-Rl-BZ1">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="168"/>
-                                                <state key="normal" backgroundImage="pexels-photo-296882"/>
-                                                <connections>
-                                                    <action selector="btnsSelectionAct:" destination="3sB-W5-bmH" eventType="touchUpInside" id="LjD-9f-NC4"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Via-R4-lr7">
-                                                <rect key="frame" x="160" y="0.0" width="160" height="168"/>
-                                                <state key="normal" backgroundImage="pexels-photo"/>
-                                                <connections>
-                                                    <action selector="btnsSelectionAct:" destination="3sB-W5-bmH" eventType="touchUpInside" id="vt8-ct-HIs"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RHo-5U-nLf">
-                                        <rect key="frame" x="0.0" y="168" width="320" height="168"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkg-Gs-0ME">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="168"/>
-                                                <state key="normal" backgroundImage="pexels-photo-296888"/>
-                                                <connections>
-                                                    <action selector="btnsSelectionAct:" destination="3sB-W5-bmH" eventType="touchUpInside" id="AgD-m8-PHm"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqR-A4-SXT">
-                                                <rect key="frame" x="160" y="0.0" width="160" height="168"/>
-                                                <state key="normal" backgroundImage="pexels-photo-532753"/>
-                                                <connections>
-                                                    <action selector="btnsSelectionAct:" destination="3sB-W5-bmH" eventType="touchUpInside" id="ikU-nN-Yso"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eYn-c5-oZM">
-                                        <rect key="frame" x="0.0" y="336" width="320" height="168"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6V2-AB-h1F">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="168"/>
-                                                <state key="normal" backgroundImage="pexels-photo-64775"/>
-                                                <connections>
-                                                    <action selector="btnsSelectionAct:" destination="3sB-W5-bmH" eventType="touchUpInside" id="MSy-vZ-iFQ"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJ8-en-tOP">
-                                                <rect key="frame" x="160" y="0.0" width="160" height="168"/>
-                                                <state key="normal" backgroundImage="menu-coffee-outside-cafe"/>
-                                                <connections>
-                                                    <action selector="btnsSelectionAct:" destination="3sB-W5-bmH" eventType="touchUpInside" id="pyd-6W-asp"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdi-HI-g67">
-                                <rect key="frame" x="12" y="124" width="109" height="36"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.4705961045" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0z-xb-5CF">
-                                <rect key="frame" x="160" y="0.0" width="160" height="168"/>
-                                <string key="text">قائمه الطلبات
-MENU</string>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEo-Cl-Kj2">
-                                <rect key="frame" x="160" y="168" width="160" height="168"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jp0-i9-vit">
-                                <rect key="frame" x="5" y="468" width="160" height="36"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FH4-jZ-yPF">
-                                <rect key="frame" x="168" y="360" width="160" height="36"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGw-iN-kdz">
-                                <rect key="frame" x="13" y="260" width="140" height="71"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="Bgk-Jx-Lms"/>
-                                    <constraint firstAttribute="width" constant="140" id="zza-Rt-ANm"/>
-                                </constraints>
-                                <string key="text">Our 
-Products</string>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FH4-jZ-yPF" firstAttribute="trailing" secondItem="qJ8-en-tOP" secondAttribute="trailing" constant="8" id="3Iu-9M-sxx"/>
-                            <constraint firstItem="f0z-xb-5CF" firstAttribute="centerY" secondItem="Via-R4-lr7" secondAttribute="centerY" id="7Z3-03-viZ"/>
-                            <constraint firstItem="nEo-Cl-Kj2" firstAttribute="centerX" secondItem="eqR-A4-SXT" secondAttribute="centerX" id="8Ex-gf-HUH"/>
-                            <constraint firstItem="nEo-Cl-Kj2" firstAttribute="centerY" secondItem="eqR-A4-SXT" secondAttribute="centerY" id="9fJ-qT-jzA"/>
-                            <constraint firstItem="f0z-xb-5CF" firstAttribute="height" secondItem="Via-R4-lr7" secondAttribute="height" id="A3d-13-Aye"/>
-                            <constraint firstItem="yGw-iN-kdz" firstAttribute="trailing" secondItem="Zkg-Gs-0ME" secondAttribute="trailing" constant="-7.5" id="Ah1-ez-cKL"/>
                             <constraint firstItem="0he-hy-lbR" firstAttribute="centerY" secondItem="Nyj-1v-b9q" secondAttribute="centerY" id="AzN-Kg-HFX"/>
-                            <constraint firstItem="nEo-Cl-Kj2" firstAttribute="width" secondItem="eqR-A4-SXT" secondAttribute="width" id="ByD-v3-tmp"/>
-                            <constraint firstItem="f0z-xb-5CF" firstAttribute="width" secondItem="Via-R4-lr7" secondAttribute="width" id="CUN-81-voV"/>
                             <constraint firstItem="0he-hy-lbR" firstAttribute="width" secondItem="Nyj-1v-b9q" secondAttribute="width" id="I9t-Jx-lwq"/>
-                            <constraint firstItem="FH4-jZ-yPF" firstAttribute="leading" secondItem="qJ8-en-tOP" secondAttribute="leading" constant="8" id="KwG-U0-8me"/>
-                            <constraint firstItem="FH4-jZ-yPF" firstAttribute="top" secondItem="qJ8-en-tOP" secondAttribute="top" constant="24" id="LJZ-7D-CHf"/>
-                            <constraint firstItem="f0z-xb-5CF" firstAttribute="centerX" secondItem="Via-R4-lr7" secondAttribute="centerX" id="M0i-L9-Nv8"/>
-                            <constraint firstItem="Jp0-i9-vit" firstAttribute="leading" secondItem="6V2-AB-h1F" secondAttribute="leading" constant="5" id="NBe-rO-iWv"/>
-                            <constraint firstItem="Jp0-i9-vit" firstAttribute="trailing" secondItem="6V2-AB-h1F" secondAttribute="trailing" constant="5" id="Qnd-OH-Frz"/>
-                            <constraint firstItem="053-Lm-y2U" firstAttribute="top" secondItem="1CN-So-E9r" secondAttribute="bottom" id="Qwv-yn-PcJ"/>
-                            <constraint firstItem="zdi-HI-g67" firstAttribute="trailing" secondItem="qZ9-Rl-BZ1" secondAttribute="trailing" constant="-39.5" id="SNZ-VD-0PO"/>
-                            <constraint firstItem="nEo-Cl-Kj2" firstAttribute="height" secondItem="eqR-A4-SXT" secondAttribute="height" id="TRg-1n-74F"/>
-                            <constraint firstItem="zdi-HI-g67" firstAttribute="leading" secondItem="qZ9-Rl-BZ1" secondAttribute="leading" constant="12" id="azl-b6-zz8"/>
                             <constraint firstItem="0he-hy-lbR" firstAttribute="height" secondItem="Nyj-1v-b9q" secondAttribute="height" id="b3s-sX-5h4"/>
                             <constraint firstItem="0he-hy-lbR" firstAttribute="centerX" secondItem="Nyj-1v-b9q" secondAttribute="centerX" id="bCM-Bx-Lwu"/>
-                            <constraint firstItem="zdi-HI-g67" firstAttribute="bottom" secondItem="qZ9-Rl-BZ1" secondAttribute="bottom" constant="-8" id="bsD-b8-avz"/>
-                            <constraint firstItem="yGw-iN-kdz" firstAttribute="bottom" secondItem="Zkg-Gs-0ME" secondAttribute="bottom" constant="-5" id="ciS-Z1-Bak"/>
-                            <constraint firstItem="Jp0-i9-vit" firstAttribute="bottom" secondItem="6V2-AB-h1F" secondAttribute="bottom" id="dWP-R8-zJf"/>
-                            <constraint firstItem="1CN-So-E9r" firstAttribute="leading" secondItem="Nyj-1v-b9q" secondAttribute="leading" id="dxV-Mv-XGR"/>
-                            <constraint firstAttribute="trailing" secondItem="1CN-So-E9r" secondAttribute="trailing" id="hQ4-q1-VeW"/>
-                            <constraint firstItem="1CN-So-E9r" firstAttribute="top" secondItem="bdW-nj-gnd" secondAttribute="bottom" id="wpZ-a7-nhC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Mercato Home" id="tSF-yf-qiB"/>
+                    <navigationItem key="navigationItem" title="Mercato" id="tSF-yf-qiB"/>
                     <connections>
                         <outlet property="collectionView" destination="0he-hy-lbR" id="IGS-CB-WcO"/>
                         <segue destination="gGe-4i-FVL" kind="show" identifier="ourProductsSegue" id="QCg-gf-46N"/>
@@ -687,14 +549,8 @@ Products</string>
         </scene>
     </scenes>
     <resources>
-        <image name="menu-coffee-outside-cafe" width="1280" height="854"/>
         <image name="mywallet_pic" width="1242" height="698"/>
         <image name="mywallet_qr" width="82" height="82"/>
-        <image name="pexels-photo" width="3000" height="2000"/>
-        <image name="pexels-photo-296882" width="1280" height="853"/>
-        <image name="pexels-photo-296888" width="1280" height="640"/>
-        <image name="pexels-photo-532753" width="640" height="426"/>
-        <image name="pexels-photo-64775" width="640" height="389"/>
         <image name="redemmt_icon" width="134" height="188"/>
         <image name="review_icon" width="53" height="82"/>
     </resources>
