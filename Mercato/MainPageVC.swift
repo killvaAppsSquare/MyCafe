@@ -58,9 +58,16 @@ class MainPageVC: UIViewController  {
     func navigatieToView ( _ selected : MenuList) {
         switch selected {
         case .MyProfile : break
-        case .MyWallet : break
-        case .Reddem : break
-        case .Offers : break
+        case .MyWallet :
+           let vc =  self.storyboard?.instantiateViewController(withIdentifier: "MyWalletVC") as! MyWalletVC
+            self.navigationController?.pushViewController(vc, animated: true)   
+        case .Reddem :
+            let vc =  self.storyboard?.instantiateViewController(withIdentifier: "RedeemPointsVC") as! RedeemPointsVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .Offers :
+            menuView.handleDismiss()
+            let vc = AboutUsVC()
+            self.navigationController?.pushViewController(vc, animated: true)
         case .Logout : break
         }
         print(selected.rawValue)
@@ -84,8 +91,8 @@ extension MainPageVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLa
         
         switch indexPath.row {
              case 0 : // Join us
-            let vc = RegistrationVC()
-            navigationController?.pushViewController(vc, animated: true)
+//            let vc = RegistrationVC()
+//            navigationController?.pushViewController(vc, animated: true)
          case 1 : //Menu
             print("Puna bete")
         case 2 : //About Us

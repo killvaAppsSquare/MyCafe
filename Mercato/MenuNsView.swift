@@ -114,7 +114,7 @@ class MenuNsView: NSObject {
 extension MenuNsView :UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        handleDismiss()
         if mainpageController != nil {
         self.mainpageController?.navigatieToView(menuList[indexPath.row])
     }

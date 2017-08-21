@@ -40,6 +40,12 @@
 		52E4D80D1F3C961800D4BF85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E4D80B1F3C961800D4BF85 /* LaunchScreen.storyboard */; };
 		71EE6EA51F49B85900C2FA9A /* MenuNsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EE6EA41F49B85900C2FA9A /* MenuNsView.swift */; };
 		71EE6EA71F49C73E00C2FA9A /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EE6EA61F49C73E00C2FA9A /* AboutUsVC.swift */; };
+		71EE6EAA1F49CEE700C2FA9A /* MyWalletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EE6EA81F49CEE700C2FA9A /* MyWalletCell.swift */; };
+		71EE6EAB1F49CEE700C2FA9A /* MyWalletCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71EE6EA91F49CEE700C2FA9A /* MyWalletCell.xib */; };
+		71EE6EB61F49D1EC00C2FA9A /* MyWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EE6EB41F49D1EC00C2FA9A /* MyWalletVC.swift */; };
+		71EE6EB91F49DA4900C2FA9A /* RedeemPointsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EE6EB81F49DA4900C2FA9A /* RedeemPointsVC.swift */; };
+		71EE6EBB1F49DC6B00C2FA9A /* RedeemsPointsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EE6EBA1F49DC6B00C2FA9A /* RedeemsPointsCell.swift */; };
+		71EE6EBD1F49E33A00C2FA9A /* RedeemPointsHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EE6EBC1F49E33A00C2FA9A /* RedeemPointsHeaderVC.swift */; };
 		7CB5DA31ABCF97EBB20B751F /* Pods_Mercato.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A92C4C907E2916ACB3EF22 /* Pods_Mercato.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +86,12 @@
 		5E65E96C4A9BB79CB38AB189 /* Pods-Mercato.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mercato.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mercato/Pods-Mercato.debug.xcconfig"; sourceTree = "<group>"; };
 		71EE6EA41F49B85900C2FA9A /* MenuNsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuNsView.swift; sourceTree = "<group>"; };
 		71EE6EA61F49C73E00C2FA9A /* AboutUsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
+		71EE6EA81F49CEE700C2FA9A /* MyWalletCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWalletCell.swift; sourceTree = "<group>"; };
+		71EE6EA91F49CEE700C2FA9A /* MyWalletCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyWalletCell.xib; sourceTree = "<group>"; };
+		71EE6EB41F49D1EC00C2FA9A /* MyWalletVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWalletVC.swift; sourceTree = "<group>"; };
+		71EE6EB81F49DA4900C2FA9A /* RedeemPointsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemPointsVC.swift; sourceTree = "<group>"; };
+		71EE6EBA1F49DC6B00C2FA9A /* RedeemsPointsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemsPointsCell.swift; sourceTree = "<group>"; };
+		71EE6EBC1F49E33A00C2FA9A /* RedeemPointsHeaderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemPointsHeaderVC.swift; sourceTree = "<group>"; };
 		93A92C4C907E2916ACB3EF22 /* Pods_Mercato.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mercato.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74646F6BDD25EB98E7A5467 /* Pods-Mercato.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mercato.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mercato/Pods-Mercato.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +136,9 @@
 		520C2A111F44424B00F56BFA /* V */ = {
 			isa = PBXGroup;
 			children = (
+				71EE6EBC1F49E33A00C2FA9A /* RedeemPointsHeaderVC.swift */,
+				71EE6EA81F49CEE700C2FA9A /* MyWalletCell.swift */,
+				71EE6EA91F49CEE700C2FA9A /* MyWalletCell.xib */,
 				520918BA1F45C582009E9340 /* MainPageCell.swift */,
 				5264F7BB1F446E9C000AD5D6 /* RegistrationVC.xib */,
 				520C2A0F1F44408300F56BFA /* ReviewCell.swift */,
@@ -154,9 +169,11 @@
 		529398D01F41AD3800CB7D79 /* C */ = {
 			isa = PBXGroup;
 			children = (
+				71EE6EB41F49D1EC00C2FA9A /* MyWalletVC.swift */,
 				521186FC1F43301100FD1C59 /* OurProductsVC.swift */,
 				521187031F434FBB00FD1C59 /* MainPageVC.swift */,
 				52E4D8041F3C961800D4BF85 /* LoginVC.swift */,
+				71EE6EB81F49DA4900C2FA9A /* RedeemPointsVC.swift */,
 				520C2A0D1F44402200F56BFA /* ReviewVC.swift */,
 				5264F7B11F44669E000AD5D6 /* LocationOnMapVC.swift */,
 				5264F7B21F44669E000AD5D6 /* LocationOnMapVC.xib */,
@@ -193,6 +210,7 @@
 				529398D01F41AD3800CB7D79 /* C */,
 				529398CF1F41AD2F00CB7D79 /* M */,
 				52E4D8061F3C961800D4BF85 /* Main.storyboard */,
+				71EE6EBA1F49DC6B00C2FA9A /* RedeemsPointsCell.swift */,
 				5264F7B51F446D73000AD5D6 /* LoginViewC.swift */,
 				5264F7B61F446D73000AD5D6 /* LoginViewC.xib */,
 				520C2A111F44424B00F56BFA /* V */,
@@ -276,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71EE6EAB1F49CEE700C2FA9A /* MyWalletCell.xib in Resources */,
 				52E4D80D1F3C961800D4BF85 /* LaunchScreen.storyboard in Resources */,
 				5264F7BC1F446E9C000AD5D6 /* RegistrationVC.xib in Resources */,
 				5264F7B41F44669E000AD5D6 /* LocationOnMapVC.xib in Resources */,
@@ -340,17 +359,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71EE6EAA1F49CEE700C2FA9A /* MyWalletCell.swift in Sources */,
 				520C2A061F443D5E00F56BFA /* UIViewAnchorPoint.swift in Sources */,
 				521186FD1F43301100FD1C59 /* OurProductsVC.swift in Sources */,
 				529397D31F419C4300CB7D79 /* MUserData.swift in Sources */,
 				5264F7B31F44669E000AD5D6 /* LocationOnMapVC.swift in Sources */,
 				520C2A031F443D5E00F56BFA /* UILabelX.swift in Sources */,
+				71EE6EBD1F49E33A00C2FA9A /* RedeemPointsHeaderVC.swift in Sources */,
 				520C2A051F443D5E00F56BFA /* UITextFieldX.swift in Sources */,
+				71EE6EBB1F49DC6B00C2FA9A /* RedeemsPointsCell.swift in Sources */,
 				5264F7B71F446D73000AD5D6 /* LoginViewC.swift in Sources */,
 				52E4D8051F3C961800D4BF85 /* LoginVC.swift in Sources */,
 				520C2A0C1F443F0200F56BFA /* MaterialView.swift in Sources */,
+				71EE6EB61F49D1EC00C2FA9A /* MyWalletVC.swift in Sources */,
 				520C2A0A1F443D5E00F56BFA /* UIVisualEffectViewX.swift in Sources */,
 				520C2A071F443D5E00F56BFA /* UIViewControllerX.swift in Sources */,
+				71EE6EB91F49DA4900C2FA9A /* RedeemPointsVC.swift in Sources */,
 				520C2A091F443D5E00F56BFA /* UIViewXRadialGradient.swift in Sources */,
 				52E4D8031F3C961800D4BF85 /* AppDelegate.swift in Sources */,
 				529397D71F41A3AF00CB7D79 /* RegistrationVC.swift in Sources */,
