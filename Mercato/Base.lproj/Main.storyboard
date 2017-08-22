@@ -296,10 +296,10 @@
             </objects>
             <point key="canvasLocation" x="2512.5" y="-1251.7605633802816"/>
         </scene>
-        <!--ReviewVC-->
+        <!--Add ReviewVC-->
         <scene sceneID="RfR-e3-fdo">
             <objects>
-                <viewController id="Wra-ow-7xa" customClass="ReviewVC" customModule="Mercato" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Wra-ow-7xa" customClass="AddReviewVC" customModule="Mercato" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W4H-52-Mix"/>
                         <viewControllerLayoutGuide type="bottom" id="5B4-g6-9Od"/>
@@ -331,13 +331,13 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
-                                                            <real key="value" value="3"/>
+                                                            <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                                            <real key="value" value="1"/>
+                                                            <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="spacing">
                                                             <real key="value" value="1"/>
@@ -460,7 +460,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="bgO-XS-Ovk"/>
                     <connections>
-                        <outlet property="reviewTextViewHeight" destination="H8v-b7-4dg" id="NM3-Wt-g0X"/>
                         <outlet property="submitBtnOL" destination="7jS-Kp-RG7" id="cfT-eh-B4J"/>
                         <outlet property="tableView" destination="Kj7-30-SLD" id="Ofg-LH-MdE"/>
                         <outlet property="textView" destination="eML-q8-Whd" id="388-NF-dzl"/>

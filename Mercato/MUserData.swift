@@ -178,6 +178,7 @@ class PostLoginVars {
         self._phone_number = jsonData[source.phone_number].stringValue
         self._photo = jsonData[source.photo].stringValue
         self._points = jsonData[source.points].intValue
+        self._id = jsonData[source.id].intValue
 
 
     }

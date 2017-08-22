@@ -9,10 +9,19 @@
 import Foundation
 import UIKit
 
+
+
 class Constants  {
     
     // #5a1e18   dark red
     // #b42024   light red
+   static var USER_ID :Int = {
+        guard  let userID = UserDefaults.standard.value(forKey: "userId") as? Int else {
+            //        print("error fetching userId from NSUserD.userId")
+            return 0
+        }
+        return userID
+    }()
     static let screenSize: CGRect = UIScreen.main.bounds
     
     class API {
@@ -37,7 +46,6 @@ class Constants  {
             let POST_REGISTER = API.main_url + "register"
             let POST_LOGIN = API.main_url + "login"
             
-            let POST_ADD_REVIEW = API.main_url + "add_review"
             let GET_OUR_MENU = API.main_url + "our_menu"
             let POST_RESET_PASSWORD = API.main_url + "password_reset"
             let GET_SEND_PASSWORD = API.main_url + "password_send"
@@ -46,7 +54,8 @@ class Constants  {
             let POST_PRODUCTS_CAT = API.main_url + "products_category"
             let POST_PROFILE = API.main_url + "profile"
             let GET_REVIEW = API.main_url + "reviews"
-            
+            let POST_ADD_REVIEW = API.main_url + "add_review"
+
         }
         
         class Parameters {
@@ -60,6 +69,18 @@ class Constants  {
             let photo = "photo"
             let points = "points"
             let api_status = "api_status"
+            let id = "id"
+            let api_message = "api_message"
+            //add_review
+            let drinks = "drinks"
+            let food = "food"
+            let services = "services"
+            let employees = "employees"
+            let cleanness = "cleanness"
+            let notes = "notes"
+            let user_id = "user_id"
+            let code = "code"
+            //@End
         }
         
     }
