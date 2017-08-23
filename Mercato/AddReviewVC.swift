@@ -58,7 +58,7 @@ class AddReviewVC: TextFieldKeyBoardhandler , ReviewCellProtocol , UITextViewDel
         print("that's the value ; \(valueForReview)")
         
          
-        self.view.loading()
+        self.loading()
         reviewM.postReview(parameters: valueForReview) { [weak self](status) in
             let reviewedOnce = status.1
             if status.1 {
@@ -67,14 +67,14 @@ class AddReviewVC: TextFieldKeyBoardhandler , ReviewCellProtocol , UITextViewDel
                         self?.view.showSimpleAlert("Attention!!", "You only can review us once per day", .warning)
                         self?.navigationController?.popViewController(animated: true)
                     }
-                    print("You Spammer") ; self?.view.killLoading(); return }
+                    print("You Spammer") ; self?.killLoading(); return }
                 DispatchQueue.main.async {
                     self?.view.showSimpleAlert("Thank You", "Your review is much appreciated.", .success)
                     self?.navigationController?.popViewController(animated: true)
                 }
-                print("YAYAYAYAYAYAY"); self?.view.killLoading();
+                print("YAYAYAYAYAYAY"); self?.killLoading();
             }else {
-                print("Dam u Adolf"); self?.view.killLoading();
+                print("Dam u Adolf"); self?.killLoading();
                 DispatchQueue.main.async {
                     self?.view.showSimpleAlert("Error!!", "Couldn't Complete request please try again!!", .warning)
                 }

@@ -33,16 +33,16 @@ class MUserData {
 //            print(response.result)
             switch(response.result) {
             case .success(_):
-                guard response.result.error == nil else {
+                guard response.result.error == nil, let value = response.result.value  else {
                     
                     // got an error in getting the data, need to handle it
 //                    print("error fetching data from url")
-                    print(response.result.error!)
+//                    print(response.result.error!)
                     return
                     
                 }
-                let json = JSON( response.result.value!) // SwiftyJSON
-                print("that is  postUserData_LOGIN getting the data Mate : %@", response.result.value)
+                let json = JSON( value ) // SwiftyJSON
+//                print("that is  postUserData_LOGIN getting the data Mate : %@", response.result.value)
                 let parm = Constants.API.Parameters()
                 let status: Bool  =  json[parm.api_status].intValue == 0 ? false : true
                 let data = json["data"]
@@ -83,7 +83,7 @@ class MUserData {
                         print(response.result)
             switch(response.result) {
             case .success(_):
-                guard response.result.error == nil else {
+                guard response.result.error == nil, let value = response.result.value  else {
                     
                     // got an error in getting the data, need to handle it
                     //                    print("error fetching data from url")
@@ -91,7 +91,7 @@ class MUserData {
                     return
                     
                 }
-                let json = JSON( response.result.value!) // SwiftyJSON
+                let json = JSON(value) // SwiftyJSON
 //                print("that is  postRegiserationData getting the data Mate : %@", response.result.value!)
                 let parm = Constants.API.Parameters()
                 let status: Bool  =  json[parm.api_status].intValue == 0 ? false : true

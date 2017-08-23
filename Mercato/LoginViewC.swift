@@ -15,7 +15,7 @@ import CDAlertView
 protocol  LoginToReviewProtocol : class  {
     func navToAddreview()
 }
-class LoginViewC: UIViewController , RegisterToLoginProtocol{
+class LoginViewC: UIViewConWithLoadingIndicator , RegisterToLoginProtocol{
     
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
@@ -24,6 +24,9 @@ class LoginViewC: UIViewController , RegisterToLoginProtocol{
     
     var isModelView = false
     weak var delegate : LoginToReviewProtocol?
+ 
+    
+ 
     
     // Good practice: create the reader lazily to avoid cpu overload during the
     // initialization and each time we need to scan a QRCode
@@ -46,9 +49,16 @@ class LoginViewC: UIViewController , RegisterToLoginProtocol{
         self.view.endEditing(true)
     }
     
-
+//    @IBAction func loginbtnAct(_ sender: UIButton) {
+//
+//    }
     @IBAction func loginbtnAct(_ sender: UIButton) {
-        
+        //Test Login
+        if emailTxt.text == "ryuu" {
+            emailTxt.text = "test@test.com"
+            passwordTxt.text = "1234"
+        }
+        //
         guard let emailT = emailTxt.text , let passT = passwordTxt.text else { return }
         guard emailT.isEmail else {
             self.view.showSimpleAlert("Error!!", "invalid Email Address", .warning)
@@ -57,18 +67,26 @@ class LoginViewC: UIViewController , RegisterToLoginProtocol{
             self.view.showSimpleAlert("Error!!", "invalid Email Address", .warning)
             return }
         let userM = MUserData()
+        self.loading()
         userM.postLoginData(email: emailT, userPassword: passT) {[weak self] (data) in
             
             guard data.1 else {
-                self?.view.showSimpleAlert("Error!!", "Request Failed, Please try again!", .warning)
+                DispatchQueue.main.async {
+                    self?.killLoading()
+                    self?.view.showSimpleAlert("Error!!", "Request Failed, Please try again!", .warning)
+                }
                 return
             }
-            guard let profileData = data.0 else { return }
-            print("that's the data : \(profileData.name) \(profileData.email) \(profileData.id) \(profileData.name) \(profileData)")
-            self?.view.showSimpleAlert("Success", "Welcome \(profileData.name)", .success)
+            guard let profileData = data.0 else {
+                DispatchQueue.main.async {
+                    self?.killLoading()
+                }
+                return }
+//            print("that's the data : \(profileData.name) \(profileData.email) \(profileData.id) \(profileData.name) \(profileData)")
             ad.saveUserLogginData(email: profileData.email, photoUrl: profileData.photo, uid: profileData.id , name: profileData.name)
             DispatchQueue.main.async {
-                
+               self?.killLoading()
+                self?.view.showSimpleAlert("Success", "Welcome \(profileData.name)", .success)
                 self?.handleLoginViewNav()
             }
             
@@ -76,10 +94,10 @@ class LoginViewC: UIViewController , RegisterToLoginProtocol{
         }
     }
     
-    
+ 
     func handleLoginViewNav() {
         guard isModelView else {
-            self.dismiss(animated: true, completion: nil)
+            navigationController?.popViewController(animated: true)
             return
         }
             self.dismiss(animated: true) { [weak self] (true) in
@@ -87,7 +105,9 @@ class LoginViewC: UIViewController , RegisterToLoginProtocol{
         }
 }
     func sendSignalToAllReview() {
-        self.delegate?.navToAddreview()
+        self.dismiss(animated: true) { [weak self] (true) in
+            self?.delegate?.navToAddreview()
+        }
     }
     
     @IBAction func forgotpassBtnAct(_ sender: UIButton) {
@@ -126,31 +146,6 @@ extension LoginViewC :QRCodeReaderViewControllerDelegate {
     }
     
     
-    func reader(reader: QRCodeReader, didScanResult result: String) {
-        self.dismiss(animated: true, completion: { () -> Void in
-            
-            // use the result variable here.
-            let vc = RegistrationVC()
-            //
-            if result == "Register" {
-                if let nav = self.navigationController  {
-                    DispatchQueue.main.async {
-                        nav.pushViewController(vc, animated: true)
-                    }
-                }else {
-                    DispatchQueue.main.async {
-                        vc.isModelView = true
-                        self.present(vc, animated: true, completion: nil)
-                    }
-                }
-                
-            }else {
-                self.view.showSimpleAlert("QR Code Not Found!!", "Plaese try again!", .warning)
-            }
-            
-            
-        })
-    }
     
     
     
@@ -169,6 +164,7 @@ extension LoginViewC :QRCodeReaderViewControllerDelegate {
                     return
                 }
                 guard let nav = self.navigationController  else {
+                    vc.delegate = self 
                     vc.isModelView = true
                     self.present(vc, animated: true, completion: nil)
                     return

@@ -14,7 +14,7 @@ protocol RegisterToLoginProtocol : class {/// Navigate to Addreview
     
     func sendSignalToAllReview()
 }
-class RegistrationVC: UIViewController {
+class RegistrationVC: UIViewConWithLoadingIndicator {
     
     @IBOutlet weak var confirmPassTxt: UITextField!
     @IBOutlet weak var passTxt: UITextField!
@@ -23,7 +23,10 @@ class RegistrationVC: UIViewController {
     @IBOutlet weak var fullnameTxt: UITextField!
     @IBOutlet weak var birthdayText: UITextField!
     @IBOutlet weak var modelViewNavBarHeight: NSLayoutConstraint!
-
+    
+ 
+    
+    
     
     var nukeTf = false
     weak var delegate : RegisterToLoginProtocol?
@@ -48,11 +51,11 @@ class RegistrationVC: UIViewController {
     }
     
     @IBAction func registerAction(_ sender: UIButtonX) {
-      
+        
         sendData()
     }
     
-  
+    
     func sendData() {
         
         
@@ -68,16 +71,26 @@ class RegistrationVC: UIViewController {
             y.dismiss(animated: true, completion: nil)
         }
     }
+    //TEST REGISTER WITH OUT VALIDATION
+//    func textFieldValidation() {
+//        self.loading()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3.1) {
+//            self.killLoading()
+//            self.handleRegisterSuccess()
+////            self.view.showSimpleAlert("Success", "Welcome", .success)
+////            self.handleRegisterSuccess()
+//        }
+//    }
     func textFieldValidation() {
-        
+
         let tfBundle : [(UITextField , String)] = [(fullnameTxt,"Full Name"),(mobileNumTxt,"Mobile Number"),(birthdayText,"Birthdate"),(emailTxt,"Email"),(passTxt,"Password"),(confirmPassTxt,"Confirm Password")]
-      
+        
         var counter = 0
         for (txt , alertSms) in tfBundle {
             print(txt , alertSms)
             if let valid = txt.text , valid.isBlank  /*, txt != fullnameTxt , txt != mobileNumTxt*/ {
                 view.showAlert("", "\(alertSms) is Required", .warning, {
-                     txt.becomeFirstResponder()
+                    txt.becomeFirstResponder()
                 })
                 return
             }
@@ -89,18 +102,22 @@ class RegistrationVC: UIViewController {
         
         if counter == 6 {
             let dataM = MUserData()
+            self.loading()
             dataM.postRegiserationData(name: fullnameTxt.text, phone_number: mobileNumTxt.text, email: emailTxt.text, userPassword: passTxt.text, birthday: birthdayText.text) { [weak self ](data) in
                 
                 if data.0 , let id = data.1{
                     ad.saveUserLogginData(email: nil, photoUrl: nil, uid: id, name: nil)
-                    self?.view.showSimpleAlert("Success", "Welcome", .success)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
-                        ad.reload()
+                        self?.view.showSimpleAlert("Success", "Welcome", .success)
+                        self?.handleRegisterSuccess()
+                        self?.killLoading()
                     }
                     
                 }else {
-                    self?.view.showSimpleAlert("Failed ot register!!", "Please try again", .error)
-                    
+                    DispatchQueue.main.async {
+                        self?.view.showSimpleAlert("Failed ot register!!", "Please try again", .error)
+                        self?.killLoading()
+                    }
                 }
                 
             }
@@ -110,13 +127,13 @@ class RegistrationVC: UIViewController {
     }
     
     func handleRegisterSuccess() {
-        guard let y = self.presentingViewController?.presentingViewController else { return }
+
         guard isModelView else {
-                y.dismiss(animated: true, completion: nil)
-             return
+              navigationController?.popToRootViewController(animated: true)
+            return
         }
         
-        y.dismiss(animated: true) { [weak self ] (true) in
+        self.presentingViewController?.dismiss(animated: true) { [weak self ] (true) in
             
             self?.delegate?.sendSignalToAllReview()
         }
@@ -154,13 +171,13 @@ extension RegistrationVC :  UITextFieldDelegate {
         guard !nukeTf else { return }
         
         if   textField == birthdayText ,(  textField.text == "" || textField.text == " " ){
-          
+            
             defaultDateSelection()
         }
-       
+        
     }
     
-
+    
     
     func textFieldRulesValidation(_ textField : UITextField)-> Bool {
         switch textField {
@@ -169,7 +186,7 @@ extension RegistrationVC :  UITextFieldDelegate {
                 fullnameTxt.text = ""
                 
                 view.showAlert("Error!!", "Full name Field has to contain 8 characters at least", .warning, {
-                                        self.fullnameTxt.becomeFirstResponder()
+                    self.fullnameTxt.becomeFirstResponder()
                     
                 })
                 return false
@@ -186,7 +203,7 @@ extension RegistrationVC :  UITextFieldDelegate {
                 emailTxt.text = ""
                 view.showAlert("Error!!", "That's not an Email address Format", .warning, {
                 })
-             return false
+                return false
             }
         case passTxt :
             guard  let x = passTxt.text , x.isValidPassword else {
@@ -196,20 +213,20 @@ extension RegistrationVC :  UITextFieldDelegate {
                 })
                 return false
             }
-
-//             self.confirmPassTxt.becomeFirstResponder()
+            
+        //             self.confirmPassTxt.becomeFirstResponder()
         case confirmPassTxt :
             guard let x = passTxt.text , !x.isBlank else {  return false  }
             if passTxt.text != confirmPassTxt.text {
                 confirmPassTxt.text  = ""
                 view.showAlert("Password Doesn't match", "please confirm your password", .warning, {
-                                    self.confirmPassTxt.becomeFirstResponder()
+                    self.confirmPassTxt.becomeFirstResponder()
                 })
                 return false
             }
-
+            
         default:
-             return true
+            return true
         }
         
         return true
@@ -221,10 +238,10 @@ extension RegistrationVC :  UITextFieldDelegate {
             
             
         }
-//        confirmPassTxt.isUserInteractionEnabled = true
+        //        confirmPassTxt.isUserInteractionEnabled = true
         switch textField {
         case birthdayText:
-                setupPickerForTextF()
+            setupPickerForTextF()
         //        case passTxt : confirmPassTxt.isUserInteractionEnabled = false
         case confirmPassTxt :
             if textField == confirmPassTxt , let txt = passTxt.text, txt.isBlank{
@@ -242,12 +259,12 @@ extension RegistrationVC :  UITextFieldDelegate {
     
     
     
-  
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-
+    
     
     
     
@@ -265,7 +282,7 @@ extension RegistrationVC : UIPickerViewDelegate {
         datePicker.datePickerMode = UIDatePickerMode.date
         birthdayText.inputView = datePicker
         datePicker.addTarget(self, action: #selector(self.timePickerChanged(_:)), for: .valueChanged)
-
+        
     }
     func setupPickerV() {
         birthdayText.delegate = self

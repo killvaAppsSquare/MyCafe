@@ -36,6 +36,9 @@
 		52ADE0B11F4C297C00552A61 /* MReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADE0B01F4C297C00552A61 /* MReviewData.swift */; };
 		52ADE0B31F4C6BCE00552A61 /* LoadingViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADE0B21F4C6BCE00552A61 /* LoadingViewIndicator.swift */; };
 		52C30DAD1F4D7E8A0049D969 /* AllReviewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C30DAC1F4D7E8A0049D969 /* AllReviewsVC.swift */; };
+		52CD5E581F4DD6BD00590654 /* PointsGuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD5E561F4DD6BD00590654 /* PointsGuideVC.swift */; };
+		52CD5E591F4DD6BD00590654 /* PointsGuideVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CD5E571F4DD6BD00590654 /* PointsGuideVC.xib */; };
+		52CD5E5B1F4DDC8F00590654 /* PointsGuideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD5E5A1F4DDC8F00590654 /* PointsGuideCell.swift */; };
 		52E1F0BA1F4B1F7100AD145A /* TextFieldKeyBoardhandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1F0B91F4B1F7100AD145A /* TextFieldKeyBoardhandler.swift */; };
 		52E4D8031F3C961800D4BF85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4D8021F3C961800D4BF85 /* AppDelegate.swift */; };
 		52E4D8081F3C961800D4BF85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E4D8061F3C961800D4BF85 /* Main.storyboard */; };
@@ -82,6 +85,9 @@
 		52ADE0B01F4C297C00552A61 /* MReviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MReviewData.swift; sourceTree = "<group>"; };
 		52ADE0B21F4C6BCE00552A61 /* LoadingViewIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewIndicator.swift; sourceTree = "<group>"; };
 		52C30DAC1F4D7E8A0049D969 /* AllReviewsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllReviewsVC.swift; sourceTree = "<group>"; };
+		52CD5E561F4DD6BD00590654 /* PointsGuideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsGuideVC.swift; sourceTree = "<group>"; };
+		52CD5E571F4DD6BD00590654 /* PointsGuideVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PointsGuideVC.xib; sourceTree = "<group>"; };
+		52CD5E5A1F4DDC8F00590654 /* PointsGuideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsGuideCell.swift; sourceTree = "<group>"; };
 		52E1F0B91F4B1F7100AD145A /* TextFieldKeyBoardhandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldKeyBoardhandler.swift; sourceTree = "<group>"; };
 		52E4D7FF1F3C961800D4BF85 /* Mercato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E4D8021F3C961800D4BF85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +186,9 @@
 			children = (
 				52C30DAE1F4D80EC0049D969 /* Reviews */,
 				71EE6EB41F49D1EC00C2FA9A /* MyWalletVC.swift */,
+				52CD5E561F4DD6BD00590654 /* PointsGuideVC.swift */,
+				52CD5E571F4DD6BD00590654 /* PointsGuideVC.xib */,
+				52CD5E5A1F4DDC8F00590654 /* PointsGuideCell.swift */,
 				521186FC1F43301100FD1C59 /* OurProductsVC.swift */,
 				521187031F434FBB00FD1C59 /* MainPageVC.swift */,
 				71EE6EB81F49DA4900C2FA9A /* RedeemPointsVC.swift */,
@@ -341,6 +350,7 @@
 				5264F7B41F44669E000AD5D6 /* LocationOnMapVC.xib in Resources */,
 				52E4D80A1F3C961800D4BF85 /* Assets.xcassets in Resources */,
 				52E4D8081F3C961800D4BF85 /* Main.storyboard in Resources */,
+				52CD5E591F4DD6BD00590654 /* PointsGuideVC.xib in Resources */,
 				5264F7B81F446D73000AD5D6 /* LoginViewC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +424,8 @@
 				520C2A0C1F443F0200F56BFA /* MaterialView.swift in Sources */,
 				71EE6EB61F49D1EC00C2FA9A /* MyWalletVC.swift in Sources */,
 				520C2A0A1F443D5E00F56BFA /* UIVisualEffectViewX.swift in Sources */,
+				52CD5E5B1F4DDC8F00590654 /* PointsGuideCell.swift in Sources */,
+				52CD5E581F4DD6BD00590654 /* PointsGuideVC.swift in Sources */,
 				520C2A071F443D5E00F56BFA /* UIViewControllerX.swift in Sources */,
 				71EE6EB91F49DA4900C2FA9A /* RedeemPointsVC.swift in Sources */,
 				520C2A091F443D5E00F56BFA /* UIViewXRadialGradient.swift in Sources */,

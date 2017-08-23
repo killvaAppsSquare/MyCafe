@@ -8,64 +8,26 @@
 
 import Foundation
 import UIKit
-
-extension UIView {
+ 
+class UIViewConWithLoadingIndicator : UIViewController {
     
-    private   var loadingClass : IsLoadingView  {
-             return IsLoadingView()
-     }
+   private  lazy var  loadingClass : IsLoadingView = {
+        let vc = IsLoadingView()
+        return vc
+    }()
+    
  
       func loading() {
-        loadingClass.isLoading(self)
+        loadingClass.isLoading(self.view)
            }
     
     func killLoading() {
-        loadingClass.killLoading(self)
+        loadingClass.killLoading(self.view)
     }
-    
- 
-    
-    /*
-    override func loadView() {
-        super.loadView()
-        
-        var baseView = UIView()
-        baseView.backgroundColor = UIColor(red: 13/255, green: 44/255, blue: 75/255, alpha: 1)
-        self.view = baseView
-        
-        var progressIcon = UIActivityIndicatorView()
-        progressIcon.setTranslatesAutoresizingMaskIntoConstraints(false)
-        progressIcon.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
-        view.addSubview(progressIcon)
-        progressIcon.startAnimating()
-        
-        var constraints = [NSLayoutConstraint]()
-        constraints.append(NSLayoutConstraint(
-            item: progressIcon,
-            attribute: .CenterX,
-            relatedBy: .Equal,
-            toItem: view,
-            attribute: .CenterX,
-            multiplier: 1,
-            constant: 0)
-        )
-        constraints.append(NSLayoutConstraint(
-            item: progressIcon,
-            attribute: .CenterY,
-            relatedBy: .Equal,
-            toItem: view,
-            attribute: .CenterY,
-            multiplier: 1,
-            constant: 0)
-        )
-        
-        view.addConstraints(constraints)
-        
-    }*/
     
 }
 
-   fileprivate  class IsLoadingView : NSObject {
+    fileprivate  class IsLoadingView : NSObject {
     
     let backgroundView : UIView = {
        let backgView = UIView()
@@ -117,15 +79,17 @@ extension UIView {
         view.addConstraintsWithFormat("V:[v0(\(height))]-2-[v1]", views: imageView,label)
  
         UIView.animate(withDuration: 0.4) {
-            
             self.backgroundView.alpha = 1
+            self.imageView.alpha = 1
+            self.label.alpha = 1
         }
     }
     func killLoading(_ view : UIView) {
         //        guard  let window = UIApplication.shared.keyWindow else { return }
         
           UIView.animate(withDuration: 0.4, animations: { 
-            
+            self.label.alpha = 0
+            self.imageView.alpha = 0
             self.backgroundView.alpha = 0
           }) { (true) in
             self.label.removeFromSuperview()

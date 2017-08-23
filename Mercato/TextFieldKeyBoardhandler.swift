@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextFieldKeyBoardhandler: UIViewController {
+class TextFieldKeyBoardhandler: UIViewConWithLoadingIndicator {
     var originheight : CGFloat?
 
     override func viewDidLoad() {
