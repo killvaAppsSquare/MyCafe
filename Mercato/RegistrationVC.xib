@@ -17,6 +17,7 @@
                 <outlet property="emailTxt" destination="Xvc-2t-Lcz" id="h6Z-Vr-b3k"/>
                 <outlet property="fullnameTxt" destination="fcP-AE-lNI" id="Fp8-TJ-5X6"/>
                 <outlet property="mobileNumTxt" destination="dLP-Gg-6VW" id="bpX-ZU-VDT"/>
+                <outlet property="modelViewNavBarHeight" destination="Rax-Ca-za6" id="Li6-rg-wUT"/>
                 <outlet property="passTxt" destination="8es-Zn-sn5" id="Uct-D2-MoV"/>
                 <outlet property="view" destination="iN0-l3-epB" id="hES-PM-S6g"/>
             </connections>
@@ -26,6 +27,39 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEL-AM-GhN">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6Y-Nl-VA9" customClass="UIButtonX" customModule="Mercato" customModuleProvider="target">
+                            <rect key="frame" x="10" y="-8" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Qdb-uE-HVZ"/>
+                                <constraint firstAttribute="width" constant="30" id="UXp-U9-Lv5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                            <state key="normal" title="X">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1.5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="modelViewDismissBtn:" destination="-1" eventType="touchUpInside" id="ym8-Z4-8pP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.352463305" green="0.11269906909999999" blue="0.09094374627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Q6Y-Nl-VA9" firstAttribute="leading" secondItem="jEL-AM-GhN" secondAttribute="leading" constant="10" id="4DQ-kv-a71"/>
+                        <constraint firstAttribute="height" id="Rax-Ca-za6"/>
+                        <constraint firstItem="Q6Y-Nl-VA9" firstAttribute="centerY" secondItem="jEL-AM-GhN" secondAttribute="centerY" constant="7" id="uEP-yu-KtB"/>
+                    </constraints>
+                </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic01" translatesAutoresizingMaskIntoConstraints="NO" id="JP4-Ce-bVM">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="187"/>
                     <color key="backgroundColor" red="0.5801500162406269" green="0.92681896098038674" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -122,7 +156,8 @@
             </subviews>
             <color key="backgroundColor" red="0.74473220109939575" green="0.72245907783508301" blue="0.63459306955337524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="JP4-Ce-bVM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0up-c5-Miy"/>
+                <constraint firstItem="jEL-AM-GhN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3I7-Ry-MHZ"/>
+                <constraint firstItem="jEL-AM-GhN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CUE-D7-Enm"/>
                 <constraint firstAttribute="bottom" secondItem="11K-Sp-WiW" secondAttribute="bottom" id="Hcf-kx-GJ1"/>
                 <constraint firstItem="11K-Sp-WiW" firstAttribute="top" secondItem="JP4-Ce-bVM" secondAttribute="bottom" id="JyI-rT-0Pq"/>
                 <constraint firstItem="11K-Sp-WiW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Kjy-vT-zDf"/>
@@ -132,6 +167,8 @@
                     <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                 </constraint>
                 <constraint firstItem="JP4-Ce-bVM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iMh-Ze-ziv"/>
+                <constraint firstItem="JP4-Ce-bVM" firstAttribute="top" secondItem="jEL-AM-GhN" secondAttribute="bottom" id="iMk-Zk-n2h"/>
+                <constraint firstAttribute="trailing" secondItem="jEL-AM-GhN" secondAttribute="trailing" id="q5T-sf-b1M"/>
                 <constraint firstAttribute="trailing" secondItem="JP4-Ce-bVM" secondAttribute="trailing" id="ypV-zL-HWa"/>
             </constraints>
             <point key="canvasLocation" x="86.5" y="-57.5"/>

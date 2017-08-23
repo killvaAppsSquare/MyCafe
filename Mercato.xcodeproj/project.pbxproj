@@ -35,6 +35,7 @@
 		529397D71F41A3AF00CB7D79 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529397D61F41A3AF00CB7D79 /* RegistrationVC.swift */; };
 		52ADE0B11F4C297C00552A61 /* MReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADE0B01F4C297C00552A61 /* MReviewData.swift */; };
 		52ADE0B31F4C6BCE00552A61 /* LoadingViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADE0B21F4C6BCE00552A61 /* LoadingViewIndicator.swift */; };
+		52C30DAD1F4D7E8A0049D969 /* AllReviewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C30DAC1F4D7E8A0049D969 /* AllReviewsVC.swift */; };
 		52E1F0BA1F4B1F7100AD145A /* TextFieldKeyBoardhandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E1F0B91F4B1F7100AD145A /* TextFieldKeyBoardhandler.swift */; };
 		52E4D8031F3C961800D4BF85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4D8021F3C961800D4BF85 /* AppDelegate.swift */; };
 		52E4D8081F3C961800D4BF85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E4D8061F3C961800D4BF85 /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		529397D61F41A3AF00CB7D79 /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		52ADE0B01F4C297C00552A61 /* MReviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MReviewData.swift; sourceTree = "<group>"; };
 		52ADE0B21F4C6BCE00552A61 /* LoadingViewIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewIndicator.swift; sourceTree = "<group>"; };
+		52C30DAC1F4D7E8A0049D969 /* AllReviewsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllReviewsVC.swift; sourceTree = "<group>"; };
 		52E1F0B91F4B1F7100AD145A /* TextFieldKeyBoardhandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldKeyBoardhandler.swift; sourceTree = "<group>"; };
 		52E4D7FF1F3C961800D4BF85 /* Mercato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E4D8021F3C961800D4BF85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,7 +145,7 @@
 				71EE6EBC1F49E33A00C2FA9A /* RedeemPointsHeaderVC.swift */,
 				71EE6EA81F49CEE700C2FA9A /* MyWalletCell.swift */,
 				71EE6EA91F49CEE700C2FA9A /* MyWalletCell.xib */,
-				5264F7BB1F446E9C000AD5D6 /* RegistrationVC.xib */,
+				52C30DAF1F4D895E0049D969 /* User */,
 				520C2A0F1F44408300F56BFA /* ReviewCell.swift */,
 			);
 			name = V;
@@ -176,15 +178,14 @@
 		529398D01F41AD3800CB7D79 /* C */ = {
 			isa = PBXGroup;
 			children = (
+				52C30DAE1F4D80EC0049D969 /* Reviews */,
 				71EE6EB41F49D1EC00C2FA9A /* MyWalletVC.swift */,
 				521186FC1F43301100FD1C59 /* OurProductsVC.swift */,
 				521187031F434FBB00FD1C59 /* MainPageVC.swift */,
 				71EE6EB81F49DA4900C2FA9A /* RedeemPointsVC.swift */,
-				520C2A0D1F44402200F56BFA /* AddReviewVC.swift */,
 				5264F7B11F44669E000AD5D6 /* LocationOnMapVC.swift */,
 				5264F7B21F44669E000AD5D6 /* LocationOnMapVC.xib */,
-				5264F7B51F446D73000AD5D6 /* LoginViewC.swift */,
-				529397D61F41A3AF00CB7D79 /* RegistrationVC.swift */,
+				52C30DB01F4D8BAC0049D969 /* User */,
 				71EE6EA61F49C73E00C2FA9A /* AboutUsVC.swift */,
 			);
 			name = C;
@@ -197,6 +198,33 @@
 				71EE6EA41F49B85900C2FA9A /* MenuNsView.swift */,
 			);
 			name = "my Views";
+			sourceTree = "<group>";
+		};
+		52C30DAE1F4D80EC0049D969 /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				52C30DAC1F4D7E8A0049D969 /* AllReviewsVC.swift */,
+				520C2A0D1F44402200F56BFA /* AddReviewVC.swift */,
+			);
+			name = Reviews;
+			sourceTree = "<group>";
+		};
+		52C30DAF1F4D895E0049D969 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5264F7B61F446D73000AD5D6 /* LoginViewC.xib */,
+				5264F7BB1F446E9C000AD5D6 /* RegistrationVC.xib */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		52C30DB01F4D8BAC0049D969 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5264F7B51F446D73000AD5D6 /* LoginViewC.swift */,
+				529397D61F41A3AF00CB7D79 /* RegistrationVC.swift */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 		52E4D7F61F3C961800D4BF85 = {
@@ -226,7 +254,6 @@
 				529398CF1F41AD2F00CB7D79 /* M */,
 				52E4D8061F3C961800D4BF85 /* Main.storyboard */,
 				71EE6EBA1F49DC6B00C2FA9A /* RedeemsPointsCell.swift */,
-				5264F7B61F446D73000AD5D6 /* LoginViewC.xib */,
 				520C2A111F44424B00F56BFA /* V */,
 				52E4D8091F3C961800D4BF85 /* Assets.xcassets */,
 				52E4D80B1F3C961800D4BF85 /* LaunchScreen.storyboard */,
@@ -377,6 +404,7 @@
 				520C2A061F443D5E00F56BFA /* UIViewAnchorPoint.swift in Sources */,
 				521186FD1F43301100FD1C59 /* OurProductsVC.swift in Sources */,
 				529397D31F419C4300CB7D79 /* MUserData.swift in Sources */,
+				52C30DAD1F4D7E8A0049D969 /* AllReviewsVC.swift in Sources */,
 				5264F7B31F44669E000AD5D6 /* LocationOnMapVC.swift in Sources */,
 				520C2A031F443D5E00F56BFA /* UILabelX.swift in Sources */,
 				71EE6EBD1F49E33A00C2FA9A /* RedeemPointsHeaderVC.swift in Sources */,
@@ -535,7 +563,7 @@
 				DEVELOPMENT_TEAM = ZMU9J2W23C;
 				INFOPLIST_FILE = Mercato/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.killva.stanford.Mercato;
+				PRODUCT_BUNDLE_IDENTIFIER = com.killva.Mercato;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -550,7 +578,7 @@
 				DEVELOPMENT_TEAM = ZMU9J2W23C;
 				INFOPLIST_FILE = Mercato/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.killva.stanford.Mercato;
+				PRODUCT_BUNDLE_IDENTIFIER = com.killva.Mercato;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

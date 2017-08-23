@@ -10,6 +10,10 @@ import UIKit
 import TextFieldEffects
 import CDAlertView
 
+protocol RegisterToLoginProtocol : class {/// Navigate to Addreview
+    
+    func sendSignalToAllReview()
+}
 class RegistrationVC: UIViewController {
     
     @IBOutlet weak var confirmPassTxt: UITextField!
@@ -18,12 +22,17 @@ class RegistrationVC: UIViewController {
     @IBOutlet weak var mobileNumTxt: UITextField!
     @IBOutlet weak var fullnameTxt: UITextField!
     @IBOutlet weak var birthdayText: UITextField!
-    
+    @IBOutlet weak var modelViewNavBarHeight: NSLayoutConstraint!
+
     
     var nukeTf = false
+    weak var delegate : RegisterToLoginProtocol?
+    var isModelView = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        modelViewNavBarHeight.constant = isModelView ? 64 : 0
         setupPickerV()
         setupTextsDelegate()
     }
@@ -53,7 +62,12 @@ class RegistrationVC: UIViewController {
         
     }
     
-    
+    @IBAction func modelViewDismissBtn(_ sender: UIButtonX) {
+        if let y =  self.presentingViewController?.presentingViewController {
+            //            print("YOYOOY 2 Views ")
+            y.dismiss(animated: true, completion: nil)
+        }
+    }
     func textFieldValidation() {
         
         let tfBundle : [(UITextField , String)] = [(fullnameTxt,"Full Name"),(mobileNumTxt,"Mobile Number"),(birthdayText,"Birthdate"),(emailTxt,"Email"),(passTxt,"Password"),(confirmPassTxt,"Confirm Password")]
@@ -95,6 +109,18 @@ class RegistrationVC: UIViewController {
         
     }
     
+    func handleRegisterSuccess() {
+        guard let y = self.presentingViewController?.presentingViewController else { return }
+        guard isModelView else {
+                y.dismiss(animated: true, completion: nil)
+             return
+        }
+        
+        y.dismiss(animated: true) { [weak self ] (true) in
+            
+            self?.delegate?.sendSignalToAllReview()
+        }
+    }
     /*
      // MARK: - Navigation
      

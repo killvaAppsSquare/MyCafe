@@ -17,6 +17,8 @@ class AddReviewVC: TextFieldKeyBoardhandler , ReviewCellProtocol , UITextViewDel
     var valueForReview = [String:Any]()
     let ratingTitles = ["drinks","food","services","employees","cleanness"]
     let textViewPlaceHolder = "Write your comment here..."
+    var startEditing = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +45,10 @@ class AddReviewVC: TextFieldKeyBoardhandler , ReviewCellProtocol , UITextViewDel
     }
     
     @IBAction func submitBtnAct(_ sender: UIButtonX) {
+        guard startEditing else {
+            self.view.showSimpleAlert("Sorry", "You have to rate at least one Service", .notification)
+            return
+        }
         valueForReview["user_id"] =  Constants.USER_ID
         if textView.text != "Write your comment here..." {
             valueForReview["notes"] = textView.text
@@ -53,36 +59,36 @@ class AddReviewVC: TextFieldKeyBoardhandler , ReviewCellProtocol , UITextViewDel
         
          
         self.view.loading()
-//        reviewM.postReview(parameters: valueForReview) { [weak self](status) in
-//            let reviewedOnce = status.1
-//            if status.1 {
-//                guard !reviewedOnce else {
-//                    DispatchQueue.main.async {
-//                        self?.view.showSimpleAlert("Attention!!", "You only can review us once per day", .warning)
-//                        self?.navigationController?.popViewController(animated: true)
-//                    }
-//                    print("You Spammer") ; return }
-//                DispatchQueue.main.async {
-//                    self?.view.showSimpleAlert("Thank You", "Your review is much appreciated.", .success)
-//                    self?.navigationController?.popViewController(animated: true)
-//                }
-//                print("YAYAYAYAYAYAY")
-//            }else {
-//                print("Dam u Adolf")
-//                DispatchQueue.main.async {
-//                    self?.view.showSimpleAlert("Error!!", "Couldn't Complete request please try again!!", .warning)
-//                }
-//                
-//            }
-//        }
+        reviewM.postReview(parameters: valueForReview) { [weak self](status) in
+            let reviewedOnce = status.1
+            if status.1 {
+                guard !reviewedOnce else {
+                    DispatchQueue.main.async {
+                        self?.view.showSimpleAlert("Attention!!", "You only can review us once per day", .warning)
+                        self?.navigationController?.popViewController(animated: true)
+                    }
+                    print("You Spammer") ; self?.view.killLoading(); return }
+                DispatchQueue.main.async {
+                    self?.view.showSimpleAlert("Thank You", "Your review is much appreciated.", .success)
+                    self?.navigationController?.popViewController(animated: true)
+                }
+                print("YAYAYAYAYAYAY"); self?.view.killLoading();
+            }else {
+                print("Dam u Adolf"); self?.view.killLoading();
+                DispatchQueue.main.async {
+                    self?.view.showSimpleAlert("Error!!", "Couldn't Complete request please try again!!", .warning)
+                }
+                
+            }
+        }
         
     }
-    
     
     func addReview(_ tag: Int, _ ratingValue: Int) {
         //         print("thatit cell : \(tag ) and the rating : \(ratingValue)")
         valueForReview[ratingTitles[tag]] = ratingValue
         print("that's the value ; \(valueForReview)")
+        startEditing = true
         
     }
     

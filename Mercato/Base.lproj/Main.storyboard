@@ -202,7 +202,7 @@
                                         <rect key="frame" x="79.5" y="231" width="161" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="161" height="155"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="162" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redemmt_icon" translatesAutoresizingMaskIntoConstraints="NO" id="rVw-Qt-YpS">
@@ -539,12 +539,153 @@
                     <connections>
                         <outlet property="collectionView" destination="0he-hy-lbR" id="IGS-CB-WcO"/>
                         <segue destination="gGe-4i-FVL" kind="show" identifier="ourProductsSegue" id="QCg-gf-46N"/>
-                        <segue destination="Wra-ow-7xa" kind="show" identifier="mTrSegue" id="OSW-81-5Av"/>
+                        <segue destination="bxp-WS-VeI" kind="show" identifier="mTrSegue" id="qBN-1y-VfI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Tt-nP-A5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="73" y="-1314"/>
+        </scene>
+        <!--All ReviewsVC-->
+        <scene sceneID="lh4-iQ-Nqz">
+            <objects>
+                <viewController id="bxp-WS-VeI" customClass="AllReviewsVC" customModule="Mercato" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="niy-IN-vFO"/>
+                        <viewControllerLayoutGuide type="bottom" id="YpC-Nx-768"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Aeu-mP-Vfq">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uro-DS-pHz">
+                                <rect key="frame" x="0.0" y="10" width="320" height="303"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="303" id="9Mj-cK-VZt"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reviewCell" rowHeight="55" id="zhQ-jU-eOI" customClass="ReviewCell" customModule="Mercato" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zhQ-jU-eOI" id="2Yj-bW-fhC">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVR-n8-YAb" customClass="SwiftyStarRatingView" customModule="SwiftyStarRatingView">
+                                                    <rect key="frame" x="192" y="0.0" width="120" height="50"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" red="0.69682055710000002" green="0.13634738330000001" blue="0.15121349689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="Qz7-gi-7Fq"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowsHalfStars" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="accurateHalfStars" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="review_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Vfx-Gw-dbB">
+                                                    <rect key="frame" x="8" y="3" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="GkX-vr-nKY"/>
+                                                        <constraint firstAttribute="width" secondItem="Vfx-Gw-dbB" secondAttribute="height" multiplier="1:1" id="nuT-of-KBZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drinks" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="we1-kp-Q2c">
+                                                    <rect key="frame" x="45" y="8" width="142" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.61694318059999997" green="0.64667433500000004" blue="0.67724907400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d98-Z1-BkZ">
+                                                    <rect key="frame" x="20" y="50" width="280" height="1"/>
+                                                    <color key="backgroundColor" red="0.69682055710000002" green="0.13634738330000001" blue="0.15121349689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="csh-Y0-Jr6"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SVR-n8-YAb" firstAttribute="top" secondItem="2Yj-bW-fhC" secondAttribute="top" id="9hX-SG-682"/>
+                                                <constraint firstItem="Vfx-Gw-dbB" firstAttribute="centerY" secondItem="we1-kp-Q2c" secondAttribute="centerY" constant="-3" id="Gd6-Sb-eDx"/>
+                                                <constraint firstItem="we1-kp-Q2c" firstAttribute="top" secondItem="2Yj-bW-fhC" secondAttribute="topMargin" id="JXl-63-IXt"/>
+                                                <constraint firstItem="Vfx-Gw-dbB" firstAttribute="leading" secondItem="2Yj-bW-fhC" secondAttribute="leading" constant="8" id="KPG-ZF-WRe"/>
+                                                <constraint firstItem="d98-Z1-BkZ" firstAttribute="top" secondItem="SVR-n8-YAb" secondAttribute="bottom" id="NQx-Ca-hCX"/>
+                                                <constraint firstItem="we1-kp-Q2c" firstAttribute="leading" secondItem="Vfx-Gw-dbB" secondAttribute="trailing" constant="2" id="OWo-Ax-eDo"/>
+                                                <constraint firstAttribute="bottom" secondItem="d98-Z1-BkZ" secondAttribute="bottom" constant="4" id="QTb-x0-fFh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="we1-kp-Q2c" secondAttribute="bottom" constant="8" id="UAe-zF-M42"/>
+                                                <constraint firstAttribute="trailing" secondItem="SVR-n8-YAb" secondAttribute="trailing" constant="8" id="Y27-CB-Ovm"/>
+                                                <constraint firstItem="d98-Z1-BkZ" firstAttribute="leading" secondItem="2Yj-bW-fhC" secondAttribute="leading" constant="20" id="aUH-sD-6Dc"/>
+                                                <constraint firstAttribute="trailing" secondItem="d98-Z1-BkZ" secondAttribute="trailing" constant="20" id="b7C-JQ-p0H"/>
+                                                <constraint firstItem="SVR-n8-YAb" firstAttribute="leading" secondItem="we1-kp-Q2c" secondAttribute="trailing" constant="5" id="n2Q-41-M9R"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="nameTitle" destination="we1-kp-Q2c" id="CjW-Ir-Suq"/>
+                                            <outlet property="ratingView" destination="SVR-n8-YAb" id="7ON-gp-Z6G"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLo-B5-HnE" customClass="UIButtonX" customModule="Mercato" customModuleProvider="target">
+                                <rect key="frame" x="80" y="333" width="160" height="30"/>
+                                <color key="backgroundColor" red="0.69682055710000002" green="0.13634738330000001" blue="0.15121349689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="oWC-5w-YYX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="Post your Review">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animate" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.35244980450000002" green="0.1126643792" blue="0.095518358050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="toAddreviewBtnAct:" destination="bxp-WS-VeI" eventType="touchUpInside" id="Q4s-xt-d3L"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gLo-B5-HnE" firstAttribute="centerX" secondItem="uro-DS-pHz" secondAttribute="centerX" id="8WZ-pt-AfZ"/>
+                            <constraint firstAttribute="trailing" secondItem="uro-DS-pHz" secondAttribute="trailing" id="IwP-r4-hPO"/>
+                            <constraint firstItem="gLo-B5-HnE" firstAttribute="top" secondItem="uro-DS-pHz" secondAttribute="bottom" constant="20" id="c2i-NC-k3k"/>
+                            <constraint firstItem="uro-DS-pHz" firstAttribute="top" secondItem="niy-IN-vFO" secondAttribute="bottom" constant="10" id="y21-qi-dhA"/>
+                            <constraint firstItem="uro-DS-pHz" firstAttribute="leading" secondItem="Aeu-mP-Vfq" secondAttribute="leading" id="zfI-cp-RA8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="muP-Gm-F7N"/>
+                    <connections>
+                        <outlet property="tableView" destination="uro-DS-pHz" id="mQP-eo-71O"/>
+                        <segue destination="Wra-ow-7xa" kind="show" identifier="addReviewSegue" id="xTg-rG-4No"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQj-sT-fQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="626" y="-402"/>
         </scene>
     </scenes>
     <resources>
