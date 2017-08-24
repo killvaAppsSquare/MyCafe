@@ -106,9 +106,12 @@ extension MainPageVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLa
                 let vc = AboutUsVC()
                 navigationController?.pushViewController(vc, animated: true)
          case 1 : //Menu
-            print("Puna bete")
+            performSegue(withIdentifier : "HomeToMenuSegue",sender: self )
         case 2 : //About Us
             print("it's all About Us")
+            let vc = AboutUsVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+
         case 3 : //Products
             performSegue(withIdentifier: "ourProductsSegue", sender: self)
         case 4 : //Our Location

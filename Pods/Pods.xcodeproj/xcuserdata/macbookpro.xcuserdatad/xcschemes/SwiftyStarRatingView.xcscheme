@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5EAC2B407886ABF2FFAC4F6FD2CA5997'
+               BlueprintIdentifier = '59FEF56A5B5E6A593E1ACC70CF20FCF0'
                BlueprintName = 'SwiftyStarRatingView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'SwiftyStarRatingView.framework'>

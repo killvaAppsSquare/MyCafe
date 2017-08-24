@@ -71,6 +71,7 @@ class Constants  {
             let api_status = "api_status"
             let id = "id"
             let api_message = "api_message"
+            let data = "data"
             //add_review
             let drinks = "drinks"
             let food = "food"

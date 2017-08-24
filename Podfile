@@ -9,6 +9,8 @@ target 'Mercato' do
     pod 'QRCodeReader.swift' 
 pod 'IQKeyboardManagerSwift'
     pod 'Alamofire', '~> 4.4'
+    pod 'AlamofireImage', '~> 3.2'
+
 	pod 'SwiftyJSON'
 	pod 'SwiftyStarRatingView'
 pod "TextFieldEffects"

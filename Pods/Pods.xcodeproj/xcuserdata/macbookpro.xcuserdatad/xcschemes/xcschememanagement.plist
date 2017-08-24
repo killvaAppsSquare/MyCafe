@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AlamofireImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>CDAlertView-CDAlertView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,22 +57,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02C5D1DC7BF7D073C8C15BBB8A889E3F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1C43B28A8806CEE2A9C75CD504D67386</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2F22D35A96B76202B544F77BCF59308F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>369C26E0019831DFC30E7122499AB269</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>407D8B658A10787A3703DB8CB1A7EC7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5EAC2B407886ABF2FFAC4F6FD2CA5997</key>
+		<key>59FEF56A5B5E6A593E1ACC70CF20FCF0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>63F66CCE4983A544456F83BE7F04436A</key>
+		<key>621B653EB69B548061CB7D0D1D6F5D81</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>63C220A5AC19731E251644908653B6E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9EFE4C70245EE2857D336B8B9FA4E825</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C4BDF1191BBE4F429F08A241D8B53E2A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FBD33645F21F0BBE73C4C50C95494795</key>
 		<dict>
 			<key>primary</key>
 			<true/>
