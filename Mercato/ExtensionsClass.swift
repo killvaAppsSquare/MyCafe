@@ -172,7 +172,13 @@ extension UIColor {
     }
 }
 
-
+extension Array {
+    mutating func remove(at indexes: [Int]) {
+        for index in indexes.sorted(by: >) {
+            remove(at: index)
+        }
+    }
+}
 extension String {
     
     

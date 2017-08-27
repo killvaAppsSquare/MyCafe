@@ -15,6 +15,7 @@ class Constants  {
     
     // #5a1e18   dark red
     // #b42024   light red
+    
    static var USER_ID :Int = {
         guard  let userID = UserDefaults.standard.value(forKey: "userId") as? Int else {
             //        print("error fetching userId from NSUserD.userId")
@@ -36,7 +37,8 @@ class Constants  {
             //           private  let HEADER_Value = "12b20fa6cca0ee113dc92d16f6be3029"
             
             let HEADER = ["X-Authorization-token" : "12b20fa6cca0ee113dc92d16f6be3029"]
-            
+            let IMAGE_URL = "http://mercatocoffee.com/"
+
             //ARTICLES
             //            let POST_ARTICLES_DATA = API.main_url + "articles"
             //            let GET_ARTICLES_ALL = API.main_url + "articles"
@@ -53,13 +55,15 @@ class Constants  {
             let GET_PRODUCTS = API.main_url + "products"
             let POST_PRODUCTS_CAT = API.main_url + "products_category"
             let POST_PROFILE = API.main_url + "profile"
+            let GET_PROFILE = API.main_url + "user_info"
             let GET_REVIEW = API.main_url + "reviews"
             let POST_ADD_REVIEW = API.main_url + "add_review"
+            
+            let GET_WALLET = API.main_url + "wallet"
 
         }
         
         class Parameters {
-            
             
             let email = "email"
             let password = "password"
@@ -82,6 +86,19 @@ class Constants  {
             let user_id = "user_id"
             let code = "code"
             //@End
+            
+            //Wallet
+            let point_id = "point_id"
+             let value = "value"
+             let qr_path = "qr_path"
+             let expire_date = "expire_date"
+            let redeemed_cards = "redeemed_cards"
+            let user_data = "user_data"
+            //@End Waller
+            
+            //Redeem 
+            let description = "description"
+            //@End Redeem
         }
         
     }

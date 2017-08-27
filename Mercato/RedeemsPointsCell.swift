@@ -12,6 +12,6 @@ class RedeemsPointsCell: UICollectionViewCell {
     
     @IBOutlet weak var redeemPoints: UILabel!
     
-    
+      
     
 }

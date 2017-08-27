@@ -12,7 +12,7 @@ class MainPageVC: UIViewController  {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let titles = ["Join Us","Menu","About Us","Our Products","Our Location","Reviews"]
+    var titles = ["Join Us","Menu","About Us","Our Products","Our Location","Reviews"]
     fileprivate let reviewSegue = "mTrSegue"
 
     
@@ -32,7 +32,7 @@ class MainPageVC: UIViewController  {
         collectionView.dataSource = self
         
         collectionView.register(MainVcCells.self, forCellWithReuseIdentifier: "MainCell")
-    
+//    updateFirstRowTitle()
         
         let btn2 = UIButton(type: .custom)
         btn2.setImage(UIImage(named: "sidemenu_icon"), for: .normal)
@@ -45,6 +45,24 @@ class MainPageVC: UIViewController  {
     
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+   updateFirstRowTitle()
+    }
+    
+    func updateFirstRowTitle() {
+        if  ad.isUserLoggedIn() , titles[0] != "Profile" {
+            titles[0] = "Profile"
+//            self.collectionView?.reloadItems(at: [IndexPath(row: 0, section: 0)])
+            self.collectionView.reloadData()
+            self.view.layoutIfNeeded()
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+viewDidLayoutSubviews()
+     }
     func sidemenuBtnAct() {
         menuView.showMenu()
     }
@@ -54,10 +72,23 @@ class MainPageVC: UIViewController  {
         // Dispose of any resources that can be recreated.
     }
     
- 
+//    func callLogin(){
+//        if !ad.isUserLoggedIn() {
+//            let vc = LoginViewC()
+//            self.navigationController?.pushViewController(vc, animated: true)
+//            return
+//        }
+//    }
     func navigatieToView ( _ selected : MenuList) {
+        guard ad.isUserLoggedIn()   else {
+            let vc = LoginViewC()
+            self.navigationController?.pushViewController(vc, animated: true)
+            return
+        }
         switch selected {
-        case .MyProfile : break
+        case .MyProfile :
+            let vc = ProfileVC()
+            self.navigationController?.pushViewController(vc, animated: true)
         case .MyWallet :
            let vc =  self.storyboard?.instantiateViewController(withIdentifier: "MyWalletVC") as! MyWalletVC
             self.navigationController?.pushViewController(vc, animated: true)   
@@ -65,7 +96,7 @@ class MainPageVC: UIViewController  {
             let vc =  self.storyboard?.instantiateViewController(withIdentifier: "RedeemPointsVC") as! RedeemPointsVC
             self.navigationController?.pushViewController(vc, animated: true)
         case .Offers :
-            menuView.handleDismiss()
+//            menuView.handleDismiss()
             let vc = AboutUsVC()
             self.navigationController?.pushViewController(vc, animated: true)
         case .Logout :
@@ -103,7 +134,7 @@ extension MainPageVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLa
                     let vc = LoginViewC()
                     navigationController?.pushViewController(vc, animated: true)
                     return }
-                let vc = AboutUsVC()
+                let vc = ProfileVC()
                 navigationController?.pushViewController(vc, animated: true)
          case 1 : //Menu
             performSegue(withIdentifier : "HomeToMenuSegue",sender: self )
@@ -147,6 +178,9 @@ extension MainPageVC : UICollectionViewDataSource {
         if indexPath.row == 0 || indexPath.row == 3  || indexPath.row == 4  {
             cell.backgroundColor = .white
             cell.label.textColor = .darkRed
+        }else {
+             cell.backgroundColor =  UIColor.lightRed
+            cell.label.textColor = .white
         }
         cell.label.text = titles[indexPath.row]
         
@@ -167,11 +201,11 @@ class MainVcCells : BaseCell {
         
         return iv
     }()
-    let blackView : UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        return view
-    }()
+//    let blackView : UIView = {
+//        let view = UIView()
+//        view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+//        return view
+//    }()
     let label : UILabel = {
         let lbl = UILabel()
 //        lbl.backgroundColor = UIColor.black.withAlphaComponent(0.5)
@@ -192,7 +226,7 @@ class MainVcCells : BaseCell {
         //        imageView.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.45)
         //        imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.45)
         //         self.backgroundColor =  UIColor.lightRed
-        self.backgroundColor =  UIColor.lightRed
+//        self.backgroundColor =  UIColor.lightRed
         let imageSize = self.frame.width * 0.6
         addConstraintsWithFormat("H:[v0(\(imageSize))]", views: imageView)
         addConstraintsWithFormat("H:|[v0]|", views: label)

@@ -9,5 +9,16 @@
 import UIKit
 
 class RedeemPointsHeaderVC: UICollectionReusableView {
+    
+    @IBOutlet weak var myPointsLbl: UILabel!
+    var redeemPointsVC : RedeemPointsVC?
+    
+    var myPoints : Int? {
+        didSet{
+        guard let mpt = myPoints else { return }
         
+        myPointsLbl.text = "Your points = \(mpt) point."
+    }
+    }
+
 }

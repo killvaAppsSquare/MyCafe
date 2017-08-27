@@ -8,39 +8,72 @@
 
 import UIKit
 
-class RedeemPointsVC: UIViewController  {
-
+class RedeemPointsVC: UIViewConWithLoadingIndicator  {
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    let mPoints = M_User_Points()
+    
+    var pointsData = [User_RedeemPoints_Var]()
+    var myPoints : Int?
+    
+    var  reusableview = RedeemPointsHeaderVC()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         collectionView.delegate = self
-        collectionView.dataSource = self 
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        collectionView.dataSource = self
+        self.loading()
+        mPoints.getPointsRedeemList { [weak self] (data) in
+            guard  data.2 else  {
+                self?.failedGettingData()
+                return
+            }
+            DispatchQueue.main.async {
+                guard let pointDataa = data.0 ,let  point = data.1 else {
+                    self?.failedGettingData()
+                    return }
+                
+                self?.pointsData = pointDataa
+                self?.myPoints = point
+                self?.reusableview.myPoints = point
+                self?.killLoading()
+                self?.collectionView.reloadData()
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func failedGettingData() {
+        DispatchQueue.main.async {
+            
+            self.view.showSimpleAlert("Error!!", "Couldn't retrieve data,Please try again!", .error)
+            //                    self?.killLoading()
+            self.navigationController?.popViewController(animated: true)
+        }
     }
-    */
-
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension RedeemPointsVC :UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      print("sup ")
+        print("sup ")
+        
+        let vc = RedeemedCodeVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -53,15 +86,16 @@ extension RedeemPointsVC :UICollectionViewDelegate, UICollectionViewDelegateFlow
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return    CGSize(width: self.collectionView.frame.width , height:230)
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionElementKindSectionHeader:
-            let reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "RedeemPointsHeaderVC", for: indexPath) as! RedeemPointsHeaderVC
+            reusableview  = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "RedeemPointsHeaderVC", for: indexPath) as! RedeemPointsHeaderVC
             
-//            reusableview.frame = CGRect(width: self.collectionView.frame.width , height:230)
+            reusableview.redeemPointsVC = self
+            //            reusableview.frame = CGRect(width: self.collectionView.frame.width , height:230)
             //do other header related calls or settups
             return reusableview
             
@@ -74,12 +108,13 @@ extension RedeemPointsVC :UICollectionViewDelegate, UICollectionViewDelegateFlow
 extension RedeemPointsVC : UICollectionViewDataSource  {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return pointsData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RedeemsPointsCell", for: indexPath) as! RedeemsPointsCell
-        
+        let point = pointsData[indexPath.row].points
+        cell.redeemPoints.text = "Redeem \(point)"
         
         return cell
     }

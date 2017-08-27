@@ -32,6 +32,8 @@
 		524626E41F4EF89100C9D0C4 /* OurMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524626E31F4EF89100C9D0C4 /* OurMenuCell.swift */; };
 		524626E71F4F0CC600C9D0C4 /* RedeemedCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524626E51F4F0CC600C9D0C4 /* RedeemedCodeVC.swift */; };
 		524626E81F4F0CC600C9D0C4 /* RedeemedCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524626E61F4F0CC600C9D0C4 /* RedeemedCodeVC.xib */; };
+		524626EC1F4F0FFF00C9D0C4 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524626EA1F4F0FFF00C9D0C4 /* ProfileVC.swift */; };
+		524626ED1F4F0FFF00C9D0C4 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524626EB1F4F0FFF00C9D0C4 /* ProfileVC.xib */; };
 		5264F7B31F44669E000AD5D6 /* LocationOnMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264F7B11F44669E000AD5D6 /* LocationOnMapVC.swift */; };
 		5264F7B41F44669E000AD5D6 /* LocationOnMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5264F7B21F44669E000AD5D6 /* LocationOnMapVC.xib */; };
 		5264F7B71F446D73000AD5D6 /* LoginViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264F7B51F446D73000AD5D6 /* LoginViewC.swift */; };
@@ -43,6 +45,7 @@
 		529397D71F41A3AF00CB7D79 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529397D61F41A3AF00CB7D79 /* RegistrationVC.swift */; };
 		52ADE0B11F4C297C00552A61 /* MReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADE0B01F4C297C00552A61 /* MReviewData.swift */; };
 		52ADE0B31F4C6BCE00552A61 /* LoadingViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADE0B21F4C6BCE00552A61 /* LoadingViewIndicator.swift */; };
+		52BC8A9E1F52DDF100E80C7E /* M_User_Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC8A9D1F52DDF100E80C7E /* M_User_Points.swift */; };
 		52C30DAD1F4D7E8A0049D969 /* AllReviewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C30DAC1F4D7E8A0049D969 /* AllReviewsVC.swift */; };
 		52CD5E581F4DD6BD00590654 /* PointsGuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD5E561F4DD6BD00590654 /* PointsGuideVC.swift */; };
 		52CD5E591F4DD6BD00590654 /* PointsGuideVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CD5E571F4DD6BD00590654 /* PointsGuideVC.xib */; };
@@ -88,6 +91,8 @@
 		524626E31F4EF89100C9D0C4 /* OurMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OurMenuCell.swift; sourceTree = "<group>"; };
 		524626E51F4F0CC600C9D0C4 /* RedeemedCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemedCodeVC.swift; sourceTree = "<group>"; };
 		524626E61F4F0CC600C9D0C4 /* RedeemedCodeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedeemedCodeVC.xib; sourceTree = "<group>"; };
+		524626EA1F4F0FFF00C9D0C4 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		524626EB1F4F0FFF00C9D0C4 /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		5264F7B11F44669E000AD5D6 /* LocationOnMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationOnMapVC.swift; sourceTree = "<group>"; };
 		5264F7B21F44669E000AD5D6 /* LocationOnMapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationOnMapVC.xib; sourceTree = "<group>"; };
 		5264F7B51F446D73000AD5D6 /* LoginViewC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewC.swift; sourceTree = "<group>"; };
@@ -99,6 +104,7 @@
 		529397D61F41A3AF00CB7D79 /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		52ADE0B01F4C297C00552A61 /* MReviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MReviewData.swift; sourceTree = "<group>"; };
 		52ADE0B21F4C6BCE00552A61 /* LoadingViewIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewIndicator.swift; sourceTree = "<group>"; };
+		52BC8A9D1F52DDF100E80C7E /* M_User_Points.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M_User_Points.swift; sourceTree = "<group>"; };
 		52C30DAC1F4D7E8A0049D969 /* AllReviewsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllReviewsVC.swift; sourceTree = "<group>"; };
 		52CD5E561F4DD6BD00590654 /* PointsGuideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsGuideVC.swift; sourceTree = "<group>"; };
 		52CD5E571F4DD6BD00590654 /* PointsGuideVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PointsGuideVC.xib; sourceTree = "<group>"; };
@@ -206,12 +212,23 @@
 			name = "Point Guide";
 			sourceTree = "<group>";
 		};
+		524626E91F4F0E8800C9D0C4 /* Points */ = {
+			isa = PBXGroup;
+			children = (
+				524626DC1F4ED87300C9D0C4 /* Point Guide */,
+				524626E51F4F0CC600C9D0C4 /* RedeemedCodeVC.swift */,
+				524626E61F4F0CC600C9D0C4 /* RedeemedCodeVC.xib */,
+			);
+			name = Points;
+			sourceTree = "<group>";
+		};
 		529398CF1F41AD2F00CB7D79 /* M */ = {
 			isa = PBXGroup;
 			children = (
 				529397D21F419C4300CB7D79 /* MUserData.swift */,
 				52ADE0B01F4C297C00552A61 /* MReviewData.swift */,
 				524626D31F4ECE1800C9D0C4 /* M_MenuData.swift */,
+				52BC8A9D1F52DDF100E80C7E /* M_User_Points.swift */,
 			);
 			name = M;
 			sourceTree = "<group>";
@@ -223,10 +240,8 @@
 				52C30DAE1F4D80EC0049D969 /* Reviews */,
 				71EE6EB41F49D1EC00C2FA9A /* MyWalletVC.swift */,
 				524626D71F4ED82500C9D0C4 /* Our Menu */,
-				524626DC1F4ED87300C9D0C4 /* Point Guide */,
+				524626E91F4F0E8800C9D0C4 /* Points */,
 				521186FC1F43301100FD1C59 /* OurProductsVC.swift */,
-				524626E51F4F0CC600C9D0C4 /* RedeemedCodeVC.swift */,
-				524626E61F4F0CC600C9D0C4 /* RedeemedCodeVC.xib */,
 				521187031F434FBB00FD1C59 /* MainPageVC.swift */,
 				71EE6EB81F49DA4900C2FA9A /* RedeemPointsVC.swift */,
 				5264F7B11F44669E000AD5D6 /* LocationOnMapVC.swift */,
@@ -269,6 +284,8 @@
 			children = (
 				5264F7B51F446D73000AD5D6 /* LoginViewC.swift */,
 				529397D61F41A3AF00CB7D79 /* RegistrationVC.swift */,
+				524626EA1F4F0FFF00C9D0C4 /* ProfileVC.swift */,
+				524626EB1F4F0FFF00C9D0C4 /* ProfileVC.xib */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -391,6 +408,7 @@
 				5264F7B81F446D73000AD5D6 /* LoginViewC.xib in Resources */,
 				524626E81F4F0CC600C9D0C4 /* RedeemedCodeVC.xib in Resources */,
 				524626CE1F4EC5A300C9D0C4 /* PointsGuideCell.xib in Resources */,
+				524626ED1F4F0FFF00C9D0C4 /* ProfileVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,10 +500,12 @@
 				52ADE0B31F4C6BCE00552A61 /* LoadingViewIndicator.swift in Sources */,
 				520C2A0E1F44402200F56BFA /* AddReviewVC.swift in Sources */,
 				521187041F434FBB00FD1C59 /* MainPageVC.swift in Sources */,
+				52BC8A9E1F52DDF100E80C7E /* M_User_Points.swift in Sources */,
 				529397D51F419C6E00CB7D79 /* Constants.swift in Sources */,
 				521187001F43317900FD1C59 /* Helper.swift in Sources */,
 				520918BB1F45C582009E9340 /* MainPageCell.swift in Sources */,
 				71EE6EA71F49C73E00C2FA9A /* AboutUsVC.swift in Sources */,
+				524626EC1F4F0FFF00C9D0C4 /* ProfileVC.swift in Sources */,
 				520C2A021F443D5E00F56BFA /* UIImageViewX.swift in Sources */,
 				5264F7BE1F447AEB000AD5D6 /* ExtensionsClass.swift in Sources */,
 				71EE6EA51F49B85900C2FA9A /* MenuNsView.swift in Sources */,

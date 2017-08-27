@@ -45,6 +45,7 @@ class LoginViewC: UIViewConWithLoadingIndicator , RegisterToLoginProtocol{
         modelViewNavBarHeight.constant = isModelView ? 64 : 0
     }
     
+   
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

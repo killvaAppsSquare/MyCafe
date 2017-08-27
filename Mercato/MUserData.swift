@@ -116,6 +116,98 @@ class MUserData {
     
     
     
+    func getProfileData( completed : @escaping (PostLoginVars?,Bool)->()) {
+        
+        let url = source.GET_PROFILE + "?id=\(Constants.USER_ID)"
+        //        print("URL: is postLoginData RL : \(url)")
+        
+        Alamofire.request(url , method: .get, parameters: nil, encoding: JSONEncoding.default, headers: source.HEADER).responseJSON { (response:DataResponse<Any>) in
+            //            print(response.result)
+            switch(response.result) {
+            case .success(_):
+                guard response.result.error == nil, let value = response.result.value  else {
+                    
+                    // got an error in getting the data, need to handle it
+                    //                    print("error fetching data from url")
+                    //                    print(response.result.error!)
+                    return
+                    
+                }
+                let json = JSON( value ) // SwiftyJSON
+                //                print("that is  postUserData_LOGIN getting the data Mate : %@", response.result.value)
+                let parm = Constants.API.Parameters()
+                let status: Bool  =  json[parm.api_status].intValue == 0 ? false : true
+                let data = json["data"]
+                
+                let profileData =  PostLoginVars(data)
+                
+                
+                completed(profileData , status )
+                break
+                
+            case .failure(_) :
+                
+                //                if let data = response.data {
+                //                    let json = String(data: data, encoding: String.Encoding.utf8)
+                //                    print("Failure Response: \(json)")
+                //                }
+                print("that is fail i n getting the Login data Mate : \(String(describing: response.result.error?.localizedDescription))")
+                
+                completed(nil,false)
+                break
+            }
+        }
+    }
+   
+    
+    func postProfileData(name: String? , email: String?,birthday:String? , phone_number:String? ,completed : @escaping (PostLoginVars?,Bool)->()) {
+        let parameters : Parameters = [ parSource.id : Constants.USER_ID , parSource.name : name , parSource.email :email , parSource.birthday : birthday , parSource.phone_number : phone_number ]
+        //        print("that is the parameters in postLoginData : \(parameters)")
+        
+        
+        //        CONFIGURATION.timeoutIntervalForResource = 10 // seconds
+        
+        //        let alamofireManager = Alamofire.SessionManager(configuration: CONFIGURATION)
+        let url = source.POST_PROFILE
+        //        print("URL: is postLoginData RL : \(url)")
+        
+        Alamofire.request(url , method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: source.HEADER).responseJSON { (response:DataResponse<Any>) in
+            //            print(response.result)
+            switch(response.result) {
+            case .success(_):
+                guard response.result.error == nil, let value = response.result.value  else {
+                    
+                    // got an error in getting the data, need to handle it
+                    //                    print("error fetching data from url")
+                    //                    print(response.result.error!)
+                    return
+                    
+                }
+                let json = JSON( value ) // SwiftyJSON
+                //                print("that is  postUserData_LOGIN getting the data Mate : %@", response.result.value)
+                let parm = Constants.API.Parameters()
+                let status: Bool  =  json[parm.api_status].intValue == 0 ? false : true
+                let data = json["data"]
+                
+                var profileData = PostLoginVars(data)
+                
+                
+                completed(profileData , status )
+                break
+                
+            case .failure(_) :
+                
+                //                if let data = response.data {
+                //                    let json = String(data: data, encoding: String.Encoding.utf8)
+                //                    print("Failure Response: \(json)")
+                //                }
+                print("that is fail i n getting the postProfileData  Mate : \(response.result.error?.localizedDescription)")
+                
+                completed(nil,false)
+                break
+            }
+        }
+    }
     
     
     

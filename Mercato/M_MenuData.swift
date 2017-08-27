@@ -6,8 +6,7 @@
 //  Copyright © 2017 Macbook Pro. All rights reserved.
 //
 
-import Foundation
-
+ 
 import Foundation
 import Alamofire
 import SwiftyJSON

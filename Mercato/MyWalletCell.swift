@@ -13,8 +13,9 @@ class MyWalletCell: UITableViewCell {
     @IBOutlet weak var myRedeemLabel: UILabel!
     @IBOutlet weak var expireDateLbl: UILabel!
     
-    var qrValue : Int?
-    var expireDate : String?
+   private  var qrValue : String?
+   private  var expireDate : String?
+    
    private var redeemPoint : String {
        guard  let x = qrValue else {
             return  ""
@@ -32,6 +33,8 @@ class MyWalletCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+     
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -39,7 +42,10 @@ class MyWalletCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell() {
+    func configCell(_ data : UserPoints_Vars) {
+        qrValue = data.value
+        expireDate = data.expire_date
+        
         myRedeemLabel.text = redeemPoint
         expireDateLbl.text = expiresAt
     }
