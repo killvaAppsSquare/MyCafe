@@ -99,6 +99,11 @@ class Constants  {
             //Redeem 
             let description = "description"
             //@End Redeem
+            
+            //All reviews
+            let total = "total"
+           
+            //@End AllReviews
         }
         
     }

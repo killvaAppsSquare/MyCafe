@@ -46,14 +46,7 @@ class RedeemPointsVC: UIViewConWithLoadingIndicator  {
         }
     }
     
-    func failedGettingData() {
-        DispatchQueue.main.async {
-            
-            self.view.showSimpleAlert("Error!!", "Couldn't retrieve data,Please try again!", .error)
-            //                    self?.killLoading()
-            self.navigationController?.popViewController(animated: true)
-        }
-    }
+
     
     /*
      // MARK: - Navigation

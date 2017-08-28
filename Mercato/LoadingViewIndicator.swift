@@ -25,6 +25,16 @@ class UIViewConWithLoadingIndicator : UIViewController {
         loadingClass.killLoading(self.view)
     }
     
+    func failedGettingData() {
+        DispatchQueue.main.async {
+            
+            self.view.showSimpleAlert("Error!!", "Couldn't retrieve data,Please try again!", .error)
+            self.killLoading()
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    
 }
 
     fileprivate  class IsLoadingView : NSObject {
@@ -112,6 +122,8 @@ class UIViewConWithLoadingIndicator : UIViewController {
         imageView.animationRepeatCount = 0
         imageView.startAnimating()
     }
+        
+     
 }
 
 

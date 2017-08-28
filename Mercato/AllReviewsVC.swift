@@ -8,18 +8,33 @@
 
 import UIKit
 
-class AllReviewsVC: UIViewController , LoginToReviewProtocol {
+class AllReviewsVC: UIViewConWithLoadingIndicator , LoginToReviewProtocol {
     
     @IBOutlet weak var tableView: UITableView!
     
     let ratingTitles = ["drinks","food","services","employees","cleanness"]
-    
-    
+    var totalRating :[Int]?
+    var totalReviewClass : TotalReviews_Vars?{
+        didSet {
+            guard let data = totalReviewClass else { return }
+            totalRating = [data.drinks,data.food,data.services,data.employees,data.cleanness]
+            tableView.reloadData()
+        }
+    }
+    let dataModel = MReviewData()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+        self.loading()
+        dataModel.getTotalReviews { [weak self] (data, code, status) in
+            
+            guard status , let data = data else {
+                 self?.failedGettingData()
+                return }
+            self?.totalReviewClass = data
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,6 +78,10 @@ extension AllReviewsVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) as! ReviewCell
         cell.nameTitle.text = ratingTitles[indexPath.row]
+        guard let reviewData = totalRating else {
+            cell.ratingView.value = CGFloat(0)
+            return cell }
+        cell.ratingView.value = CGFloat(reviewData[indexPath.row])
         return cell
     }
 }
