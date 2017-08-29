@@ -204,6 +204,7 @@
 		524626DC1F4ED87300C9D0C4 /* Point Guide */ = {
 			isa = PBXGroup;
 			children = (
+				71EE6EB81F49DA4900C2FA9A /* RedeemPointsVC.swift */,
 				52CD5E561F4DD6BD00590654 /* PointsGuideVC.swift */,
 				52CD5E571F4DD6BD00590654 /* PointsGuideVC.xib */,
 				524626CB1F4EC5A300C9D0C4 /* PointsGuideCell.swift */,
@@ -243,7 +244,6 @@
 				524626E91F4F0E8800C9D0C4 /* Points */,
 				521186FC1F43301100FD1C59 /* OurProductsVC.swift */,
 				521187031F434FBB00FD1C59 /* MainPageVC.swift */,
-				71EE6EB81F49DA4900C2FA9A /* RedeemPointsVC.swift */,
 				5264F7B11F44669E000AD5D6 /* LocationOnMapVC.swift */,
 				5264F7B21F44669E000AD5D6 /* LocationOnMapVC.xib */,
 				52C30DB01F4D8BAC0049D969 /* User */,

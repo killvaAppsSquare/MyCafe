@@ -32,9 +32,11 @@ class RegistrationVC: UIViewConWithLoadingIndicator {
     weak var delegate : RegisterToLoginProtocol?
     var isModelView = false
     
+    var serialNum = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+           title = "Registerion"
         modelViewNavBarHeight.constant = isModelView ? 64 : 0
         setupPickerV()
         setupTextsDelegate()
@@ -57,7 +59,6 @@ class RegistrationVC: UIViewConWithLoadingIndicator {
     
     
     func sendData() {
-        
         
         self.view.endEditing(true)
         textFieldValidation()
@@ -103,7 +104,7 @@ class RegistrationVC: UIViewConWithLoadingIndicator {
         if counter == 6 {
             let dataM = MUserData()
             self.loading()
-            dataM.postRegiserationData(name: fullnameTxt.text, phone_number: mobileNumTxt.text, email: emailTxt.text, userPassword: passTxt.text, birthday: birthdayText.text) { [weak self ](data) in
+            dataM.postRegiserationData(name: fullnameTxt.text, phone_number: mobileNumTxt.text, email: emailTxt.text, userPassword: passTxt.text, birthday: birthdayText.text,serialNum :serialNum) { [weak self ](data) in
                 
                 if data.0 , let id = data.1{
                     ad.saveUserLogginData(email: nil, photoUrl: nil, uid: id, name: nil)

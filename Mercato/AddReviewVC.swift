@@ -21,7 +21,7 @@ class AddReviewVC: TextFieldKeyBoardhandler , ReviewCellProtocol , UITextViewDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+          title = "Add Reviews"
         //        tableView.delegate = self
         tableView.dataSource = self
         textView.text = textViewPlaceHolder

@@ -60,7 +60,10 @@ class Constants  {
             let POST_ADD_REVIEW = API.main_url + "add_review"
             
             let GET_WALLET = API.main_url + "wallet"
-
+            
+            let POST_REDEEM = API.main_url + "redeem"
+            
+            let GET_QRScanner = API.main_url + "qrscan"
         }
         
         class Parameters {
@@ -76,6 +79,7 @@ class Constants  {
             let id = "id"
             let api_message = "api_message"
             let data = "data"
+            let serial_number = "serial_number"
             //add_review
             let drinks = "drinks"
             let food = "food"
@@ -104,6 +108,10 @@ class Constants  {
             let total = "total"
            
             //@End AllReviews
+            
+            //RedeemPoints
+            let qr_png = "qr_png"
+            //@End RedeemPoints
         }
         
     }

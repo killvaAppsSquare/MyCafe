@@ -25,6 +25,7 @@ class ProfileVC: UIViewConWithLoadingIndicator , UITextFieldDelegate{
                 self.phoneNumberTxt?.text = data.phone_number
                 self.birthdayTxt?.text = data.birthday
                 self.emailTxt?.text = data.email
+                self.killLoading()
             }
         }
     }
@@ -34,7 +35,7 @@ class ProfileVC: UIViewConWithLoadingIndicator , UITextFieldDelegate{
         super.viewDidLoad()
         title = "Profile"
         textFields = [fullNameTxt,phoneNumberTxt,birthdayTxt,emailTxt]
-        
+        self.loading()
         for txt in textFields {
             txt.delegate = self
         }
@@ -43,13 +44,14 @@ class ProfileVC: UIViewConWithLoadingIndicator , UITextFieldDelegate{
             
             guard status , let data = data  else {
                 DispatchQueue.main.async {
-                    
-                    self?.view.showSimpleAlert("Couldn't Provide Data", "Please trty again later!!", .error)
-                    self?.navigationController?.popViewController(animated: true)
+                    self?.failedGettingData()
+//                    self?.view.showSimpleAlert("Couldn't Provide Data", "Please trty again later!!", .error)
+//                    self?.navigationController?.popViewController(animated: true)
                 }
                 return
             }
             self?.profileData = data
+            
         }
         // Do any additional setup after loading the view.
     }

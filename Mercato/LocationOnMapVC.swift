@@ -19,7 +19,7 @@ class LocationOnMapVC: UIViewController , MKMapViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        title = "Our Location"
         
     }
     

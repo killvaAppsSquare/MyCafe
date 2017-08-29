@@ -14,16 +14,17 @@ import AlamofireImage
     var menuList = [GetMenuVars]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Menu"
         // Do any additional setup after loading the view.
         self.loading()
         let dataRequest = M_MenuData()
-        dataRequest.postLoginData { [weak self ] (data, status) in
+        dataRequest.getMenuData { [weak self ] (data, status) in
             
             guard status else {
-                
-                return
+                self?.failedGettingData()
+                 return
             }
+            
             guard let data = data else { return }
            
             DispatchQueue.main.async {

@@ -18,6 +18,7 @@ class UIViewConWithLoadingIndicator : UIViewController {
     
  
       func loading() {
+        
         loadingClass.isLoading(self.view)
            }
     
@@ -113,8 +114,8 @@ class UIViewConWithLoadingIndicator : UIViewController {
         
       
          var images = [UIImage]()
-        for i in 1...48 {
-            guard let img = UIImage(named: "1 (\(i)).png") else { return }
+        for i in 1...30 {
+            guard let img = UIImage(named: "\(i).png") else { return }
             images.append(img)
         }
         imageView.animationImages = images

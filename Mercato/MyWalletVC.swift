@@ -30,6 +30,7 @@ class MyWalletVC: UIViewConWithLoadingIndicator ,UITableViewDelegate,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "My Wallet"
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.

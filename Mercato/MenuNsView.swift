@@ -138,7 +138,18 @@ extension MenuNsView : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellID ", for: indexPath) as! MyMenuCell
-         cell.label.text = menuList[indexPath.row].rawValue
+        cell.label.text = menuList[indexPath.row].rawValue
+
+        guard ad.isUserLoggedIn() else {
+            if menuList.count - 2 == indexPath.row {
+                cell.seprator.backgroundColor = .clear
+            }
+             if menuList.count - 1 == indexPath.row {
+                cell.seprator.backgroundColor = .clear
+                cell.label.text = ""
+            }
+            return cell
+        }
         
         if menuList.count - 1 == indexPath.row {
             cell.seprator.backgroundColor = .clear

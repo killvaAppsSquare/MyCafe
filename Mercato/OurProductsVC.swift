@@ -8,13 +8,13 @@
 
 import UIKit
 
-class OurProductsVC: UIViewController  {
+class OurProductsVC: UIViewConWithLoadingIndicator  {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
-    let titles = ["Hot Drinks","Cold Drinks","Dessert" ]
     
-    let imgList = [#imageLiteral(resourceName: "menu_pic01"),#imageLiteral(resourceName: "menu_pic03"),#imageLiteral(resourceName: "menu_pic02") ]
+     var productList = [GetProductsVars]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +23,27 @@ class OurProductsVC: UIViewController  {
         collectionView.dataSource = self
         
         collectionView.register(OurProductsCell.self, forCellWithReuseIdentifier: "MainCell")
+        
+        self.loading()
+        let dataRequest = M_MenuData()
+        dataRequest.getProductsData { [weak self ] (data, status) in
+            
+            guard status else {
+                self?.failedGettingData()
+                return
+            }
+            
+            guard let data = data else { self?.failedGettingData(); return }
+            
+            DispatchQueue.main.async {
+                self?.productList = data
+                self?.collectionView.reloadData()
+                self?.killLoading()
+                
+            }
+            
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,15 +90,22 @@ extension OurProductsVC : UICollectionViewDelegate , UICollectionViewDelegateFlo
 extension OurProductsVC : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titles.count
+        return productList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCell", for: indexPath) as! OurProductsCell
-        cell.label.text = titles[indexPath.row]
+        cell.label.text = productList[indexPath.row].name
         
-        cell.imageView.image = imgList[indexPath.row]
-        return cell
+        if let url = URL(string: productList[indexPath.row].photo) {
+            cell.imageView.af_setImage(
+                withURL: url ,
+                placeholderImage: UIImage(named: "menu_loading"),
+                filter: nil,
+                imageTransition: .crossDissolve(0.2)
+            )
+        }
+         return cell
     }
 }
 

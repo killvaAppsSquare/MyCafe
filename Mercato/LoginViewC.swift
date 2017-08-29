@@ -25,7 +25,8 @@ class LoginViewC: UIViewConWithLoadingIndicator , RegisterToLoginProtocol{
     var isModelView = false
     weak var delegate : LoginToReviewProtocol?
  
-    
+    let userM = MUserData()
+
  
     
     // Good practice: create the reader lazily to avoid cpu overload during the
@@ -42,6 +43,7 @@ class LoginViewC: UIViewConWithLoadingIndicator , RegisterToLoginProtocol{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+         title = "Login"
         modelViewNavBarHeight.constant = isModelView ? 64 : 0
     }
     
@@ -67,7 +69,6 @@ class LoginViewC: UIViewConWithLoadingIndicator , RegisterToLoginProtocol{
         guard passT.isValidPassword else {
             self.view.showSimpleAlert("Error!!", "invalid Email Address", .warning)
             return }
-        let userM = MUserData()
         self.loading()
         userM.postLoginData(email: emailT, userPassword: passT) {[weak self] (data) in
             
@@ -84,18 +85,20 @@ class LoginViewC: UIViewConWithLoadingIndicator , RegisterToLoginProtocol{
                 }
                 return }
 //            print("that's the data : \(profileData.name) \(profileData.email) \(profileData.id) \(profileData.name) \(profileData)")
-            ad.saveUserLogginData(email: profileData.email, photoUrl: profileData.photo, uid: profileData.id , name: profileData.name)
-            DispatchQueue.main.async {
-               self?.killLoading()
-                self?.view.showSimpleAlert("Success", "Welcome \(profileData.name)", .success)
-                self?.handleLoginViewNav()
-            }
+            self?.loginSuccessfully(profileData)
             
             
         }
     }
     
- 
+    func loginSuccessfully(_ profileData : PostLoginVars) {
+        ad.saveUserLogginData(email: profileData.email, photoUrl: profileData.photo, uid: profileData.id , name: profileData.name)
+        DispatchQueue.main.async {
+            self.killLoading()
+            self.view.showSimpleAlert("Success", "Welcome \(profileData.name)", .success)
+            self.handleLoginViewNav()
+        }
+    }
     func handleLoginViewNav() {
         guard isModelView else {
             navigationController?.popViewController(animated: true)
@@ -137,9 +140,9 @@ extension LoginViewC :QRCodeReaderViewControllerDelegate {
         readerVC.delegate = self
         
         // Or by using the closure pattern
-        readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-            //            print(result)
-        }
+//        readerVC.completionBlock = { (result: QRCodeReaderResult?) in
+//            //            print(result)
+//        }
         
         // Presents the readerVC as modal form sheet
         readerVC.modalPresentationStyle = .formSheet
@@ -154,24 +157,47 @@ extension LoginViewC :QRCodeReaderViewControllerDelegate {
     
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         reader.stopScanning()
-        self.dismiss(animated: true, completion: { () -> Void in
+        self.dismiss(animated: true, completion: { [weak self] () -> Void in
             
             // use the result variable here.
-            let vc = RegistrationVC()
-            //
-            DispatchQueue.main.async {
-                guard result.value == "Register" else {
-                    self.view.showSimpleAlert("QR Code Not Found!!", "Plaese try again!", .warning)
+            self?.loading()
+            self?.userM.getQrScannerValue(serial_number: result.value, completed: { [weak self] ( data) in
+                
+                guard data.2 else {
+                    self?.view.showSimpleAlert("Error!!", "Request Failed, Please try again!", .warning)
+                    self?.killLoading()
                     return
                 }
-                guard let nav = self.navigationController  else {
-                    vc.delegate = self 
-                    vc.isModelView = true
-                    self.present(vc, animated: true, completion: nil)
-                    return
+                
+                guard let codee = data.1 , codee != 9000 , data.0 == nil  else {
+                    
+                    self?.loginSuccessfully(data.0!)
+                    //Login
+                    self?.killLoading()
+                    return }
+                
+                guard codee == 9001 else {
+                     DispatchQueue.main.async {
+                    self?.view.showSimpleAlert("Error!!", "invalid QR Code!!", .warning)
+                        self?.killLoading()
+                    }
+                    return }
+                DispatchQueue.main.async {
+                    let vc = RegistrationVC()
+                    vc.serialNum = result.value
+                    guard let nav = self?.navigationController  else {
+                        self?.killLoading()
+                        vc.delegate = self
+                        vc.isModelView = true
+                        self?.present(vc, animated: true, completion: nil)
+                        return
+                    }
+                    self?.killLoading()
+                    nav.pushViewController(vc, animated: true)
                 }
-                nav.pushViewController(vc, animated: true)
-            }
+            })
+           
+          
         })
     }
     

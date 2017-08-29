@@ -25,15 +25,20 @@ class AllReviewsVC: UIViewConWithLoadingIndicator , LoginToReviewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Total Reviews"
         tableView.dataSource = self
         // Do any additional setup after loading the view.
         self.loading()
         dataModel.getTotalReviews { [weak self] (data, code, status) in
             
             guard status , let data = data else {
-                 self?.failedGettingData()
+                self?.failedGettingData()
                 return }
-            self?.totalReviewClass = data
+            DispatchQueue.main.async {
+                self?.totalReviewClass = data
+                self?.killLoading()
+            }
+            
         }
     }
     

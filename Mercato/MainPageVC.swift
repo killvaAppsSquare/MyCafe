@@ -65,6 +65,10 @@ viewDidLayoutSubviews()
      }
     func sidemenuBtnAct() {
         menuView.showMenu()
+           self.navigationItem.leftBarButtonItem?.isEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+            self.navigationItem.leftBarButtonItem?.isEnabled = true 
+        }
     }
     
     override func didReceiveMemoryWarning() {

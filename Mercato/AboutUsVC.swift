@@ -30,12 +30,14 @@ class AboutUsVC: UIViewController {
        let tv = UITextView()
         tv.isEditable = false
         tv.textColor = .darkGray
-        tv.text = "ldjflasjlfsajlsjalkasfjl kasjkl asjklf jaslkdjaskj dkaslj ghwuoeoq w ,cmqkwjp qwkl;qwj"
+        tv.text = "At Mercato,You'r morethan a Customer,You're our Guest,Mercato Bakeries are Modern Version of the Traditional Neighborhood Bakery where you'r Always welcome to Strollin,Sample our Unique and Delicious Treats and linger awhile to enjoy the Entertaining Baking Process and warm friendly Atmosphere, Our Total Commitment to Quality includes Attentive,Cheerful and timely Service"
            tv.font = UIFont.boldSystemFont(ofSize: 18)
         return tv
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "About Us"
 self.view.backgroundColor = .white
         // Do any additional setup after loading the view.
         self.view.addSubview(imageView)

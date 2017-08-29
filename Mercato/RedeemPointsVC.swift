@@ -11,7 +11,7 @@ import UIKit
 class RedeemPointsVC: UIViewConWithLoadingIndicator  {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    let redeemModel = M_User_Points()
     let mPoints = M_User_Points()
     
     var pointsData = [User_RedeemPoints_Var]()
@@ -23,6 +23,7 @@ class RedeemPointsVC: UIViewConWithLoadingIndicator  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Redeem Points"
         // Do any additional setup after loading the view.
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -64,10 +65,31 @@ extension RedeemPointsVC :UICollectionViewDelegate, UICollectionViewDelegateFlow
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("sup ")
+        guard let points = myPoints ,  pointsData[indexPath.row].points <= points else {
+            self.view.showSimpleAlert("Sorry", "But you don't have Enough Points", .alarm)
+            return
+        }
+        self.loading()
+        redeemModel.postRedeemPoints(pointID:  pointsData[indexPath.row].id) { [weak self] (data, status) in
+            guard status , let dataa = data else  {
+                self?.failedGettingData()
+                return
+            }
+            DispatchQueue.main.async {
+                self?.killLoading()
+                let vc = RedeemedCodeVC()
+                vc.imageLink = dataa.qr_png
+                vc.qrCodeValue = dataa.value
+                vc.reddemedCode = true
+                self?.navigationController?.pushViewController(vc, animated: true)
+
+                
+            }
+            
+            
+        }
         
-        let vc = RedeemedCodeVC()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+          }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return    CGSize(width: (self.collectionView.frame.width / 2 ) - 1, height:155)
