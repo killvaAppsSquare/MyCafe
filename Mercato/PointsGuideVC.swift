@@ -8,9 +8,13 @@
 
 import UIKit
 
-class PointsGuideVC: UIViewController  , UICollectionViewDelegateFlowLayout , UICollectionViewDataSource {
+class PointsGuideVC: UIViewConWithLoadingIndicator  , UICollectionViewDelegateFlowLayout , UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var pointsData = [User_RedeemPoints_Var]()
+    let mPoints = M_User_Points()
+
+    var  reusableview = RedeemPointsHeaderVC()
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -18,21 +22,44 @@ class PointsGuideVC: UIViewController  , UICollectionViewDelegateFlowLayout , UI
         collectionView.dataSource = self
 //        collectionView.re/gister(PointsGuideCell.self , forCellWithReuseIdentifier: "PointsGuideCell")
          self.collectionView.register(UINib(nibName: "PointsGuideCell", bundle: nil), forCellWithReuseIdentifier: "PointsGuideCell")
+        
+        self.loading()
+        mPoints.getPointsRedeemList { [weak self] (data) in
+            guard  data.2 else  {
+                self?.failedGettingData()
+                return
+            }
+            DispatchQueue.main.async {
+                guard let pointsD = data.0  else {
+                    self?.failedGettingData()
+                    return }
+                self?.pointsData = pointsD
+                   self?.killLoading()
+                self?.collectionView.reloadData()
+            }
+        }
 
     }
 
+    @IBAction func dismissBtnAcr(_ sender: UIButtonX) {
+        self.presentingViewController?.dismiss(animated : true)
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return pointsData.count
     }
     
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PointsGuideCell", for: indexPath) as! PointsGuideCell
+        let data = pointsData[indexPath.row]
+        cell.moneyValueForPoints.text = data.description
+        cell.pointsInCupLbl.text = "\(data.value)"
         return cell
     }
     

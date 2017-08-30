@@ -40,7 +40,7 @@ class RedeemedCodeVC: UIViewController {
         }
         
         qrCodeLbl.text = redeemPoint
-        //        print("that's the imageLink : \(String(describing: imageLink))")
+                print("that's the imageLink : \(String(describing: imageLink))")
         if let urlString = imageLink ,  let url = URL(string: urlString) {
             
             imageView.af_setImage(

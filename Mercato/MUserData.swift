@@ -214,7 +214,7 @@ class MUserData {
     func getQrScannerValue(serial_number : String ,completed : @escaping ( PostLoginVars?,Int?,Bool)->()) {
         
         let url = source.GET_QRScanner + "?serial_number=\(serial_number)"
-        //        print("URL: is postLoginData RL : \(url)")
+                print("URL: is postLoginData RL : \(url)")
         
         Alamofire.request(url , method: .get, parameters: nil, encoding: JSONEncoding.default, headers: source.HEADER).responseJSON { (response:DataResponse<Any>) in
             //            print(response.result)
@@ -235,8 +235,8 @@ class MUserData {
                  let code = json[parm.code].int
                
                 if code == 9000 {
-                let data = json["data"]
-                
+                let data = json["user_data"]
+                print(data)
                 let profileData =  PostLoginVars(data)
                     completed( profileData,code, status )
                     return

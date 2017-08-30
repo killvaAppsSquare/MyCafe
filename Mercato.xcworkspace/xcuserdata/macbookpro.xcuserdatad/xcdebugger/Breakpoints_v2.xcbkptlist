@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
-            landmarkName = "postRegiserationData(name:phone_number:email:userPassword:birthday:completed:)"
+            landmarkName = "postRegiserationData(name:phone_number:email:userPassword:birthday:serialNum:completed:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -120,54 +120,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mercato/LoginViewC.swift"
-            timestampString = "525709467.557338"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "handleLoginViewNav()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Mercato.LoginViewC.handleLoginViewNav () -&gt; ()"
-                  moduleName = "Mercato"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/LoginViewC.swift"
-                  timestampString = "525709818.10084"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Mercato.LoginViewC.(handleLoginViewNav () -&gt; ()).(closure #1)"
-                  moduleName = "Mercato"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/LoginViewC.swift"
-                  timestampString = "525709818.103694"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Mercato/AddReviewVC.swift"
             timestampString = "525193563.427446"
             startingColumnNumber = "9223372036854775807"
@@ -185,11 +137,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mercato/ProfileVC.swift"
-            timestampString = "525699397.190557"
+            timestampString = "525776013.924389"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "textFieldDidEndEditing(_:)"
             landmarkType = "7">
             <Locations>
@@ -201,12 +153,12 @@
                   moduleName = "Mercato"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/ProfileVC.swift"
-                  timestampString = "525709818.116078"
+                  timestampString = "525799261.457822"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "32">
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "19">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -216,12 +168,12 @@
                   moduleName = "Mercato"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/ProfileVC.swift"
-                  timestampString = "525709818.122189"
+                  timestampString = "525799261.45996"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "216">
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "249">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -280,13 +232,237 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mercato/LoginViewC.swift"
-            timestampString = "525709525.237707"
+            filePath = "Mercato/RedeemPointsHeaderVC.swift"
+            timestampString = "525779439.671609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "myPoints"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mercato.RedeemPointsHeaderVC.init (frame : __C.CGRect) -&gt; Mercato.RedeemPointsHeaderVC"
+                  moduleName = "Mercato"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/RedeemPointsHeaderVC.swift"
+                  timestampString = "525799261.479568"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "195">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mercato.RedeemPointsHeaderVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Mercato.RedeemPointsHeaderVC&gt;"
+                  moduleName = "Mercato"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/RedeemPointsHeaderVC.swift"
+                  timestampString = "525799261.481657"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "123">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/RedeemPointsHeaderVC.swift"
+            timestampString = "525779465.053523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "myPoints"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/M_User_Points.swift"
+            timestampString = "525779481.273461"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "getPointsRedeemList(completed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/MUserData.swift"
+            timestampString = "525785603.315304"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "postProfileData(name:email:birthday:phone_number:completed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/MUserData.swift"
+            timestampString = "525785631.354718"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "getProfileData(completed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/MUserData.swift"
+            timestampString = "525785747.225518"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "getProfileData(completed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/LoginViewC.swift"
+            timestampString = "525796067.114263"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "reader(_:didScanResult:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/MUserData.swift"
+            timestampString = "525785992.983547"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "getQrScannerValue(serial_number:completed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/MUserData.swift"
+            timestampString = "525786141.51105"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "getQrScannerValue(serial_number:completed:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mercato.MUserData.getQrScannerValue (serial_number : Swift.String, completed : (Swift.Optional&lt;Mercato.PostLoginVars&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Mercato"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/MUserData.swift"
+                  timestampString = "525799261.51523"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "219"
+                  endingLineNumber = "219"
+                  offsetFromSymbolStart = "876">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mercato.MUserData.(getQrScannerValue (serial_number : Swift.String, completed : (Swift.Optional&lt;Mercato.PostLoginVars&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Bool) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Mercato"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro/Documents/Mercato/Mercato/MUserData.swift"
+                  timestampString = "525799261.517125"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "221"
+                  endingLineNumber = "221"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/LoginViewC.swift"
+            timestampString = "525789123.282353"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "handleLoginViewNav()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mercato/MenuNsView.swift"
+            timestampString = "525799024.941794"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

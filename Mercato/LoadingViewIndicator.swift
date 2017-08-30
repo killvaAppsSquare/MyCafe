@@ -31,6 +31,10 @@ class UIViewConWithLoadingIndicator : UIViewController {
             
             self.view.showSimpleAlert("Error!!", "Couldn't retrieve data,Please try again!", .error)
             self.killLoading()
+            guard self.navigationController  != nil else {
+                self.dismiss(animated: true, completion: nil)
+                return
+            }
             self.navigationController?.popViewController(animated: true)
         }
     }

@@ -58,7 +58,7 @@ class MenuNsView: NSObject {
         return  cv
     }()
     
-    let menuList : [MenuList] = [.MyProfile, .MyWallet,.Reddem,.Offers,.Logout]
+    var menuList : [MenuList] = [.MyProfile, .MyWallet,.Reddem,.Offers,.Logout]
     var mainpageController : MainPageVC?
     
     func showMenu() {
@@ -75,6 +75,12 @@ class MenuNsView: NSObject {
             collectionView.frame = CGRect(x: 0, y: 120, width:window.frame.width, height: window.frame.height - 80)
             headerSetup(window)
             menuView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            if ad.isUserLoggedIn()  {
+                menuList = [.MyProfile, .MyWallet,.Reddem,.Offers,.Logout]
+            }else {
+               menuList = [.MyProfile, .MyWallet,.Reddem,.Offers]
+            }
+            collectionView.reloadData()
             UIView.animate(withDuration: 0.8, animations: {
                 self.menuView.transform = .identity
                 self.menuView.alpha = 1
@@ -138,22 +144,23 @@ extension MenuNsView : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellID ", for: indexPath) as! MyMenuCell
+        cell.tag = indexPath.row
         cell.label.text = menuList[indexPath.row].rawValue
 
-        guard ad.isUserLoggedIn() else {
-            if menuList.count - 2 == indexPath.row {
-                cell.seprator.backgroundColor = .clear
-            }
-             if menuList.count - 1 == indexPath.row {
-                cell.seprator.backgroundColor = .clear
-                cell.label.text = ""
-            }
-            return cell
-        }
-        
-        if menuList.count - 1 == indexPath.row {
-            cell.seprator.backgroundColor = .clear
-        }
+//        guard ad.isUserLoggedIn() else {
+//            if menuList.count - 2 == indexPath.row {
+//                cell.seprator.backgroundColor = .clear
+//            }
+//             if menuList.count - 1 == indexPath.row {
+//                cell.seprator.backgroundColor = .clear
+//                cell.label.text = ""
+//            }
+//            return cell
+//        }
+//        if cell.label.text == "Logout" , cell.tag == indexPath.row {
+//        if menuList.count - 1 == indexPath.row ,  indexPath.row == cell.tag{
+//            cell.seprator.backgroundColor = .clear
+//        }
         return cell
     }
     

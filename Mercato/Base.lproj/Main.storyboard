@@ -262,7 +262,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFq-Ny-OcV">
                                             <rect key="frame" x="0.0" y="169" width="320" height="61"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Points = 250 Point" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkM-sI-JPh">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkM-sI-JPh">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.43510723114013672" green="0.22977399826049805" blue="0.2229229211807251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -872,7 +872,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="11" width="2199" height="2756"/>
+        <image name="11" width="72" height="72"/>
         <image name="mywallet_pic" width="1242" height="698"/>
         <image name="mywallet_qr" width="82" height="82"/>
         <image name="redemmt_icon" width="134" height="188"/>

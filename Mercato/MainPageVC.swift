@@ -86,6 +86,7 @@ viewDidLayoutSubviews()
     func navigatieToView ( _ selected : MenuList) {
         guard ad.isUserLoggedIn()   else {
             let vc = LoginViewC()
+            vc.guideDelegate = self
             self.navigationController?.pushViewController(vc, animated: true)
             return
         }
@@ -101,8 +102,9 @@ viewDidLayoutSubviews()
             self.navigationController?.pushViewController(vc, animated: true)
         case .Offers :
 //            menuView.handleDismiss()
-            let vc = AboutUsVC()
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.view.showSimpleAlert("Comming Soon", "", .alarm)
+//            let vc = AboutUsVC()
+//            self.navigationController?.pushViewController(vc, animated: true)
         case .Logout :
             self.view.showSimpleAlert("LoggingOut", "loading...", .alarm)
             self.view.isUserInteractionEnabled = false
@@ -136,6 +138,7 @@ extension MainPageVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLa
              case 0 : // Join us
                 guard ad.isUserLoggedIn() else {
                     let vc = LoginViewC()
+                     vc.guideDelegate = self
                     navigationController?.pushViewController(vc, animated: true)
                     return }
                 let vc = ProfileVC()
@@ -239,30 +242,15 @@ class MainVcCells : BaseCell {
 
         addConstraints([NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0 )])
         addConstraints([NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: -8)])
-//        addConstraints([NSLayoutConstraint(item: imageView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0.6, constant: 0)])
-//        addConstraints([NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 0.6, constant: 0)])
-////        
-//        addConstraints([NSLayoutConstraint(item: label, attribute: .top, relatedBy: .equal, toItem: imageView, attribute: .bottom, multiplier: 1, constant: 3 )])
-//        addConstraints([NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0 )])
-////        addConstraints([NSLayoutConstraint(item: label, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 20)])
-//        addConstraints([NSLayoutConstraint(item: label, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 0.85, constant: 0)])
-
-        //        addConstraints([NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0 )])
-        //           addConstraints([NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)])
-        
-        //        addConstraintsWithFormat("H:|[v0]|", views: imageView)
-        //        addConstraintsWithFormat("V:|[v0]|", views: imageView)
-        //
-        //        addConstraintsWithFormat("H:|[v0]|", views: blackView)
-        //        addConstraintsWithFormat("V:|[v0]|", views: blackView)
-        //
-        //
-        //        addConstraintsWithFormat("H:|[v0]|", views: label)
-        //
-        //        addConstraints([NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: imageView, attribute: .centerX, multiplier: 1, constant: 0)])
-        //        addConstraints([NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: imageView, attribute: .centerY, multiplier: 1, constant: 0)])
-        //
-        //        addConstraints([NSLayoutConstraint(item: label, attribute: .height, relatedBy: .equal, toItem: imageView, attribute: .height, multiplier: 1/4, constant: 0)])
-        
     }
+}
+
+
+extension MainPageVC : LoginToMainProtocol {
+    func showPointGuide() {
+        
+        let vc = PointsGuideVC()
+        self.present(vc, animated: true, completion: nil)   
+    }
+    
 }

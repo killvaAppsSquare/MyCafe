@@ -70,9 +70,12 @@ class ProfileVC: UIViewConWithLoadingIndicator , UITextFieldDelegate{
         sender.isSelected = !sender.isSelected
         
         if sender.isSelected {
+          title =  "Editing..."
             sender.setTitle("Save", for: .normal)
                         editableTextField(true)
+              self.fullNameTxt.becomeFirstResponder()
         }else {
+            self.view.endEditing(true)
             guard  checkingprofileDataBeforeSending() else { return }
             self.loading()
             mProfile.postProfileData(name: fullNameTxt.text, email: emailTxt.text, birthday: birthdayTxt.text, phone_number: phoneNumberTxt.text, completed: { [weak self ] (data, status) in
@@ -87,6 +90,7 @@ class ProfileVC: UIViewConWithLoadingIndicator , UITextFieldDelegate{
                     self?.editableTextField(false)
                     sender.setTitle("Edit", for: .normal)
                     self?.killLoading()
+                    self?.title = "Profile"
                     self?.view.showSimpleAlert("Success", "", .success)
                 }
             })

@@ -15,6 +15,9 @@ import CDAlertView
 protocol  LoginToReviewProtocol : class  {
     func navToAddreview()
 }
+protocol  LoginToMainProtocol : class  {
+    func showPointGuide()
+}
 class LoginViewC: UIViewConWithLoadingIndicator , RegisterToLoginProtocol{
     
     @IBOutlet weak var emailTxt: UITextField!
@@ -24,7 +27,8 @@ class LoginViewC: UIViewConWithLoadingIndicator , RegisterToLoginProtocol{
     
     var isModelView = false
     weak var delegate : LoginToReviewProtocol?
- 
+    weak var guideDelegate : LoginToMainProtocol?
+
     let userM = MUserData()
 
  
@@ -102,22 +106,28 @@ class LoginViewC: UIViewConWithLoadingIndicator , RegisterToLoginProtocol{
     func handleLoginViewNav() {
         guard isModelView else {
             navigationController?.popViewController(animated: true)
+            guideDelegate?.showPointGuide()
             return
         }
             self.dismiss(animated: true) { [weak self] (true) in
                 self?.delegate?.navToAddreview()
         }
 }
-    func sendSignalToAllReview() {
+    
+    
+    func sendSignalToAllReview(_ isNav : Bool) {
+        guard  !isNav else {
+            self.guideDelegate?.showPointGuide()
+            return
+        }
         self.dismiss(animated: true) { [weak self] (true) in
             self?.delegate?.navToAddreview()
         }
     }
     
     @IBAction func forgotpassBtnAct(_ sender: UIButton) {
-        let vc = RegistrationVC()
-        vc.isModelView = true
-        self.present(vc, animated: true, completion: nil)
+    
+        
     }
     
     @IBAction func modelViewDismissBtn(_ sender: UIButtonX) {
@@ -170,7 +180,7 @@ extension LoginViewC :QRCodeReaderViewControllerDelegate {
                 }
                 
                 guard let codee = data.1 , codee != 9000 , data.0 == nil  else {
-                    
+                    print("that's the data : \(data.0 )")
                     self?.loginSuccessfully(data.0!)
                     //Login
                     self?.killLoading()

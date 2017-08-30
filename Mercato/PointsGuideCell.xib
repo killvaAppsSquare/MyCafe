@@ -13,37 +13,42 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PointsGuideCell" id="jWW-eV-SfZ" customClass="PointsGuideCell" customModule="Mercato" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="442" height="90"/>
+            <rect key="frame" x="0.0" y="0.0" width="315" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="442" height="90"/>
+                <rect key="frame" x="0.0" y="0.0" width="315" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="points_bg" translatesAutoresizingMaskIntoConstraints="NO" id="jQ5-cJ-B8S">
-                        <rect key="frame" x="0.0" y="13.5" width="442" height="76.5"/>
+                        <rect key="frame" x="0.0" y="13.5" width="315" height="76.5"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="points_icon" translatesAutoresizingMaskIntoConstraints="NO" id="glY-jX-H1h">
-                        <rect key="frame" x="15" y="23.5" width="110.5" height="61.5"/>
+                        <rect key="frame" x="13" y="23.5" width="79" height="61.5"/>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sb4-zV-hcA">
-                        <rect key="frame" x="47" y="29.5" width="47.5" height="40"/>
+                        <rect key="frame" x="32.5" y="30.5" width="40.5" height="37.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="9aq-pb-hcJ">
-                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="40.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tP-Fw-uZV">
-                                <rect key="frame" x="0.0" y="20.5" width="47.5" height="19.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <rect key="frame" x="0.0" y="20.5" width="40.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <size key="shadowOffset" width="0.5" height="-1"/>
                             </label>
                         </subviews>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will gain 10 L.E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTe-fs-8HQ">
-                        <rect key="frame" x="199" y="41.5" width="144.5" height="20.5"/>
+                        <rect key="frame" x="135.5" y="41.5" width="144.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.71158564089999998" green="0.030109563839999999" blue="0.08819010109" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -63,14 +68,14 @@
                 <constraint firstItem="pTe-fs-8HQ" firstAttribute="centerY" secondItem="jQ5-cJ-B8S" secondAttribute="centerY" id="dgh-yR-DK9"/>
                 <constraint firstItem="jQ5-cJ-B8S" firstAttribute="height" secondItem="jWW-eV-SfZ" secondAttribute="height" multiplier="0.85" id="goC-5H-e8Z"/>
                 <constraint firstAttribute="bottom" secondItem="jQ5-cJ-B8S" secondAttribute="bottom" id="oJ0-Zj-Iu7"/>
-                <constraint firstItem="glY-jX-H1h" firstAttribute="leading" secondItem="jQ5-cJ-B8S" secondAttribute="leading" constant="15" id="zbt-K7-T6k"/>
+                <constraint firstItem="glY-jX-H1h" firstAttribute="leading" secondItem="jQ5-cJ-B8S" secondAttribute="leading" constant="13" id="zbt-K7-T6k"/>
             </constraints>
-            <size key="customSize" width="442" height="104"/>
+            <size key="customSize" width="315" height="104"/>
             <connections>
                 <outlet property="moneyValueForPoints" destination="pTe-fs-8HQ" id="4Av-8i-DVF"/>
                 <outlet property="pointsInCupLbl" destination="9aq-pb-hcJ" id="sX2-SV-eDh"/>
             </connections>
-            <point key="canvasLocation" x="-188" y="428"/>
+            <point key="canvasLocation" x="-251.5" y="428"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -216,6 +216,7 @@
 		524626E91F4F0E8800C9D0C4 /* Points */ = {
 			isa = PBXGroup;
 			children = (
+				71EE6EB41F49D1EC00C2FA9A /* MyWalletVC.swift */,
 				524626DC1F4ED87300C9D0C4 /* Point Guide */,
 				524626E51F4F0CC600C9D0C4 /* RedeemedCodeVC.swift */,
 				524626E61F4F0CC600C9D0C4 /* RedeemedCodeVC.xib */,
@@ -239,7 +240,6 @@
 			children = (
 				524626DF1F4EE97B00C9D0C4 /* MyScrollTest.swift */,
 				52C30DAE1F4D80EC0049D969 /* Reviews */,
-				71EE6EB41F49D1EC00C2FA9A /* MyWalletVC.swift */,
 				524626D71F4ED82500C9D0C4 /* Our Menu */,
 				524626E91F4F0E8800C9D0C4 /* Points */,
 				521186FC1F43301100FD1C59 /* OurProductsVC.swift */,

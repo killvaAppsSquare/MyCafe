@@ -11,8 +11,7 @@ import UIKit
 class RedeemPointsVC: UIViewConWithLoadingIndicator  {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    let redeemModel = M_User_Points()
-    let mPoints = M_User_Points()
+     let mPoints = M_User_Points()
     
     var pointsData = [User_RedeemPoints_Var]()
     var myPoints : Int?
@@ -70,7 +69,7 @@ extension RedeemPointsVC :UICollectionViewDelegate, UICollectionViewDelegateFlow
             return
         }
         self.loading()
-        redeemModel.postRedeemPoints(pointID:  pointsData[indexPath.row].id) { [weak self] (data, status) in
+        mPoints.postRedeemPoints(pointID:  pointsData[indexPath.row].id) { [weak self] (data, status) in
             guard status , let dataa = data else  {
                 self?.failedGettingData()
                 return
