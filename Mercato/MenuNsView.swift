@@ -158,9 +158,12 @@ extension MenuNsView : UICollectionViewDataSource {
 //            return cell
 //        }
 //        if cell.label.text == "Logout" , cell.tag == indexPath.row {
-//        if menuList.count - 1 == indexPath.row ,  indexPath.row == cell.tag{
-//            cell.seprator.backgroundColor = .clear
-//        }
+        if menuList.count - 1 == indexPath.row ,  indexPath.row == cell.tag{
+            cell.seprator.backgroundColor = .clear
+        }else {
+            cell.seprator.backgroundColor = .white
+
+        }
         return cell
     }
     
