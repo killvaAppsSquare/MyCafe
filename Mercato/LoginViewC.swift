@@ -88,7 +88,7 @@ class LoginViewC: UIViewConWithLoadingIndicator , RegisterToLoginProtocol{
                     self?.killLoading()
                 }
                 return }
-//            print("that's the data : \(profileData.name) \(profileData.email) \(profileData.id) \(profileData.name) \(profileData)")
+            print("that's the data : \(profileData.name) \(profileData.email) \(profileData.id) \(profileData.name) \(profileData)")
             self?.loginSuccessfully(profileData)
             
             
@@ -148,12 +148,7 @@ extension LoginViewC :QRCodeReaderViewControllerDelegate {
         // Retrieve the QRCode content
         // By using the delegate pattern
         readerVC.delegate = self
-        
-        // Or by using the closure pattern
-//        readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-//            //            print(result)
-//        }
-        
+    
         // Presents the readerVC as modal form sheet
         readerVC.modalPresentationStyle = .formSheet
         present(readerVC, animated: true, completion: nil)
@@ -220,3 +215,5 @@ extension LoginViewC :QRCodeReaderViewControllerDelegate {
     
     
 }
+
+ 

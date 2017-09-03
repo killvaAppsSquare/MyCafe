@@ -3,6 +3,7 @@ PODS:
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
   - CDAlertView (0.6.0)
+  - FSPagerView (0.5.0)
   - IQKeyboardManagerSwift (4.0.9)
   - QRCodeReader.swift (7.4.0)
   - SwiftyJSON (3.1.4)
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.4)
   - AlamofireImage (~> 3.2)
   - CDAlertView
+  - FSPagerView
   - IQKeyboardManagerSwift
   - QRCodeReader.swift
   - SwiftyJSON
@@ -23,12 +25,13 @@ SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   CDAlertView: e6f365fa0fac7349197e7ea4bd7810c069215cf4
+  FSPagerView: 64df73fea77ec77eaa4f8a1c6dfd81d2adef0bac
   IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
   QRCodeReader.swift: 759a4320cd9005ecc94abdb4aaf0eb72fcd359d0
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   SwiftyStarRatingView: a2b0057700e0adeb8e7442c55d99cb53b531d2f4
   TextFieldEffects: 9e5cce561ea39c75b86e9d3637601727a67e8b23
 
-PODFILE CHECKSUM: 93bfa81121db5d55e56dbdfd71a934432ebad4f2
+PODFILE CHECKSUM: 936afa2b1d637f791a7581d96ff1f56efcc8ac6f
 
 COCOAPODS: 1.2.0

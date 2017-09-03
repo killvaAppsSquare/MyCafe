@@ -15,7 +15,8 @@ class LocationOnMapVC: UIViewController , MKMapViewDelegate{
     let coords = [  CLLocation(latitude: 30.7921024, longitude: 31.0024722),
                     CLLocation(latitude: 30.7936133, longitude: 30.9961207) ];
     
-    
+    let coordss = [  CLLocationCoordinate2DMake(30.7921024, 31.0024722),CLLocationCoordinate2DMake(30.7936133, 30.9961207)]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,8 +28,11 @@ class LocationOnMapVC: UIViewController , MKMapViewDelegate{
         super.viewDidAppear(animated)
         // Do any additional setup after loading the view.
         mapView.delegate = self
-        
-        addAnnotations(coords: coords)
+        let x =   PinAnnotation("El Nady", "Branch", coordss[0])
+        let y =   PinAnnotation("Al Radwan", "Branch", coordss[1])
+        let xy = [x,y]
+        mapView.addAnnotations(xy)
+//        addAnnotations(coords: coords)
         self.mapView.showAnnotations(self.mapView.annotations, animated: true)
         
     }
@@ -87,7 +91,7 @@ class LocationOnMapVC: UIViewController , MKMapViewDelegate{
         }
         else {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
-            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+//            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         
         if let annotationView = annotationView {
@@ -108,4 +112,20 @@ class LocationOnMapVC: UIViewController , MKMapViewDelegate{
      }
      */
     
+}
+
+
+
+class PinAnnotation : NSObject, MKAnnotation {
+    
+    var coordinate: CLLocationCoordinate2D
+    
+    var title: String?
+    var subtitle: String?
+    
+    init(_ title : String, _ subtitle : String , _ coord :CLLocationCoordinate2D ) {
+        self.title = title
+        self.subtitle = subtitle
+        self.coordinate = coord
+    }
 }

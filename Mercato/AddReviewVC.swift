@@ -49,7 +49,7 @@ class AddReviewVC: TextFieldKeyBoardhandler , ReviewCellProtocol , UITextViewDel
             self.view.showSimpleAlert("Sorry", "You have to rate at least one Service", .notification)
             return
         }
-        valueForReview["user_id"] =  Constants.USER_ID
+        valueForReview["user_id"] =  USER_ID
         if textView.text != "Write your comment here..." {
             valueForReview["notes"] = textView.text
         }

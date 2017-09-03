@@ -25,7 +25,7 @@ class AllReviewsVC: UIViewConWithLoadingIndicator , LoginToReviewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Total Reviews"
+        
         tableView.dataSource = self
         // Do any additional setup after loading the view.
         self.loading()
@@ -42,6 +42,16 @@ class AllReviewsVC: UIViewConWithLoadingIndicator , LoginToReviewProtocol {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = "Total Reviews"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        title = ""
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

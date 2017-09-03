@@ -10,19 +10,21 @@ import Foundation
 import UIKit
 
 
+var USER_ID :Int   {
+    guard  let userID = UserDefaults.standard.value(forKey: "userId") as? Int else {
+        //        print("error fetching userId from NSUserD.userId")
+        return 0
+    }
+    return userID
+}
+
 
 class Constants  {
     
     // #5a1e18   dark red
     // #b42024   light red
     
-   static var USER_ID :Int = {
-        guard  let userID = UserDefaults.standard.value(forKey: "userId") as? Int else {
-            //        print("error fetching userId from NSUserD.userId")
-            return 0
-        }
-        return userID
-    }()
+    
     static let screenSize: CGRect = UIScreen.main.bounds
     
     class API {

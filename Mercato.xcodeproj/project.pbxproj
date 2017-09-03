@@ -43,6 +43,9 @@
 		529397D31F419C4300CB7D79 /* MUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529397D21F419C4300CB7D79 /* MUserData.swift */; };
 		529397D51F419C6E00CB7D79 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529397D41F419C6E00CB7D79 /* Constants.swift */; };
 		529397D71F41A3AF00CB7D79 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529397D61F41A3AF00CB7D79 /* RegistrationVC.swift */; };
+		52A7C64A1F5C3B6B0038E15C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A7C6491F5C3B6B0038E15C /* MapKit.framework */; };
+		52A7C64D1F5C4CA30038E15C /* MyGuidePagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7C64B1F5C4CA30038E15C /* MyGuidePagerVC.swift */; };
+		52A7C64E1F5C4CA30038E15C /* MyGuidePagerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A7C64C1F5C4CA30038E15C /* MyGuidePagerVC.xib */; };
 		52ADE0B11F4C297C00552A61 /* MReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADE0B01F4C297C00552A61 /* MReviewData.swift */; };
 		52ADE0B31F4C6BCE00552A61 /* LoadingViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ADE0B21F4C6BCE00552A61 /* LoadingViewIndicator.swift */; };
 		52BC8A9E1F52DDF100E80C7E /* M_User_Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC8A9D1F52DDF100E80C7E /* M_User_Points.swift */; };
@@ -102,6 +105,9 @@
 		529397D21F419C4300CB7D79 /* MUserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUserData.swift; sourceTree = "<group>"; };
 		529397D41F419C6E00CB7D79 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		529397D61F41A3AF00CB7D79 /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		52A7C6491F5C3B6B0038E15C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		52A7C64B1F5C4CA30038E15C /* MyGuidePagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGuidePagerVC.swift; sourceTree = "<group>"; };
+		52A7C64C1F5C4CA30038E15C /* MyGuidePagerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyGuidePagerVC.xib; sourceTree = "<group>"; };
 		52ADE0B01F4C297C00552A61 /* MReviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MReviewData.swift; sourceTree = "<group>"; };
 		52ADE0B21F4C6BCE00552A61 /* LoadingViewIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewIndicator.swift; sourceTree = "<group>"; };
 		52BC8A9D1F52DDF100E80C7E /* M_User_Points.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M_User_Points.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A7C64A1F5C3B6B0038E15C /* MapKit.framework in Frameworks */,
 				7CB5DA31ABCF97EBB20B751F /* Pods_Mercato.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +150,7 @@
 		42A766C3CE4035AB250CBB37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52A7C6491F5C3B6B0038E15C /* MapKit.framework */,
 				93A92C4C907E2916ACB3EF22 /* Pods_Mercato.framework */,
 			);
 			name = Frameworks;
@@ -169,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				71EE6EBC1F49E33A00C2FA9A /* RedeemPointsHeaderVC.swift */,
+				52A7C64B1F5C4CA30038E15C /* MyGuidePagerVC.swift */,
+				52A7C64C1F5C4CA30038E15C /* MyGuidePagerVC.xib */,
 				71EE6EA81F49CEE700C2FA9A /* MyWalletCell.swift */,
 				71EE6EA91F49CEE700C2FA9A /* MyWalletCell.xib */,
 				52C30DAF1F4D895E0049D969 /* User */,
@@ -369,8 +379,13 @@
 				TargetAttributes = {
 					52E4D7FE1F3C961800D4BF85 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = ZMU9J2W23C;
+						DevelopmentTeam = 2QX96JAZ4L;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -405,6 +420,7 @@
 				52E4D80A1F3C961800D4BF85 /* Assets.xcassets in Resources */,
 				52E4D8081F3C961800D4BF85 /* Main.storyboard in Resources */,
 				52CD5E591F4DD6BD00590654 /* PointsGuideVC.xib in Resources */,
+				52A7C64E1F5C4CA30038E15C /* MyGuidePagerVC.xib in Resources */,
 				5264F7B81F446D73000AD5D6 /* LoginViewC.xib in Resources */,
 				524626E81F4F0CC600C9D0C4 /* RedeemedCodeVC.xib in Resources */,
 				524626CE1F4EC5A300C9D0C4 /* PointsGuideCell.xib in Resources */,
@@ -483,6 +499,7 @@
 				520C2A051F443D5E00F56BFA /* UITextFieldX.swift in Sources */,
 				71EE6EBB1F49DC6B00C2FA9A /* RedeemsPointsCell.swift in Sources */,
 				5264F7B71F446D73000AD5D6 /* LoginViewC.swift in Sources */,
+				52A7C64D1F5C4CA30038E15C /* MyGuidePagerVC.swift in Sources */,
 				520C2A0C1F443F0200F56BFA /* MaterialView.swift in Sources */,
 				71EE6EB61F49D1EC00C2FA9A /* MyWalletVC.swift in Sources */,
 				520C2A0A1F443D5E00F56BFA /* UIVisualEffectViewX.swift in Sources */,
@@ -636,10 +653,10 @@
 			baseConfigurationReference = 5E65E96C4A9BB79CB38AB189 /* Pods-Mercato.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZMU9J2W23C;
+				DEVELOPMENT_TEAM = 2QX96JAZ4L;
 				INFOPLIST_FILE = Mercato/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.killva.Mercato;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appsTest.-AppsSquareTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -651,10 +668,10 @@
 			baseConfigurationReference = D74646F6BDD25EB98E7A5467 /* Pods-Mercato.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZMU9J2W23C;
+				DEVELOPMENT_TEAM = 2QX96JAZ4L;
 				INFOPLIST_FILE = Mercato/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.killva.Mercato;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appsTest.-AppsSquareTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

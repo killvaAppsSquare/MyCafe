@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FSPagerView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,7 +67,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>407D8B658A10787A3703DB8CB1A7EC7A</key>
+		<key>4971431D196C08FFC962A7E28B63FC48</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +77,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>59FEF56A5B5E6A593E1ACC70CF20FCF0</key>
+		<key>5E45F26B2D00D1F814101CCF25284A2C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>621B653EB69B548061CB7D0D1D6F5D81</key>
+		<key>6522F4217D04C182DC0862DB5398905F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>63C220A5AC19731E251644908653B6E7</key>
+		<key>849AC368B20E736A726DD57C5C42F850</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FBD33645F21F0BBE73C4C50C95494795</key>
+		<key>CCCB142BAE7EB8C3AC30E0E1D108C857</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED279AFE7EA745A57B7B9F35AD5F2C9F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

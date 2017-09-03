@@ -9,7 +9,7 @@
 import UIKit
 
 enum MenuList : String {
-    
+    case Login = "Login"
     case MyProfile = "My Profile"
     case MyWallet = "My Wallet"
     case Reddem = "Redeem Points"
@@ -78,7 +78,7 @@ class MenuNsView: NSObject {
             if ad.isUserLoggedIn()  {
                 menuList = [.MyProfile, .MyWallet,.Reddem,.Offers,.Logout]
             }else {
-               menuList = [.MyProfile, .MyWallet,.Reddem,.Offers]
+               menuList = [.Login, .MyWallet,.Reddem,.Offers]
             }
             collectionView.reloadData()
             UIView.animate(withDuration: 0.8, animations: {

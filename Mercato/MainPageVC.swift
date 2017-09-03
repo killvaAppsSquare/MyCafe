@@ -102,9 +102,9 @@ viewDidLayoutSubviews()
             self.navigationController?.pushViewController(vc, animated: true)
         case .Offers :
 //            menuView.handleDismiss()
-            self.view.showSimpleAlert("Comming Soon", "", .alarm)
-//            let vc = AboutUsVC()
-//            self.navigationController?.pushViewController(vc, animated: true)
+//            self.view.showSimpleAlert("Comming Soon", "", .alarm)
+            let vc = MyGuidePagerVC()
+            self.navigationController?.pushViewController(vc, animated: true)
         case .Logout :
             self.view.showSimpleAlert("LoggingOut", "loading...", .alarm)
             self.view.isUserInteractionEnabled = false
@@ -114,6 +114,8 @@ viewDidLayoutSubviews()
                 self.view.isUserInteractionEnabled = true
                 ad.reload()
             }
+            
+        default : break
         }
         print(selected.rawValue)
     }

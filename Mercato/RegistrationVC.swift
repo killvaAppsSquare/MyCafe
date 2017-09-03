@@ -36,7 +36,7 @@ class RegistrationVC: UIViewConWithLoadingIndicator {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-           title = "Registerion"
+           title = "Registration"
         modelViewNavBarHeight.constant = isModelView ? 64 : 0
         setupPickerV()
         setupTextsDelegate()

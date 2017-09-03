@@ -118,8 +118,8 @@ class MUserData {
     
     func getProfileData( completed : @escaping (PostLoginVars?,Bool)->()) {
         
-        let url = source.GET_PROFILE + "?id=\(Constants.USER_ID)"
-        //        print("URL: is postLoginData RL : \(url)")
+        let url = source.GET_PROFILE + "?id=\(USER_ID)"
+                print("URL: is postLoginData RL : \(url)")
         
         Alamofire.request(url , method: .get, parameters: nil, encoding: JSONEncoding.default, headers: source.HEADER).responseJSON { (response:DataResponse<Any>) in
             //            print(response.result)
@@ -134,7 +134,7 @@ class MUserData {
                     
                 }
                 let json = JSON( value ) // SwiftyJSON
-                //                print("that is  postUserData_LOGIN getting the data Mate : %@", response.result.value)
+                                print("that is  postUserData_LOGIN getting the data Mate : %@", response.result.value)
                 let parm = Constants.API.Parameters()
                 let status: Bool  =  json[parm.api_status].intValue == 0 ? false : true
                 let data = json["data"]
@@ -161,7 +161,7 @@ class MUserData {
    
     
     func postProfileData(name: String? , email: String?,birthday:String? , phone_number:String? ,completed : @escaping (PostLoginVars?,Bool)->()) {
-        let parameters : Parameters = [ parSource.id : Constants.USER_ID , parSource.name : name , parSource.email :email , parSource.birthday : birthday , parSource.phone_number : phone_number ]
+        let parameters : Parameters = [ parSource.id : USER_ID , parSource.name : name , parSource.email :email , parSource.birthday : birthday , parSource.phone_number : phone_number ]
         //        print("that is the parameters in postLoginData : \(parameters)")
         
         

@@ -15,5 +15,6 @@ pod 'IQKeyboardManagerSwift'
 	pod 'SwiftyStarRatingView'
 pod "TextFieldEffects"
 pod "CDAlertView"
+    pod 'FSPagerView'
 
 end

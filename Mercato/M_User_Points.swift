@@ -20,7 +20,7 @@ class M_User_Points {
     
     func getWalletData( completed : @escaping ([UserPoints_Vars]?,PostLoginVars?,Bool)->()) {
         
-        let url = source.GET_WALLET + "?id=\(Constants.USER_ID)"
+        let url = source.GET_WALLET + "?id=\(USER_ID)"
         //        print("URL: is postLoginData RL : \(url)")
         
         Alamofire.request(url , method: .get, parameters: nil, encoding: JSONEncoding.default, headers: source.HEADER).responseJSON { (response:DataResponse<Any>) in
@@ -60,7 +60,7 @@ class M_User_Points {
                 //                    let json = String(data: data, encoding: String.Encoding.utf8)
                 //                    print("Failure Response: \(json)")
                 //                }
-      print("that is fail i n getting the getWalletData Mate : \(response.result.error?.localizedDescription)")
+      print("that is fail i n getting the getWalletData Mate : \(String(describing: response.result.error?.localizedDescription))")
                 
                 completed(nil, nil , false)
                 break
@@ -72,9 +72,10 @@ class M_User_Points {
     func getPointsRedeemList(completed : @escaping ([User_RedeemPoints_Var]?,Int?,Bool)->()) {
 //        let parameters : Parameters = [ parSource.user_id  : Constants.USER_ID]
         //        print("that is the parameters in postLoginData : \(parameters)")
-        
+                print("UserDefaults.standard.value(forKey: ) : \(UserDefaults.standard.value(forKey: "userId"))")
+
  
-        let url = source.GET_POINTS + "?user_id=\(Constants.USER_ID)"
+        let url = source.GET_POINTS + "?user_id=\(USER_ID)"
 
 //         let url = source.GET_POINTS
                 print("URL: is getPointsRedeemList RL : \(url)")
@@ -121,7 +122,7 @@ class M_User_Points {
     
 
     func postRedeemPoints(pointID : Int ,completed : @escaping ( RedeemPoint_Vars?,Bool)->()) {
-        let parameters : Parameters = [ parSource.user_id  : Constants.USER_ID, parSource.point_id : pointID]
+        let parameters : Parameters = [ parSource.user_id  : USER_ID, parSource.point_id : pointID]
 
         let url = source.POST_REDEEM
         //        print("URL: is postLoginData RL : \(url)")
