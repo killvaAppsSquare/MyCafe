@@ -12,7 +12,7 @@ import CDAlertView
 
 protocol RegisterToLoginProtocol : class {/// Navigate to Addreview
     
-    func sendSignalToAllReview(_ isNav : Bool)
+    func sendSignalToAllReview()
 }
 class RegistrationVC: UIViewConWithLoadingIndicator {
     
@@ -26,7 +26,7 @@ class RegistrationVC: UIViewConWithLoadingIndicator {
     
  
     
-    
+    var isInReview = false
     
     var nukeTf = false
     weak var delegate : RegisterToLoginProtocol?
@@ -128,18 +128,23 @@ class RegistrationVC: UIViewConWithLoadingIndicator {
     }
     
     func handleRegisterSuccess() {
-
+//        guard !isInReview else {
+//            if let y =  self.presentingViewController?.presentingViewController {
+//                //            print("YOYOOY 2 Views ")
+//                y.dismiss(animated: true, completion: nil)
+//            }
+//            return
+//        }
         guard isModelView else {
-            
 //              navigationController?.popToRootViewController(animated: true)
             navigationController?.popViewController(animated: true)
-            self.delegate?.sendSignalToAllReview(true)
+            self.delegate?.sendSignalToAllReview()
             return
         }
         
         self.presentingViewController?.dismiss(animated: true) { [weak self ] (true) in
             
-            self?.delegate?.sendSignalToAllReview(false)
+            self?.delegate?.sendSignalToAllReview()
         }
     }
     /*

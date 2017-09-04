@@ -61,6 +61,7 @@ class AllReviewsVC: UIViewConWithLoadingIndicator , LoginToReviewProtocol {
         guard  ad.isUserLoggedIn() else {
             let vc = LoginViewC()
             vc.isModelView = true
+            vc.isInReview = true 
             vc.delegate = self
             self.present(vc, animated: true, completion: nil)
             return

@@ -24,7 +24,8 @@ class LoginViewC: UIViewConWithLoadingIndicator , RegisterToLoginProtocol{
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var loginBtnOL: UIButton!
     @IBOutlet weak var modelViewNavBarHeight: NSLayoutConstraint!
-    
+    var isInReview = false
+
     var isModelView = false
     weak var delegate : LoginToReviewProtocol?
     weak var guideDelegate : LoginToMainProtocol?
@@ -66,12 +67,18 @@ class LoginViewC: UIViewConWithLoadingIndicator , RegisterToLoginProtocol{
             passwordTxt.text = "1234"
         }
         //
-        guard let emailT = emailTxt.text , let passT = passwordTxt.text else { return }
+        guard let emailT = emailTxt.text , let passT = passwordTxt.text , !emailT.isBlank else {
+            self.view.showSimpleAlert("Error!!", "E-Mail is Required", .warning)
+            return }
+        guard !passT.isBlank else {
+            self.view.showSimpleAlert("Error!!", "Password is Required", .warning)
+            return }
+
         guard emailT.isEmail else {
             self.view.showSimpleAlert("Error!!", "invalid Email Address", .warning)
             return }
         guard passT.isValidPassword else {
-            self.view.showSimpleAlert("Error!!", "invalid Email Address", .warning)
+            self.view.showSimpleAlert("Error!!", "invalid Password Address", .warning)
             return }
         self.loading()
         userM.postLoginData(email: emailT, userPassword: passT) {[weak self] (data) in
@@ -104,26 +111,39 @@ class LoginViewC: UIViewConWithLoadingIndicator , RegisterToLoginProtocol{
         }
     }
     func handleLoginViewNav() {
+        handleLoginDelegation()
+    }
+    
+    func sendSignalToAllReview() {
+        
+        handleLoginDelegation()
+//        guard  !isNav else {
+//            self.guideDelegate?.showPointGuide()
+//            return
+//        }
+//        self.dismiss(animated: true) { [weak self] (true) in
+//            self?.delegate?.navToAddreview()
+//        }
+    }
+    
+    func handleLoginDelegation() {
+        guard !isInReview else {
+            self.dismiss(animated: true) { [weak self] (true) in
+                self?.delegate?.navToAddreview()
+            }
+            return
+        }
         guard isModelView else {
             navigationController?.popViewController(animated: true)
             guideDelegate?.showPointGuide()
             return
         }
-            self.dismiss(animated: true) { [weak self] (true) in
-                self?.delegate?.navToAddreview()
-        }
-}
-    
-    
-    func sendSignalToAllReview(_ isNav : Bool) {
-        guard  !isNav else {
-            self.guideDelegate?.showPointGuide()
-            return
-        }
-        self.dismiss(animated: true) { [weak self] (true) in
-            self?.delegate?.navToAddreview()
-        }
+        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true) { [weak self] (true) in
+//            self?.delegate?.navToAddreview()
+//        }
     }
+
     
     @IBAction func forgotpassBtnAct(_ sender: UIButton) {
     
@@ -190,10 +210,14 @@ extension LoginViewC :QRCodeReaderViewControllerDelegate {
                 DispatchQueue.main.async {
                     let vc = RegistrationVC()
                     vc.serialNum = result.value
+                     vc.delegate = self
                     guard let nav = self?.navigationController  else {
                         self?.killLoading()
-                        vc.delegate = self
                         vc.isModelView = true
+                        if let inReview = self?.isInReview , inReview == true  {
+                         vc.isInReview = inReview
+                        }
+                        
                         self?.present(vc, animated: true, completion: nil)
                         return
                     }

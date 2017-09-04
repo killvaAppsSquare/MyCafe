@@ -42,7 +42,7 @@ extension String {
     
     var validPhoneNumber : Bool  {
 //        print("that is the phone : \(self)")
-        let PHONE_REGEX = "^(01)?(0|1|2)([0-9]{8})$"
+        let PHONE_REGEX = "^(01)?(0|1|2)([0-9]{10})$"
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
         let result =  phoneTest.evaluate(with: self)
 //        print("that is the phone result : \(result)")

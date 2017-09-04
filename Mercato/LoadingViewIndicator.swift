@@ -118,7 +118,7 @@ class UIViewConWithLoadingIndicator : UIViewController {
         
       
          var images = [UIImage]()
-        for i in 1...50 {
+        for i in 2...50 {
             guard let img = UIImage(named: "\(i).png") else { return }
             images.append(img)
         }

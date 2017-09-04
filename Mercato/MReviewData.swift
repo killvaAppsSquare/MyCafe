@@ -19,7 +19,7 @@ class MReviewData {
     private  let source = Constants.API.URLS()
     private   let parSource = Constants.API.Parameters()
 
-    func postReview(parameters : [String:Any] ,completed : @escaping (_ reviewdOnce : Bool,Bool)->()) {
+    func postReview(parameters : [String:Any] ,completed : @escaping (Bool,Bool)->()) {
  
         let url = source.POST_ADD_REVIEW
         //        print("URL: is postLoginData RL : \(url)")
@@ -42,8 +42,8 @@ class MReviewData {
                 let status: Bool  =  json[parm.api_status].intValue == 0 ? false : true
                 let  api_message = json[parm.api_message].stringValue
                 let code = json[parm.code].int
-                let  reviewdOnce : Bool = code != 9000 ? true : false
-               
+                let  reviewdOnce : Bool = code == 9000 ? true : false
+               print("that's the value : \(reviewdOnce)")
  //                let data = json["data"]
                 
 //                var profileData =  PostLoginVars(data)

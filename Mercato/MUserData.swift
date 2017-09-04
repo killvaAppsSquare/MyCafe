@@ -92,7 +92,7 @@ class MUserData {
                     
                 }
                 let json = JSON(value) // SwiftyJSON
-//                print("that is  postRegiserationData getting the data Mate : %@", response.result.value!)
+                print("that is  postRegiserationData getting the data Mate : %@", response.result.value)
                 let parm = Constants.API.Parameters()
                 let status: Bool  =  json[parm.api_status].intValue == 0 ? false : true
                 let id = json["id"].intValue

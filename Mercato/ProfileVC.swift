@@ -91,7 +91,7 @@ class ProfileVC: UIViewConWithLoadingIndicator , UITextFieldDelegate{
                     sender.setTitle("Edit", for: .normal)
                     self?.killLoading()
                     self?.title = "Profile"
-                    self?.view.showSimpleAlert("Success", "", .success)
+                    self?.view.showSimpleAlert("Success", "your profile updated successfully", .success)
                 }
             })
             

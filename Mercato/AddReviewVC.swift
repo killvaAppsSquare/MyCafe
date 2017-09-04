@@ -60,7 +60,9 @@ class AddReviewVC: TextFieldKeyBoardhandler , ReviewCellProtocol , UITextViewDel
          
         self.loading()
         reviewM.postReview(parameters: valueForReview) { [weak self](status) in
-            let reviewedOnce = status.1
+            let reviewedOnce = status.0
+            print("that's the value : \(reviewedOnce), \(status.0) , \(status.1)")
+
             if status.1 {
                 guard !reviewedOnce else {
                     DispatchQueue.main.async {
@@ -72,7 +74,7 @@ class AddReviewVC: TextFieldKeyBoardhandler , ReviewCellProtocol , UITextViewDel
                     self?.view.showSimpleAlert("Thank You", "Your review is much appreciated.", .success)
                     self?.navigationController?.popViewController(animated: true)
                 }
-                print("YAYAYAYAYAYAY"); self?.killLoading();
+               self?.killLoading();
             }else {
                 print("Dam u Adolf"); self?.killLoading();
                 DispatchQueue.main.async {
